@@ -1,11 +1,8 @@
-import { Container } from '@/components/ui/Container'
-import type { Metadata } from 'next'
-import Image from 'next/image'
+'use client'
 
-export const metadata: Metadata = {
-  title: 'LinkedIn Campaign Review - March 2026',
-  robots: { index: false, follow: false },
-}
+import { Container } from '@/components/ui/Container'
+import Image from 'next/image'
+import { useState } from 'react'
 
 type Post = {
   num: number
@@ -2815,6 +2812,8 @@ situation right now.`,
   },
 ]
 
+// ---- Color maps ----
+
 const funnelColors: Record<string, { bg: string; text: string; border: string }> = {
   TOFU: { bg: 'bg-blue-50', text: 'text-blue-700', border: 'border-blue-200' },
   MOFU: { bg: 'bg-amber-50', text: 'text-amber-700', border: 'border-amber-200' },
@@ -2830,89 +2829,488 @@ const typeColors: Record<string, string> = {
   CTA: 'bg-emerald-100 text-emerald-700',
 }
 
-function PostCard({ post }: { post: Post }) {
-  const funnel = funnelColors[post.funnel]
+// ---- Date helpers ----
+
+function getCampaignDate(postNum: number): Date {
+  // Campaign starts March 2, 2026 (Monday). Posts are Mon-Sat (skip Sunday).
+  const start = new Date(2026, 2, 2) // March 2 2026
+  let count = 0
+  const d = new Date(start)
+  while (count < postNum - 1) {
+    d.setDate(d.getDate() + 1)
+    if (d.getDay() !== 0) {
+      count++
+    }
+  }
+  return d
+}
+
+function formatDate(d: Date): string {
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+}
+
+// ---- Text rendering helpers ----
+
+function renderPostText(text: string) {
+  // Color hashtags blue, preserve whitespace
+  const parts = text.split(/(#\w+)/g)
+  return parts.map((part, i) =>
+    part.startsWith('#') ? (
+      <span key={i} style={{ color: '#0a66c2' }}>
+        {part}
+      </span>
+    ) : (
+      part
+    ),
+  )
+}
+
+// ---- LinkedIn Post Card ----
+
+function LinkedInPostCard({ post }: { post: Post }) {
   const imgUrl = `${IMG_BASE}/post-${post.slug}.jpg`
+  const postDate = getCampaignDate(post.num)
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-      {/* Post Image */}
-      <div className="relative w-full aspect-[1.91/1] bg-gray-100">
+    <div className="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden">
+      {/* Card header */}
+      <div className="flex items-start justify-between px-4 pt-3 pb-2">
+        <div className="flex items-center gap-3">
+          {/* Avatar */}
+          <div
+            className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 text-white font-semibold text-sm"
+            style={{ backgroundColor: '#0071E3' }}
+          >
+            MR
+          </div>
+          <div>
+            <p className="text-sm font-semibold" style={{ color: '#191919' }}>
+              Moe Randera
+            </p>
+            <p className="text-xs" style={{ color: '#666666' }}>
+              Founder, WorkflowClick
+            </p>
+            <p className="text-xs" style={{ color: '#666666' }}>
+              {formatDate(postDate)} &middot; 🌐
+            </p>
+          </div>
+        </div>
+        <button className="text-gray-400 hover:text-gray-600 p-1 mt-0.5" aria-label="More options">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <circle cx="5" cy="12" r="2" />
+            <circle cx="12" cy="12" r="2" />
+            <circle cx="19" cy="12" r="2" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Post body text */}
+      <div className="px-4 pb-3 text-sm leading-[1.4] whitespace-pre-wrap" style={{ color: '#191919' }}>
+        {renderPostText(post.copy)}
+      </div>
+
+      {/* Image - edge to edge */}
+      <div className="relative w-full aspect-square bg-gray-100">
         <Image
           src={imgUrl}
           alt={post.altText}
           fill
           className="object-cover"
-          sizes="(max-width: 768px) 100vw, 800px"
+          sizes="(max-width: 1024px) 100vw, 600px"
           unoptimized
         />
       </div>
 
-      <div className="p-6 sm:p-8">
-        {/* Header */}
-        <div className="flex flex-wrap items-center gap-2 mb-4">
-          <span className="text-sm font-mono text-gray-400">#{post.num}</span>
-          <span
-            className={`text-xs font-semibold px-2.5 py-1 rounded-full ${funnel.bg} ${funnel.text} border ${funnel.border}`}
-          >
-            {post.funnel}
-          </span>
-          <span
-            className={`text-xs font-semibold px-2.5 py-1 rounded-full ${typeColors[post.type] || 'bg-gray-100 text-gray-700'}`}
-          >
-            {post.type}
-          </span>
+      {/* Action bar */}
+      <div className="border-t border-gray-200">
+        <div className="flex items-center">
+          {[
+            {
+              label: 'Like',
+              icon: (
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M19.46 11l-3.91-3.91a7 7 0 0 1-1.69-2.74l-.49-1.47A2.76 2.76 0 0 0 10.76 1 2.75 2.75 0 0 0 8 3.74v1.12a9.19 9.19 0 0 0 .46 2.85L8.89 9H4.12A2.12 2.12 0 0 0 2 11.12a2.16 2.16 0 0 0 .92 1.76A2.11 2.11 0 0 0 2 14.62a2.14 2.14 0 0 0 1.28 2 2 2 0 0 0-.28 1 2.12 2.12 0 0 0 2 2.12v.14A2.12 2.12 0 0 0 7.12 22h7.49a8.08 8.08 0 0 0 3.58-.84l.31-.16H21V11z" />
+                </svg>
+              ),
+            },
+            {
+              label: 'Comment',
+              icon: (
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M7 9h10v1H7zm0 4h7v-1H7zm16-2a6.78 6.78 0 0 1-2.84 5.61L12 22v-4H8A7 7 0 0 1 8 4h8a7 7 0 0 1 7 7z" />
+                </svg>
+              ),
+            },
+            {
+              label: 'Repost',
+              icon: (
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M13.96 5H6c-1.1 0-2 .9-2 2v5.04h2V7h7.96L12 9.04l1.41 1.41L17.86 6l-4.45-4.45L12 2.96 13.96 5zm-3.92 14H18c1.1 0 2-.9 2-2v-5.04h-2V17h-7.96L12 14.96l-1.41-1.41L6.14 18l4.45 4.45L12 21.04 10.04 19z" />
+                </svg>
+              ),
+            },
+            {
+              label: 'Send',
+              icon: (
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M21 3L0 10l7.66 4.26L20 6l-8.26 9.33L16 23l5-20z" />
+                </svg>
+              ),
+            },
+          ].map(({ label, icon }) => (
+            <button
+              key={label}
+              className="flex flex-1 items-center justify-center gap-1.5 py-2.5 text-xs font-semibold hover:bg-gray-100 transition-colors"
+              style={{ color: '#666666' }}
+            >
+              {icon}
+              <span className="hidden sm:inline">{label}</span>
+            </button>
+          ))}
         </div>
+      </div>
 
-        <h3 className="text-xl font-bold text-gray-900 mb-6">{post.title}</h3>
-
-        {/* Post Copy */}
-        <div className="mb-6">
-          <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3">
-            Post Copy
-          </p>
-          <div className="bg-white border border-gray-200 rounded-xl p-5 sm:p-6">
-            <pre className="whitespace-pre-wrap font-sans text-[15px] text-gray-800 leading-relaxed">
-              {post.copy}
-            </pre>
+      {/* First comment */}
+      <div className="bg-gray-50 px-4 py-3 border-t border-gray-100">
+        <div className="flex items-start gap-2">
+          <div
+            className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-white font-semibold text-xs"
+            style={{ backgroundColor: '#0071E3' }}
+          >
+            MR
           </div>
-        </div>
-
-        {/* Alt Text */}
-        <div className="mb-6">
-          <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">
-            Image Alt Text
-          </p>
-          <p className="text-sm text-gray-500 italic">{post.altText}</p>
-        </div>
-
-        {/* First Comment */}
-        <div className="bg-slate-50 -mx-6 sm:-mx-8 -mb-6 sm:-mb-8 px-6 sm:px-8 py-6 border-t border-gray-100">
-          <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3">
-            First Comment
-          </p>
-          <pre className="whitespace-pre-wrap font-sans text-sm text-gray-600 leading-relaxed">
-            {post.firstComment}
-          </pre>
+          <div>
+            <p className="text-xs font-semibold" style={{ color: '#191919' }}>
+              Moe Randera
+            </p>
+            <p className="text-[13px] leading-[1.4] whitespace-pre-wrap mt-0.5" style={{ color: '#444444' }}>
+              {post.firstComment}
+            </p>
+          </div>
         </div>
       </div>
     </div>
   )
 }
 
+// ---- Metadata Panel ----
+
+function MetadataPanel({ post, weekNum }: { post: Post; weekNum: number }) {
+  const funnel = funnelColors[post.funnel]
+  const postDate = getCampaignDate(post.num)
+
+  return (
+    <div className="bg-white rounded-lg border border-gray-200 p-5 h-fit">
+      <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">
+        Post #{post.num} &middot; {formatDate(postDate)}
+      </p>
+      <p className="font-semibold text-gray-900 text-sm mb-3 leading-snug">{post.title}</p>
+
+      <div className="flex flex-wrap gap-2 mb-4">
+        <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-gray-100 text-gray-600">
+          Week {weekNum}
+        </span>
+        <span
+          className={`text-xs font-semibold px-2.5 py-1 rounded-full border ${funnel.bg} ${funnel.text} ${funnel.border}`}
+        >
+          {post.funnel}
+        </span>
+        <span
+          className={`text-xs font-semibold px-2.5 py-1 rounded-full ${typeColors[post.type] || 'bg-gray-100 text-gray-700'}`}
+        >
+          {post.type}
+        </span>
+      </div>
+
+      <hr className="border-gray-100 mb-4" />
+
+      <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
+        Alt Text
+      </p>
+      <p className="text-xs text-gray-500 italic leading-relaxed">{post.altText}</p>
+    </div>
+  )
+}
+
+// ---- Approach Tab ----
+
+function ApproachTab() {
+  const totalTOFU = weeks.reduce((acc, w) => acc + w.posts.filter((p) => p.funnel === 'TOFU').length, 0)
+  const totalMOFU = weeks.reduce((acc, w) => acc + w.posts.filter((p) => p.funnel === 'MOFU').length, 0)
+  const totalBOFU = weeks.reduce((acc, w) => acc + w.posts.filter((p) => p.funnel === 'BOFU').length, 0)
+
+  const allPosts = weeks.flatMap((w) => w.posts.map((p) => ({ ...p, weekNum: w.num })))
+
+  return (
+    <div className="py-10 space-y-12">
+      {/* Campaign overview */}
+      <section>
+        <Container>
+          <h2 className="text-xl font-bold text-gray-900 mb-4">Campaign Overview</h2>
+          <p className="text-gray-600 text-sm mb-6">
+            30 posts. 5 weeks. March 2 &ndash; April 4, 2026. Mon&ndash;Sat cadence.
+          </p>
+
+          {/* Funnel breakdown */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="rounded-xl border border-blue-200 bg-blue-50 p-5">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-blue-500" />
+                <span className="text-xs font-semibold uppercase tracking-wider text-blue-700">TOFU</span>
+              </div>
+              <p className="text-3xl font-bold text-blue-700 mb-1">{totalTOFU}</p>
+              <p className="text-xs text-blue-600 font-semibold mb-1">Awareness</p>
+              <p className="text-xs text-blue-600">Problem education, industry data, contrarian takes</p>
+            </div>
+            <div className="rounded-xl border border-amber-200 bg-amber-50 p-5">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
+                <span className="text-xs font-semibold uppercase tracking-wider text-amber-700">MOFU</span>
+              </div>
+              <p className="text-3xl font-bold text-amber-700 mb-1">{totalMOFU}</p>
+              <p className="text-xs text-amber-600 font-semibold mb-1">Consideration</p>
+              <p className="text-xs text-amber-600">Frameworks, playbooks, detailed how-to</p>
+            </div>
+            <div className="rounded-xl border border-green-200 bg-green-50 p-5">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-green-500" />
+                <span className="text-xs font-semibold uppercase tracking-wider text-green-700">BOFU</span>
+              </div>
+              <p className="text-3xl font-bold text-green-700 mb-1">{totalBOFU}</p>
+              <p className="text-xs text-green-600 font-semibold mb-1">Decision</p>
+              <p className="text-xs text-green-600">WorkflowClick positioning, CTAs, social proof</p>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Week themes */}
+      <section>
+        <Container>
+          <h2 className="text-xl font-bold text-gray-900 mb-6">Week Themes</h2>
+          <div className="space-y-3">
+            {weeks.map((week) => {
+              const tofu = week.posts.filter((p) => p.funnel === 'TOFU').length
+              const mofu = week.posts.filter((p) => p.funnel === 'MOFU').length
+              const bofu = week.posts.filter((p) => p.funnel === 'BOFU').length
+              const startPost = week.posts[0]
+              const endPost = week.posts[week.posts.length - 1]
+              const startDate = getCampaignDate(startPost.num)
+              const endDate = getCampaignDate(endPost.num)
+
+              return (
+                <div key={week.num} className="flex items-start gap-4 p-4 rounded-xl bg-white border border-gray-200">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0071E3] text-white text-sm font-bold flex items-center justify-center">
+                    {week.num}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                      <p className="font-semibold text-gray-900 text-sm">&ldquo;{week.theme}&rdquo;</p>
+                      <p className="text-xs text-gray-400">
+                        {formatDate(startDate)} &ndash; {formatDate(endDate)}
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      <span className="text-xs text-gray-500">{week.posts.length} posts</span>
+                      {tofu > 0 && (
+                        <span className="text-xs px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
+                          {tofu} TOFU
+                        </span>
+                      )}
+                      {mofu > 0 && (
+                        <span className="text-xs px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
+                          {mofu} MOFU
+                        </span>
+                      )}
+                      {bofu > 0 && (
+                        <span className="text-xs px-2 py-0.5 rounded-full bg-green-50 text-green-700 border border-green-200">
+                          {bofu} BOFU
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </Container>
+      </section>
+
+      {/* Full 30-post calendar */}
+      <section>
+        <Container>
+          <h2 className="text-xl font-bold text-gray-900 mb-6">Full Post Calendar</h2>
+          <div className="overflow-x-auto rounded-xl border border-gray-200">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-gray-50 border-b border-gray-200">
+                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider w-10">
+                    #
+                  </th>
+                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    Date
+                  </th>
+                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    Title
+                  </th>
+                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider w-20">
+                    Funnel
+                  </th>
+                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider w-28">
+                    Type
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {allPosts.map((post) => {
+                  const funnel = funnelColors[post.funnel]
+                  const postDate = getCampaignDate(post.num)
+                  return (
+                    <tr key={post.num} className="hover:bg-gray-50 transition-colors">
+                      <td className="px-4 py-3 text-gray-400 font-mono text-xs">{post.num}</td>
+                      <td className="px-4 py-3 text-gray-500 text-xs whitespace-nowrap">
+                        {formatDate(postDate)}
+                      </td>
+                      <td className="px-4 py-3 text-gray-700">{post.title}</td>
+                      <td className="px-4 py-3">
+                        <span
+                          className={`text-xs font-semibold px-2 py-0.5 rounded-full border ${funnel.bg} ${funnel.text} ${funnel.border}`}
+                        >
+                          {post.funnel}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3">
+                        <span
+                          className={`text-xs font-semibold px-2 py-0.5 rounded-full ${typeColors[post.type] || 'bg-gray-100 text-gray-700'}`}
+                        >
+                          {post.type}
+                        </span>
+                      </td>
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </table>
+          </div>
+        </Container>
+      </section>
+    </div>
+  )
+}
+
+// ---- Posts Tab ----
+
+function PostsTab() {
+  const [weekFilter, setWeekFilter] = useState<number | null>(null)
+  const [funnelFilter, setFunnelFilter] = useState<string | null>(null)
+
+  const allPosts = weeks.flatMap((w) => w.posts.map((p) => ({ ...p, weekNum: w.num })))
+
+  const filtered = allPosts.filter((p) => {
+    if (weekFilter !== null && p.weekNum !== weekFilter) return false
+    if (funnelFilter !== null && p.funnel !== funnelFilter) return false
+    return true
+  })
+
+  return (
+    <div>
+      {/* Sticky filter bar */}
+      <div className="sticky top-[109px] z-30 bg-white border-b border-gray-200 shadow-sm">
+        <Container>
+          <div className="py-3 flex flex-wrap gap-y-2 gap-x-4 items-center">
+            {/* Week filters */}
+            <div className="flex flex-wrap gap-1.5">
+              {[null, 1, 2, 3, 4, 5].map((w) => (
+                <button
+                  key={String(w)}
+                  onClick={() => setWeekFilter(w)}
+                  className={`text-xs px-3 py-1.5 rounded-full font-medium transition-colors border ${
+                    weekFilter === w
+                      ? 'bg-[#0071E3] text-white border-[#0071E3]'
+                      : 'bg-white text-gray-600 border-gray-200 hover:border-[#0071E3] hover:text-[#0071E3]'
+                  }`}
+                >
+                  {w === null ? 'All Weeks' : `Week ${w}`}
+                </button>
+              ))}
+            </div>
+
+            <div className="w-px h-5 bg-gray-200 hidden sm:block" />
+
+            {/* Funnel filters */}
+            <div className="flex flex-wrap gap-1.5">
+              {[null, 'TOFU', 'MOFU', 'BOFU'].map((f) => {
+                const colors =
+                  f === 'TOFU'
+                    ? 'bg-blue-50 text-blue-700 border-blue-200'
+                    : f === 'MOFU'
+                      ? 'bg-amber-50 text-amber-700 border-amber-200'
+                      : f === 'BOFU'
+                        ? 'bg-green-50 text-green-700 border-green-200'
+                        : ''
+                return (
+                  <button
+                    key={String(f)}
+                    onClick={() => setFunnelFilter(f)}
+                    className={`text-xs px-3 py-1.5 rounded-full font-medium transition-colors border ${
+                      funnelFilter === f
+                        ? f === null
+                          ? 'bg-[#0071E3] text-white border-[#0071E3]'
+                          : `${colors} ring-2 ring-offset-1 ${
+                              f === 'TOFU'
+                                ? 'ring-blue-400'
+                                : f === 'MOFU'
+                                  ? 'ring-amber-400'
+                                  : 'ring-green-400'
+                            }`
+                        : f === null
+                          ? 'bg-white text-gray-600 border-gray-200 hover:border-[#0071E3] hover:text-[#0071E3]'
+                          : `${colors} opacity-70 hover:opacity-100`
+                    }`}
+                  >
+                    {f === null ? 'All Funnels' : f}
+                  </button>
+                )
+              })}
+            </div>
+
+            <div className="ml-auto text-xs text-gray-400 font-medium">
+              {filtered.length} post{filtered.length !== 1 ? 's' : ''}
+            </div>
+          </div>
+        </Container>
+      </div>
+
+      {/* Feed */}
+      <div style={{ backgroundColor: '#F4F2EE' }} className="min-h-screen py-8">
+        <Container>
+          <div className="space-y-8">
+            {filtered.map((post) => (
+              <div
+                key={post.num}
+                className="flex flex-col lg:flex-row gap-4"
+              >
+                {/* LinkedIn card */}
+                <div className="lg:w-[65%]">
+                  <LinkedInPostCard post={post} />
+                </div>
+                {/* Metadata panel */}
+                <div className="lg:w-[35%]">
+                  <MetadataPanel post={post} weekNum={post.weekNum} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </div>
+    </div>
+  )
+}
+
+// ---- Page ----
+
 export default function LinkedInCampaignReview() {
-  const totalTOFU = weeks.reduce(
-    (acc, w) => acc + w.posts.filter((p) => p.funnel === 'TOFU').length,
-    0,
-  )
-  const totalMOFU = weeks.reduce(
-    (acc, w) => acc + w.posts.filter((p) => p.funnel === 'MOFU').length,
-    0,
-  )
-  const totalBOFU = weeks.reduce(
-    (acc, w) => acc + w.posts.filter((p) => p.funnel === 'BOFU').length,
-    0,
-  )
+  const [activeTab, setActiveTab] = useState<'approach' | 'posts'>('approach')
 
   return (
     <>
@@ -2921,107 +3319,42 @@ export default function LinkedInCampaignReview() {
         <Container>
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-4">
-              Campaign Review - March 2026
+              Campaign Review &middot; March 2026
             </p>
             <h1 className="text-4xl font-bold text-white sm:text-5xl">
               InsurTech Event{' '}
               <span className="text-primary">Prospecting</span>
             </h1>
             <p className="mt-4 text-lg text-white/70">
-              30-post LinkedIn campaign with full post copy, images, and first
-              comments. Ready for your review.
+              30-post LinkedIn campaign with full post copy, images, and first comments. Ready for your review.
             </p>
           </div>
         </Container>
       </section>
 
-      {/* Stats Bar */}
-      <section className="py-6 border-b border-gray-100 bg-white sticky top-0 z-40 shadow-sm">
+      {/* Sticky tab bar */}
+      <div className="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
         <Container>
-          <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
-            <span className="font-semibold text-gray-900">30 Posts</span>
-            <span className="text-gray-300">|</span>
-            <span className="font-semibold text-gray-900">5 Weeks</span>
-            <span className="text-gray-300">|</span>
-            <div className="flex items-center gap-3">
-              <span className="inline-flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-blue-500" />
-                <span className="text-gray-600">TOFU {totalTOFU}</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
-                <span className="text-gray-600">MOFU {totalMOFU}</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-green-500" />
-                <span className="text-gray-600">BOFU {totalBOFU}</span>
-              </span>
-            </div>
+          <div className="flex gap-6">
+            {(['approach', 'posts'] as const).map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`py-4 text-sm font-semibold capitalize border-b-2 transition-colors ${
+                  activeTab === tab
+                    ? 'border-[#0071E3] text-[#0071E3]'
+                    : 'border-transparent text-gray-500 hover:text-gray-800'
+                }`}
+              >
+                {tab === 'approach' ? 'Approach' : 'Posts (30)'}
+              </button>
+            ))}
           </div>
         </Container>
-      </section>
+      </div>
 
-      {/* Week Sections */}
-      {weeks.map((week) => (
-        <section key={week.num} className="py-16">
-          <Container>
-            {/* Week Header */}
-            <div className="mb-12">
-              <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">
-                Week {week.num}
-              </p>
-              <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-                &ldquo;{week.theme}&rdquo;
-              </h2>
-            </div>
-
-            {/* Post Cards */}
-            <div className="space-y-10">
-              {week.posts.map((post) => (
-                <PostCard key={post.num} post={post} />
-              ))}
-            </div>
-          </Container>
-
-          {/* Divider between weeks */}
-          {week.num < 5 && (
-            <div className="mt-16">
-              <Container>
-                <hr className="border-gray-200" />
-              </Container>
-            </div>
-          )}
-        </section>
-      ))}
-
-      {/* Footer Summary */}
-      <section className="py-16 bg-gray-50">
-        <Container>
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Campaign Summary
-            </h2>
-            <p className="text-gray-500 mb-8">
-              All 30 posts with full copy, Cloudinary images, first comments,
-              and alt text. Ready for scheduling.
-            </p>
-            <div className="grid grid-cols-3 gap-4 max-w-md mx-auto">
-              <div className="bg-white rounded-xl p-4 border border-gray-100">
-                <p className="text-2xl font-bold text-blue-600">{totalTOFU}</p>
-                <p className="text-xs text-gray-500 mt-1">TOFU</p>
-              </div>
-              <div className="bg-white rounded-xl p-4 border border-gray-100">
-                <p className="text-2xl font-bold text-amber-600">{totalMOFU}</p>
-                <p className="text-xs text-gray-500 mt-1">MOFU</p>
-              </div>
-              <div className="bg-white rounded-xl p-4 border border-gray-100">
-                <p className="text-2xl font-bold text-green-600">{totalBOFU}</p>
-                <p className="text-xs text-gray-500 mt-1">BOFU</p>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
+      {/* Tab content */}
+      {activeTab === 'approach' ? <ApproachTab /> : <PostsTab />}
     </>
   )
 }
