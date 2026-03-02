@@ -1,14 +1,15 @@
-import type { Metadata } from 'next'
 import { Container } from '@/components/ui/Container'
+import { createMetadata } from '@/lib/metadata'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { StatsBar } from '@/components/sections/StatsBar'
 import { FinalCTA } from '@/components/sections/FinalCTA'
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: 'About',
   description:
     'Meet the team behind WorkflowClick. 10+ years of B2B sales experience and $10M+ in pipeline generated.',
-}
+  path: '/about',
+})
 
 export default function AboutPage() {
   return (

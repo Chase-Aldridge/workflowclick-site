@@ -1,0 +1,91 @@
+---
+title: "How to Set Up Cold Email Infrastructure in 2026"
+description: "A practical guide to building cold email infrastructure that lands in inboxes — covering domains, warming, authentication, sending tools, and monitoring."
+date: "2026-01-15"
+author: "Moe Raza"
+tags: ["Deliverability", "Infrastructure", "Cold Email"]
+---
+
+If you are sending cold email and half your messages are going to spam, the problem almost certainly is not your copy. It is your infrastructure.
+
+Most founders treat cold email like a marketing blast: buy a list, fire up Gmail, start sending. That approach gets you blacklisted inside a week. In 2026, with spam filters getting smarter every quarter, the technical foundation matters more than ever.
+
+Here is how to set it up properly.
+
+## Step 1: Buy Dedicated Sending Domains
+
+Never send cold email from your primary company domain. If it gets flagged or blacklisted, your transactional email goes with it — meaning customers stop receiving receipts, password resets, and onboarding sequences.
+
+Instead, buy separate domains specifically for outbound. If your company is `acmecorp.com`, register two or three variations:
+
+- `getacmecorp.com`
+- `acmecorpapp.com`
+- `tryacmecorp.com`
+
+Keep them on the same registrar (Namecheap or Cloudflare work well). You will rotate sending across these domains so no single one absorbs too much volume.
+
+## Step 2: Configure DNS Authentication Records
+
+This is the step most founders skip, and it is the most important one. Email providers like Google and Microsoft check three DNS records before deciding where to deliver your message.
+
+**SPF (Sender Policy Framework)** tells receiving servers which IP addresses are authorized to send email on behalf of your domain. A basic SPF record looks like:
+
+```
+v=spf1 include:sendgrid.net ~all
+```
+
+**DKIM (DomainKeys Identified Mail)** adds a cryptographic signature to every email so receivers can verify it was not tampered with in transit. Your sending tool will generate a DKIM key for you to add to DNS.
+
+**DMARC (Domain-based Message Authentication)** tells receivers what to do when SPF or DKIM fail, and sends you reports about authentication failures. Start with a policy of `none` to monitor before enforcing:
+
+```
+v=DMARC1; p=none; rua=mailto:dmarc@yourdomain.com
+```
+
+Give DNS propagation 24-48 hours, then verify everything using MXToolbox or mail-tester.com.
+
+## Step 3: Warm Up Your Domains
+
+A brand new domain with no sending history is immediately suspicious. You cannot just start blasting 200 emails a day on day one — that is a fast way to get flagged.
+
+Warming means gradually increasing your sending volume over 4-6 weeks while building a positive reputation. The process looks like this:
+
+- **Week 1-2:** Send 10-20 emails per day per domain, primarily to warm contacts or seed accounts that will open and reply
+- **Week 3-4:** Increase to 50-75 per day, mixing in your real prospects
+- **Week 5-6:** Ramp to 100-150 per day
+
+Use a warm-up tool like Warmup Inbox, Mailreach, or Instantly's built-in warmer. These tools send emails between a network of real accounts and automatically mark them as "not spam" and reply to them, building your reputation organically.
+
+## Step 4: Choose a Sending Tool
+
+Your sending infrastructure sits on top of your authenticated, warmed domains. For cold email specifically, purpose-built tools give you far better deliverability than general email service providers.
+
+The three tools worth evaluating in 2026 are:
+
+**Instantly** — the current market leader for cold email at scale. Handles domain rotation, warm-up, and has solid analytics. Good for teams sending 500+ emails per day.
+
+**Smartlead** — strong alternative with excellent deliverability infrastructure and more flexible pricing. Better for agencies managing multiple clients.
+
+**Apollo** — if you are doing both prospecting and sending, Apollo lets you do it in one place. Deliverability is decent but not as optimized as dedicated tools.
+
+Set your daily sending limit to no more than 40-50 emails per domain per day, even after warming. Spread volume across your domains so each stays well under provider thresholds.
+
+## Step 5: Monitor Your Deliverability
+
+Set it and forget it does not work here. You need to actively watch a few signals.
+
+**Google Postmaster Tools** — free tool from Google that shows your domain reputation and spam rate. Set this up for every domain immediately. If your spam rate climbs above 0.1%, stop sending and diagnose the cause.
+
+**Blacklist monitoring** — use MXToolbox or Postmark's blacklist checker weekly. Getting on a major blacklist like Spamhaus can crater deliverability across all ISPs.
+
+**Reply rates** — the most honest signal of deliverability health. If you are getting zero replies, something is broken in the infrastructure, the targeting, or the copy. Diagnose systematically.
+
+**Bounce rates** — keep hard bounces below 2%. Scrub your lists with a tool like ZeroBounce or NeverBounce before sending.
+
+## The Bottom Line
+
+Properly built cold email infrastructure takes 6-8 weeks to fully establish: domain registration, DNS configuration, warm-up, then scaled sending. Most founders underestimate this timeline and wonder why they get no replies.
+
+If you do not want to spend that time learning deliverability from scratch, that is exactly what we handle at WorkflowClick. We build the entire system — domains, authentication, warm-up, sending infrastructure — and then run your campaigns on top of it.
+
+Either way, skip the infrastructure step at your own peril. The best copy in the world lands in spam if your technical foundation is broken.

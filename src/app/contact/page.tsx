@@ -1,12 +1,13 @@
-import type { Metadata } from 'next'
 import { Mail, Phone, Linkedin } from 'lucide-react'
+import { createMetadata } from '@/lib/metadata'
 import { Container } from '@/components/ui/Container'
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: 'Contact',
   description:
     'Book a free strategy call with WorkflowClick. Talk directly with our founder about your outbound goals.',
-}
+  path: '/contact',
+})
 
 export default function ContactPage() {
   return (

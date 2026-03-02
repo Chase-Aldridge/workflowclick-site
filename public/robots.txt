@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://workflowclick.chasealdridge.com/sitemap.xml
+Sitemap: https://workflowclick.com/sitemap.xml

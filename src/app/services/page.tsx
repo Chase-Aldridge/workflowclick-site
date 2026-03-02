@@ -1,16 +1,17 @@
-import type { Metadata } from 'next'
 import { Check, X } from 'lucide-react'
+import { createMetadata } from '@/lib/metadata'
 import { Container } from '@/components/ui/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Button } from '@/components/ui/Button'
 import { ProcessSteps } from '@/components/sections/ProcessSteps'
 import { FinalCTA } from '@/components/sections/FinalCTA'
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: 'Services',
   description:
     'Cold email services for startups. Choose from Bronze, Silver, or Gold tiers with done-for-you outbound campaigns, domain warming, and qualified meetings.',
-}
+  path: '/services',
+})
 
 const comparisonRows = [
   { feature: 'Verified contacts/month', bronze: '1,000-1,500', silver: '2,500-3,000', gold: '5,000+' },

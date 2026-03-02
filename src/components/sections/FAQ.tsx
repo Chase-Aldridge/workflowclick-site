@@ -2,7 +2,7 @@ import { Container } from '@/components/ui/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Accordion } from '@/components/ui/Accordion'
 
-const faqItems = [
+export const faqItems = [
   {
     question: 'How quickly will I see results?',
     answer:

@@ -7,12 +7,15 @@ import { StatsBar } from '@/components/sections/StatsBar'
 import { Differentiators } from '@/components/sections/Differentiators'
 import { Testimonials } from '@/components/sections/Testimonials'
 import { AuditCTA } from '@/components/sections/AuditCTA'
-import { FAQ } from '@/components/sections/FAQ'
+import { FAQ, faqItems } from '@/components/sections/FAQ'
 import { FinalCTA } from '@/components/sections/FinalCTA'
+import { SchemaScript } from '@/components/shared/SchemaScript'
+import { getFAQSchema } from '@/lib/schema'
 
 export default function HomePage() {
   return (
     <>
+      <SchemaScript schema={getFAQSchema(faqItems)} />
       <Hero />
       <LogoBar />
       <ProblemGrid />

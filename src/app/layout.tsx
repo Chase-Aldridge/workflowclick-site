@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google'
 import '@/styles/globals.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { SchemaScript } from '@/components/shared/SchemaScript'
+import { getOrganizationSchema } from '@/lib/schema'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -43,6 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body>
+        <SchemaScript schema={getOrganizationSchema()} />
         <Header />
         <main>{children}</main>
         <Footer />

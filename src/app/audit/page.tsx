@@ -1,13 +1,14 @@
-import type { Metadata } from 'next'
 import { Shield, Search, FileCheck, Zap } from 'lucide-react'
+import { createMetadata } from '@/lib/metadata'
 import { Container } from '@/components/ui/Container'
 import { AuditCTA } from '@/components/sections/AuditCTA'
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: 'Free Email Deliverability Audit',
   description:
     'Get a free audit of your email infrastructure. We check DKIM, SPF, DMARC, domain reputation, and blacklist status. Results in 24 hours.',
-}
+  path: '/audit',
+})
 
 const auditChecks = [
   {
