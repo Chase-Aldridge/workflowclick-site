@@ -2868,8 +2868,16 @@ function renderPostText(text: string) {
 // ---- LinkedIn Post Card ----
 
 function LinkedInPostCard({ post }: { post: Post }) {
+  const [expanded, setExpanded] = useState(false)
   const imgUrl = `${IMG_BASE}/post-${post.slug}.jpg`
   const postDate = getCampaignDate(post.num)
+
+  // Show ~3 lines collapsed (roughly 120 chars)
+  const previewLength = 120
+  const needsTruncation = post.copy.length > previewLength
+  const previewText = needsTruncation
+    ? post.copy.slice(0, post.copy.indexOf('\n\n', previewLength) > 0 ? post.copy.indexOf('\n\n', previewLength) : previewLength) + '...'
+    : post.copy
 
   return (
     <div className="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden">
@@ -2904,21 +2912,40 @@ function LinkedInPostCard({ post }: { post: Post }) {
         </button>
       </div>
 
-      {/* Post body text */}
+      {/* Post body text - collapsible */}
       <div className="px-4 pb-3 text-sm leading-[1.4] whitespace-pre-wrap" style={{ color: '#191919' }}>
-        {renderPostText(post.copy)}
+        {expanded || !needsTruncation ? renderPostText(post.copy) : renderPostText(previewText)}
+        {needsTruncation && !expanded && (
+          <button
+            onClick={() => setExpanded(true)}
+            className="text-gray-500 hover:text-gray-700 font-medium ml-1"
+          >
+            see more
+          </button>
+        )}
+        {needsTruncation && expanded && (
+          <button
+            onClick={() => setExpanded(false)}
+            className="block text-gray-500 hover:text-gray-700 font-medium mt-1 text-xs"
+          >
+            show less
+          </button>
+        )}
       </div>
 
-      {/* Image - edge to edge */}
-      <div className="relative w-full aspect-square bg-gray-100">
-        <Image
-          src={imgUrl}
-          alt={post.altText}
-          fill
-          className="object-cover"
-          sizes="(max-width: 1024px) 100vw, 600px"
-          unoptimized
-        />
+      {/* Image - smaller, complete (no crop) */}
+      <div className="px-4 pb-3">
+        <div className="relative w-full bg-gray-100 rounded overflow-hidden" style={{ maxHeight: '360px' }}>
+          <Image
+            src={imgUrl}
+            alt={post.altText}
+            width={600}
+            height={360}
+            className="w-full h-auto object-contain"
+            sizes="(max-width: 1024px) 100vw, 600px"
+            unoptimized
+          />
+        </div>
       </div>
 
       {/* Action bar */}
@@ -3201,81 +3228,55 @@ function ApproachTab() {
 // ---- Posts Tab ----
 
 function PostsTab() {
-  const [weekFilter, setWeekFilter] = useState<number | null>(null)
-  const [funnelFilter, setFunnelFilter] = useState<string | null>(null)
+  const [activeWeek, setActiveWeek] = useState(1)
 
-  const allPosts = weeks.flatMap((w) => w.posts.map((p) => ({ ...p, weekNum: w.num })))
-
-  const filtered = allPosts.filter((p) => {
-    if (weekFilter !== null && p.weekNum !== weekFilter) return false
-    if (funnelFilter !== null && p.funnel !== funnelFilter) return false
-    return true
-  })
+  const week = weeks[activeWeek - 1]
+  const posts = week.posts
 
   return (
     <div>
-      {/* Sticky filter bar */}
+      {/* Sticky week tabs */}
       <div className="sticky top-[109px] z-30 bg-white border-b border-gray-200 shadow-sm">
         <Container>
-          <div className="py-3 flex flex-wrap gap-y-2 gap-x-4 items-center">
-            {/* Week filters */}
-            <div className="flex flex-wrap gap-1.5">
-              {[null, 1, 2, 3, 4, 5].map((w) => (
-                <button
-                  key={String(w)}
-                  onClick={() => setWeekFilter(w)}
-                  className={`text-xs px-3 py-1.5 rounded-full font-medium transition-colors border ${
-                    weekFilter === w
-                      ? 'bg-[#0071E3] text-white border-[#0071E3]'
-                      : 'bg-white text-gray-600 border-gray-200 hover:border-[#0071E3] hover:text-[#0071E3]'
-                  }`}
-                >
-                  {w === null ? 'All Weeks' : `Week ${w}`}
-                </button>
-              ))}
+          <div className="flex gap-0 overflow-x-auto">
+            {weeks.map((w) => (
+              <button
+                key={w.num}
+                onClick={() => setActiveWeek(w.num)}
+                className={`flex-shrink-0 px-5 py-3 text-sm font-semibold border-b-2 transition-colors whitespace-nowrap ${
+                  activeWeek === w.num
+                    ? 'border-[#0071E3] text-[#0071E3]'
+                    : 'border-transparent text-gray-500 hover:text-gray-800'
+                }`}
+              >
+                Week {w.num}
+              </button>
+            ))}
+          </div>
+        </Container>
+      </div>
+
+      {/* Week theme header */}
+      <div className="bg-white border-b border-gray-100 py-4">
+        <Container>
+          <div className="flex items-center justify-between">
+            <div>
+              <h3 className="text-lg font-bold text-gray-900">&ldquo;{week.theme}&rdquo;</h3>
+              <p className="text-xs text-gray-500 mt-0.5">
+                {formatDate(getCampaignDate(posts[0].num))} &ndash; {formatDate(getCampaignDate(posts[posts.length - 1].num))} &middot; {posts.length} posts
+              </p>
             </div>
-
-            <div className="w-px h-5 bg-gray-200 hidden sm:block" />
-
-            {/* Funnel filters */}
-            <div className="flex flex-wrap gap-1.5">
-              {[null, 'TOFU', 'MOFU', 'BOFU'].map((f) => {
-                const colors =
-                  f === 'TOFU'
-                    ? 'bg-blue-50 text-blue-700 border-blue-200'
-                    : f === 'MOFU'
-                      ? 'bg-amber-50 text-amber-700 border-amber-200'
-                      : f === 'BOFU'
-                        ? 'bg-green-50 text-green-700 border-green-200'
-                        : ''
+            <div className="flex gap-2">
+              {['TOFU', 'MOFU', 'BOFU'].map((f) => {
+                const count = posts.filter((p) => p.funnel === f).length
+                if (count === 0) return null
+                const fc = funnelColors[f]
                 return (
-                  <button
-                    key={String(f)}
-                    onClick={() => setFunnelFilter(f)}
-                    className={`text-xs px-3 py-1.5 rounded-full font-medium transition-colors border ${
-                      funnelFilter === f
-                        ? f === null
-                          ? 'bg-[#0071E3] text-white border-[#0071E3]'
-                          : `${colors} ring-2 ring-offset-1 ${
-                              f === 'TOFU'
-                                ? 'ring-blue-400'
-                                : f === 'MOFU'
-                                  ? 'ring-amber-400'
-                                  : 'ring-green-400'
-                            }`
-                        : f === null
-                          ? 'bg-white text-gray-600 border-gray-200 hover:border-[#0071E3] hover:text-[#0071E3]'
-                          : `${colors} opacity-70 hover:opacity-100`
-                    }`}
-                  >
-                    {f === null ? 'All Funnels' : f}
-                  </button>
+                  <span key={f} className={`text-xs px-2 py-0.5 rounded-full border ${fc.bg} ${fc.text} ${fc.border}`}>
+                    {count} {f}
+                  </span>
                 )
               })}
-            </div>
-
-            <div className="ml-auto text-xs text-gray-400 font-medium">
-              {filtered.length} post{filtered.length !== 1 ? 's' : ''}
             </div>
           </div>
         </Container>
@@ -3285,7 +3286,7 @@ function PostsTab() {
       <div style={{ backgroundColor: '#F4F2EE' }} className="min-h-screen py-8">
         <Container>
           <div className="space-y-8">
-            {filtered.map((post) => (
+            {posts.map((post) => (
               <div
                 key={post.num}
                 className="flex flex-col lg:flex-row gap-4"
@@ -3296,7 +3297,7 @@ function PostsTab() {
                 </div>
                 {/* Metadata panel */}
                 <div className="lg:w-[35%]">
-                  <MetadataPanel post={post} weekNum={post.weekNum} />
+                  <MetadataPanel post={post} weekNum={week.num} />
                 </div>
               </div>
             ))}
