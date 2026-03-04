@@ -10,6 +10,9 @@ const options: Array<{
   icon: typeof Building2
   title: string
   description: string
+  accentColor: string
+  accentBg: string
+  accentBorder: string
 }> = [
   {
     key: 'agency',
@@ -17,6 +20,9 @@ const options: Array<{
     title: 'Insurance Agency',
     description:
       'Independent agencies looking to grow their book of business with qualified prospects.',
+    accentColor: '#1B6B4A',
+    accentBg: 'rgba(27, 107, 74, 0.1)',
+    accentBorder: 'rgba(27, 107, 74, 0.5)',
   },
   {
     key: 'insurtech',
@@ -24,6 +30,9 @@ const options: Array<{
     title: 'Insurtech',
     description:
       'Insurance technology companies looking to book meetings with carriers and agencies.',
+    accentColor: '#6C3CE0',
+    accentBg: 'rgba(108, 60, 224, 0.1)',
+    accentBorder: 'rgba(108, 60, 224, 0.5)',
   },
 ]
 
@@ -49,7 +58,7 @@ export function AudienceGate() {
             {/* Logo */}
             <div className="mb-10">
               <span className="text-2xl font-bold tracking-tight text-white">
-                Workflow<span className="text-primary">Click</span>
+                Workflow<span className="text-[#0071E3]">Click</span>
               </span>
             </div>
 
@@ -70,10 +79,25 @@ export function AudienceGate() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.2 + i * 0.1 }}
                   onClick={() => setAudience(option.key)}
-                  className="group relative rounded-2xl border border-white/10 bg-white/5 p-8 text-left transition-all duration-200 hover:border-primary/50 hover:bg-primary/5 cursor-pointer"
+                  className="group relative rounded-2xl border border-white/10 bg-white/5 p-8 text-left transition-all duration-200 cursor-pointer"
+                  style={{
+                    ['--card-accent' as string]: option.accentColor,
+                    ['--card-bg' as string]: option.accentBg,
+                    ['--card-border' as string]: option.accentBorder,
+                  }}
+                  whileHover={{
+                    borderColor: option.accentBorder,
+                    backgroundColor: option.accentBg,
+                  }}
                 >
-                  <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
-                    <option.icon className="h-7 w-7 text-primary" />
+                  <div
+                    className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl"
+                    style={{ backgroundColor: option.accentBg }}
+                  >
+                    <option.icon
+                      className="h-7 w-7"
+                      style={{ color: option.accentColor }}
+                    />
                   </div>
                   <h2 className="text-xl font-bold text-white mb-2">
                     {option.title}
@@ -81,7 +105,10 @@ export function AudienceGate() {
                   <p className="text-sm text-white/60 leading-relaxed">
                     {option.description}
                   </p>
-                  <div className="mt-4 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div
+                    className="mt-4 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity"
+                    style={{ color: option.accentColor }}
+                  >
                     Continue &rarr;
                   </div>
                 </motion.button>

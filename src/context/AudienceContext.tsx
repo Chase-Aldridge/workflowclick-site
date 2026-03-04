@@ -13,7 +13,19 @@ import {
   type AudienceContent,
 } from '@/data/audience-content'
 
-const STORAGE_KEY = 'wc-audience'
+// Color themes per audience
+const audienceColors: Record<Audience, Record<string, string>> = {
+  agency: {
+    '--color-primary': '#1B6B4A',      // Forest green - trust, stability
+    '--color-primary-dark': '#145236',
+    '--color-primary-light': '#2D9B6E',
+  },
+  insurtech: {
+    '--color-primary': '#6C3CE0',      // Electric purple - innovation, tech
+    '--color-primary-dark': '#5429B5',
+    '--color-primary-light': '#8F6AEE',
+  },
+}
 
 interface AudienceContextValue {
   audience: Audience | null
@@ -31,25 +43,26 @@ const AudienceContext = createContext<AudienceContextValue>({
   isLoaded: false,
 })
 
-function isValidAudience(value: string | null): value is Audience {
-  return value === 'agency' || value === 'insurtech'
-}
-
 export function AudienceProvider({ children }: { children: ReactNode }) {
   const [audience, setAudienceState] = useState<Audience | null>(null)
   const [isLoaded, setIsLoaded] = useState(false)
 
-  // Read from localStorage on mount
+  // No localStorage - always start with gate
   useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY)
-    if (isValidAudience(stored)) {
-      setAudienceState(stored)
-    }
     setIsLoaded(true)
   }, [])
 
+  // Apply color theme to document when audience changes
+  useEffect(() => {
+    if (!audience) return
+    const colors = audienceColors[audience]
+    const root = document.documentElement
+    for (const [prop, value] of Object.entries(colors)) {
+      root.style.setProperty(prop, value)
+    }
+  }, [audience])
+
   function setAudience(a: Audience) {
-    localStorage.setItem(STORAGE_KEY, a)
     setAudienceState(a)
   }
 

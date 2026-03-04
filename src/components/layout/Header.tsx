@@ -58,7 +58,8 @@ function AudienceToggle({
           {audience === option.key && (
             <motion.div
               layoutId="audience-toggle-pill"
-              className="absolute inset-0 rounded-full bg-primary"
+              className="absolute inset-0 rounded-full"
+              style={{ backgroundColor: 'var(--color-primary)' }}
               transition={{ type: 'spring', bounce: 0.15, duration: 0.4 }}
             />
           )}
