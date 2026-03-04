@@ -1,29 +1,43 @@
+'use client'
+
+import { AnimatePresence, motion } from 'framer-motion'
 import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
+import { useAudience } from '@/context/AudienceContext'
 
 export function FinalCTA() {
+  const { audience, content } = useAudience()
+
+  if (!content) return null
+
+  const { headline, subheadline, buttonText, footnote } = content.finalCTA
+
   return (
     <section className="py-20 bg-bg-light">
       <Container>
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-dark sm:text-4xl lg:text-5xl">
-            Ready to Fill Your Pipeline?
-          </h2>
-          <p className="mt-4 text-lg text-medium-gray">
-            Book a free strategy call. No pitch deck, no pressure. Just a
-            conversation about your outbound goals.
-          </p>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={audience}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="max-w-2xl mx-auto text-center"
+          >
+            <h2 className="text-3xl font-bold tracking-tight text-dark sm:text-4xl lg:text-5xl">
+              {headline}
+            </h2>
+            <p className="mt-4 text-lg text-medium-gray">{subheadline}</p>
 
-          <div className="mt-8">
-            <Button href="/contact" size="lg">
-              Book a Strategy Call
-            </Button>
-          </div>
+            <div className="mt-8">
+              <Button href="/contact" size="lg">
+                {buttonText}
+              </Button>
+            </div>
 
-          <p className="mt-6 text-sm text-light-gray">
-            You&apos;ll speak directly with Moe, our founder.
-          </p>
-        </div>
+            <p className="mt-6 text-sm text-light-gray">{footnote}</p>
+          </motion.div>
+        </AnimatePresence>
       </Container>
     </section>
   )

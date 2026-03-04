@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
 import { Container } from '@/components/ui/Container'
+import { useAudience } from '@/context/AudienceContext'
 
 const footerLinks = {
   company: [
@@ -20,6 +23,12 @@ const footerLinks = {
 }
 
 export function Footer() {
+  const { content } = useAudience()
+
+  const tagline =
+    content?.footer.tagline ||
+    'Done-for-you cold email infrastructure for insurance organizations. We handle everything from domain warming to booked calls.'
+
   return (
     <footer className="bg-dark text-white">
       <Container className="py-16">
@@ -30,8 +39,7 @@ export function Footer() {
               Workflow<span className="text-primary">Click</span>
             </Link>
             <p className="mt-4 text-sm text-light-gray leading-relaxed">
-              Done-for-you cold email infrastructure for seed-funded startups.
-              We handle everything from domain warming to booked calls.
+              {tagline}
             </p>
             <div className="mt-6 text-sm text-light-gray">
               <a

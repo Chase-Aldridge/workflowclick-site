@@ -4,12 +4,19 @@ import { useState } from 'react'
 import { Container } from '@/components/ui/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Button } from '@/components/ui/Button'
+import { useAudience } from '@/context/AudienceContext'
 
 export function AuditCTA() {
+  const { audience, content } = useAudience()
   const [email, setEmail] = useState('')
   const [domain, setDomain] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+
+  if (!content) return null
+
+  const { sectionTitle, sectionSubtitle, buttonText, successMessage, successDetail } =
+    content.auditCTA
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -19,7 +26,7 @@ export function AuditCTA() {
       const res = await fetch('/api/audit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, domain }),
+        body: JSON.stringify({ email, domain, audience }),
       })
 
       if (res.ok) {
@@ -37,25 +44,24 @@ export function AuditCTA() {
       <Container>
         <div className="max-w-2xl mx-auto text-center">
           <SectionHeading
-            title="Is Your Email Domain Healthy?"
-            subtitle="Get a free deliverability audit. We'll check your DKIM, SPF, DMARC, and domain reputation, and tell you exactly what's broken."
+            title={sectionTitle}
+            subtitle={sectionSubtitle}
             light
           />
 
           {submitted ? (
             <div className="bg-green/10 border border-green/20 rounded-xl p-8">
               <p className="text-white text-lg font-medium">
-                Your audit request has been received.
+                {successMessage}
               </p>
-              <p className="text-white/60 mt-2">
-                We&apos;ll send you a detailed report within 24 hours.
-              </p>
+              <p className="text-white/60 mt-2">{successDetail}</p>
             </div>
           ) : (
             <form
               onSubmit={handleSubmit}
               className="flex flex-col sm:flex-row gap-3 mt-8"
             >
+              <input type="hidden" name="audience" value={audience || ''} />
               <input
                 type="email"
                 placeholder="Your email"
@@ -73,7 +79,7 @@ export function AuditCTA() {
                 className="flex-1 rounded-lg bg-white/10 border border-white/20 px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-primary"
               />
               <Button type="submit" disabled={loading}>
-                {loading ? 'Sending...' : 'Get My Free Audit'}
+                {loading ? 'Sending...' : buttonText}
               </Button>
             </form>
           )}

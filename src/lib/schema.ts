@@ -6,7 +6,7 @@ export function getOrganizationSchema() {
     '@type': 'Organization',
     name: 'WorkflowClick',
     url: BASE_URL,
-    description: 'Done-for-you cold email infrastructure for seed-funded startups',
+    description: 'Done-for-you cold email infrastructure for insurance agencies and insurtech companies',
     email: 'moe@workflowclick.com',
     founder: {
       '@type': 'Person',

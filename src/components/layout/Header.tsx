@@ -2,10 +2,13 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
+import { useAudience } from '@/context/AudienceContext'
+import type { Audience } from '@/data/audience-content'
 
 const navLinks = [
   { label: 'Services', href: '/services' },
@@ -14,6 +17,57 @@ const navLinks = [
   { label: 'Blog', href: '/blog' },
   { label: 'Free Audit', href: '/audit' },
 ]
+
+const toggleOptions: Array<{ key: Audience; label: string }> = [
+  { key: 'agency', label: 'Agency' },
+  { key: 'insurtech', label: 'Insurtech' },
+]
+
+function AudienceToggle({
+  scrolled,
+  className,
+}: {
+  scrolled: boolean
+  className?: string
+}) {
+  const { audience, setAudience } = useAudience()
+
+  if (!audience) return null
+
+  return (
+    <div
+      className={cn(
+        'relative flex rounded-full p-0.5 text-sm font-medium',
+        scrolled ? 'bg-gray-100' : 'bg-white/10',
+        className
+      )}
+    >
+      {toggleOptions.map((option) => (
+        <button
+          key={option.key}
+          onClick={() => setAudience(option.key)}
+          className={cn(
+            'relative z-10 rounded-full px-4 py-1.5 transition-colors cursor-pointer',
+            audience === option.key
+              ? 'text-white'
+              : scrolled
+                ? 'text-medium-gray hover:text-dark'
+                : 'text-white/60 hover:text-white'
+          )}
+        >
+          {audience === option.key && (
+            <motion.div
+              layoutId="audience-toggle-pill"
+              className="absolute inset-0 rounded-full bg-primary"
+              transition={{ type: 'spring', bounce: 0.15, duration: 0.4 }}
+            />
+          )}
+          <span className="relative z-10">{option.label}</span>
+        </button>
+      ))}
+    </div>
+  )
+}
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -62,7 +116,9 @@ export function Header() {
             ))}
           </div>
 
-          <div className="hidden lg:block">
+          {/* Desktop toggle + CTA */}
+          <div className="hidden lg:flex items-center gap-4">
+            <AudienceToggle scrolled={scrolled} />
             <Button
               href="/contact"
               size="sm"
@@ -91,7 +147,7 @@ export function Header() {
       <div
         className={cn(
           'lg:hidden overflow-hidden transition-all duration-300 bg-white',
-          mobileOpen ? 'max-h-96 border-b border-gray-100' : 'max-h-0'
+          mobileOpen ? 'max-h-[500px] border-b border-gray-100' : 'max-h-0'
         )}
       >
         <Container className="py-4">
@@ -106,6 +162,9 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
+            <div className="py-2">
+              <AudienceToggle scrolled={true} className="w-fit" />
+            </div>
             <Button href="/contact" size="sm" className="mt-2 w-full">
               Book a Strategy Call
             </Button>
