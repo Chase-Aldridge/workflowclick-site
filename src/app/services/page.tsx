@@ -9,7 +9,7 @@ import { FinalCTA } from '@/components/sections/FinalCTA'
 export const metadata = createMetadata({
   title: 'Services',
   description:
-    'Cold email services for startups. Choose from Bronze, Silver, or Gold tiers with done-for-you outbound campaigns, domain warming, and qualified meetings.',
+    'Cold email services for insurance agencies and insurtechs. Choose from Bronze, Silver, or Gold tiers with done-for-you outbound campaigns, domain warming, and qualified meetings.',
   path: '/services',
 })
 
@@ -19,12 +19,17 @@ const comparisonRows = [
   { feature: 'Authenticated inboxes', bronze: 'Up to 10', silver: 'Up to 20', gold: 'Unlimited' },
   { feature: 'Domains managed', bronze: '1', silver: '3', gold: '5' },
   { feature: 'Named accounts/month', bronze: false, silver: '10', gold: '25' },
+  { feature: 'X-date campaign targeting', bronze: false, silver: true, gold: true },
+  { feature: 'Commercial lines list building by class code', bronze: false, silver: true, gold: true },
+  { feature: 'Carrier-specific messaging', bronze: false, silver: false, gold: true },
   { feature: 'Real-time Slack notifications', bronze: false, silver: true, gold: 'Full suite + custom rules' },
   { feature: 'Signal-based follow-up playbook', bronze: false, silver: false, gold: true },
   { feature: 'Strategy sessions', bronze: '2x biweekly', silver: 'Weekly', gold: 'Unlimited (up to 8hrs)' },
   { feature: 'Manual prospecting', bronze: false, silver: true, gold: true },
   { feature: 'Omnichannel (email + LinkedIn + calls)', bronze: false, silver: false, gold: true },
   { feature: 'Cold call scripts', bronze: false, silver: false, gold: true },
+  { feature: 'Insurance compliance review (CAN-SPAM + state)', bronze: true, silver: true, gold: true },
+  { feature: 'AMS integration readiness', bronze: false, silver: false, gold: true },
   { feature: 'Quarterly business review', bronze: false, silver: false, gold: true },
 ]
 
@@ -41,11 +46,11 @@ export default function ServicesPage() {
         <Container>
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl font-bold text-white sm:text-5xl">
-              Services Built for <span className="text-primary">Growth</span>
+              Services Built to <span className="text-primary">Grow Your Book</span>
             </h1>
             <p className="mt-4 text-lg text-white/70">
-              Three tiers designed to match your stage. From early traction to
-              full-scale pipeline domination.
+              Three tiers designed to match your agency&apos;s goals. From first
+              campaigns to a full outbound engine.
             </p>
           </div>
         </Container>
@@ -124,6 +129,73 @@ export default function ServicesPage() {
                 </tr>
               </tfoot>
             </table>
+          </div>
+        </Container>
+      </section>
+
+      {/* SDR Cost Comparison */}
+      <section className="py-20 bg-bg-light">
+        <Container>
+          <SectionHeading
+            title="Less Than an In-House SDR"
+            subtitle="And you get an entire team, not just one person who might quit."
+          />
+          <div className="max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <div className="p-6 bg-white rounded-xl border border-gray-100">
+                <h3 className="text-lg font-semibold text-dark mb-4">In-House SDR</h3>
+                <ul className="space-y-3 text-sm text-medium-gray">
+                  <li className="flex items-start gap-2">
+                    <X className="h-4 w-4 text-red shrink-0 mt-0.5" />
+                    <span>$60K-$108K/year fully loaded</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <X className="h-4 w-4 text-red shrink-0 mt-0.5" />
+                    <span>3-6 months to ramp up</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <X className="h-4 w-4 text-red shrink-0 mt-0.5" />
+                    <span>35% annual turnover rate</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <X className="h-4 w-4 text-red shrink-0 mt-0.5" />
+                    <span>Daily management overhead</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <X className="h-4 w-4 text-red shrink-0 mt-0.5" />
+                    <span>One person doing one job</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="p-6 bg-white rounded-xl border-2 border-primary">
+                <h3 className="text-lg font-semibold text-primary mb-4">WorkflowClick</h3>
+                <ul className="space-y-3 text-sm text-medium-gray">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-4 w-4 text-green shrink-0 mt-0.5" />
+                    <span>$3K-$5K/month</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-4 w-4 text-green shrink-0 mt-0.5" />
+                    <span>Campaigns live in weeks, not months</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-4 w-4 text-green shrink-0 mt-0.5" />
+                    <span>Cancel anytime, no contracts</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-4 w-4 text-green shrink-0 mt-0.5" />
+                    <span>Weekly reporting, no daily oversight</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-4 w-4 text-green shrink-0 mt-0.5" />
+                    <span>Entire team: copywriters, data, deliverability</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <p className="text-center text-sm text-light-gray mt-6">
+              Month-to-month. Cancel with 30 days notice. No setup fees.
+            </p>
           </div>
         </Container>
       </section>

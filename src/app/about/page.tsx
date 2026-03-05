@@ -7,7 +7,7 @@ import { FinalCTA } from '@/components/sections/FinalCTA'
 export const metadata = createMetadata({
   title: 'About',
   description:
-    'Meet the team behind WorkflowClick. 10+ years of B2B sales experience and $10M+ in pipeline generated.',
+    'Meet the team behind WorkflowClick. 10+ years selling to insurance organizations, $10M+ in B2B pipeline built from cold email.',
   path: '/about',
 })
 
@@ -18,11 +18,11 @@ export default function AboutPage() {
         <Container>
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl font-bold text-white sm:text-5xl">
-              Built by Operators, <span className="text-primary">Not Theorists</span>
+              Built by Operators Who <span className="text-primary">Know Insurance</span>
             </h1>
             <p className="mt-4 text-lg text-white/70">
-              We have been in the trenches building outbound engines for over a
-              decade. Now we do it for you.
+              We&apos;ve spent years selling to insurance carriers, MGAs, and
+              agencies. Now we build outbound engines for you.
             </p>
           </div>
         </Container>
@@ -42,19 +42,23 @@ export default function AboutPage() {
               </p>
               <div className="mt-6 space-y-4 text-medium-gray leading-relaxed">
                 <p>
-                  Moe has spent over 10 years in B2B sales, progressing from SDR
-                  to Sales Director across 7+ companies. He has generated over
-                  $10M in ARR through cold email and outbound strategies.
+                  Moe sold insurance technology to 150+ insurance organizations
+                  at Risk Control Technologies, the industry&apos;s leading loss
+                  control software provider. RCT was later acquired by Duck
+                  Creek Technologies.
                 </p>
                 <p>
-                  His career includes senior roles at Element AI (acquired by
-                  ServiceNow in 2020), Armilla AI (YC-backed), PointClickCare,
-                  Xero, BlueCat, and Risk Control Technologies.
+                  As Sales Director at Armilla AI, he built the outbound engine
+                  for an AI warranty product backed by Swiss Re, Greenlight Re,
+                  and Chaucer (Lloyd&apos;s of London). Before that, he generated
+                  $4M+ in pipeline at Element AI through cold email before their
+                  acquisition by ServiceNow.
                 </p>
                 <p>
-                  Moe founded WorkflowClick to bring enterprise-level outbound
-                  infrastructure to seed-funded startups who need pipeline but
-                  cannot afford a full sales team.
+                  Over 10+ years and 7+ B2B companies, Moe&apos;s built $10M+ in
+                  pipeline from cold email. He founded WorkflowClick to bring
+                  that same outbound infrastructure to independent agencies and
+                  growing insurance companies.
                 </p>
               </div>
             </div>
@@ -70,21 +74,19 @@ export default function AboutPage() {
               </p>
               <div className="mt-6 space-y-4 text-medium-gray leading-relaxed">
                 <p>
-                  Chase is an AI and automation specialist who builds the
-                  technical infrastructure that powers WorkflowClick. From
-                  custom automation workflows to intelligent campaign
-                  optimization, he makes sure your outreach runs on real
-                  technology, not guesswork.
+                  Chase builds the technical infrastructure behind every
+                  WorkflowClick campaign. Custom automation identifies prospects
+                  with expiring policies, matches them to your carrier appetite,
+                  and sends personalized outreach at scale.
                 </p>
                 <p>
-                  With deep expertise in AI agent architecture, workflow
-                  automation (n8n, Make), and full-stack development, Chase
-                  builds systems that give our clients a technical edge over
-                  agencies still running on spreadsheets.
+                  With deep expertise in AI agent architecture and workflow
+                  automation, Chase gives our clients a technical edge. Your
+                  campaigns run on real intelligence, not copy-paste templates.
                 </p>
                 <p>
                   Based in Denver, Colorado. Focused on making outbound smarter
-                  through AI-augmented infrastructure.
+                  for insurance agencies and insurtechs.
                 </p>
               </div>
             </div>
@@ -98,10 +100,10 @@ export default function AboutPage() {
           <SectionHeading title="Our Mission" />
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-lg text-medium-gray leading-relaxed">
-              Seed-funded startups deserve enterprise-level outbound
-              infrastructure without enterprise budgets. We built WorkflowClick
-              to close that gap. You focus on building your product and closing
-              deals. We fill your pipeline with qualified conversations.
+              Growing agencies and insurance companies deserve enterprise-level
+              outbound infrastructure without enterprise budgets. We built
+              WorkflowClick to close that gap. You focus on placing coverage and
+              closing deals. We fill your calendar with qualified conversations.
             </p>
           </div>
         </Container>
