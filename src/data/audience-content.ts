@@ -139,161 +139,160 @@ const agencyContent: AudienceContent = {
   shortLabel: 'Agency',
 
   hero: {
-    headline: 'Fill Your Commercial Prospects Pipeline.',
-    highlightedText: 'Every Week.',
+    headline: 'Grow Your Commercial Book.',
+    highlightedText: 'Without Prospecting.',
     subheadline:
-      'Done-for-you cold email infrastructure for independent insurance agencies. We handle everything from domain warming to booked appointments with decision-makers.',
+      'Done-for-you cold email for independent insurance agencies. We build the lists, write the sequences, warm the domains, and put qualified commercial prospects on your calendar.',
     proofLine:
-      'Backed by $10M+ in pipeline generated across B2B sales programs',
+      'Built by a team that sold to 150+ insurance organizations and generated $10M+ in B2B outbound pipeline',
   },
 
   logoBar: {
-    heading: 'Leadership Experience Across',
+    heading: 'Insurance & Enterprise Sales Experience',
     logos: [
+      { name: 'Risk Control Technologies / Duck Creek', abbr: 'RCT / Duck Creek' },
+      { name: 'Armilla AI (Swiss Re, Lloyd\'s-backed)', abbr: 'Armilla AI' },
       { name: 'Element AI / ServiceNow', abbr: 'Element AI' },
-      { name: 'Armilla AI', abbr: 'Armilla AI' },
       { name: 'PointClickCare', abbr: 'PointClickCare' },
-      { name: 'Xero', abbr: 'Xero' },
-      { name: 'BlueCat', abbr: 'BlueCat' },
     ],
   },
 
   problemGrid: {
-    sectionTitle: 'Your Outreach Is Broken (And You Know It)',
+    sectionTitle: 'You Know What\'s Broken. Here\'s What We Fix.',
     sectionSubtitle:
-      "Sound familiar? You're not alone. Here's how we fix it.",
+      'These aren\'t guesses. We hear them from agency owners every week.',
     problems: [
       {
-        icon: 'ShieldAlert',
-        title: 'Emails landing in spam',
+        icon: 'Clock',
+        title: 'Renewals eat 80% of your time',
         description:
-          'Your messages to prospects never reach the inbox. They go straight to junk.',
+          'Between renewals, certificates, endorsements, and claims, your producers have no time left to prospect. New business goals don\'t hit themselves.',
       },
       {
         icon: 'TrendingDown',
-        title: 'Losing clients to bigger brokers',
+        title: 'Rates are softening. Your book isn\'t growing.',
         description:
-          'National firms are outspending you on marketing. Your book of business is shrinking.',
-      },
-      {
-        icon: 'Clock',
-        title: 'No time for prospecting',
-        description:
-          'Between renewals, claims, and servicing, there is no time left to find new business.',
+          'Commercial property rates are falling for the first time since 2017. The agencies that grew on rate increases, not new clients, are about to feel it.',
       },
       {
         icon: 'MessageSquareOff',
-        title: 'Generic outreach getting ignored',
+        title: 'Lead vendors burned you',
         description:
-          'Copy-paste templates sound robotic. Decision-makers delete them instantly.',
+          'EverQuote, SmartFinancial, QuoteWizard. Shared leads, bad numbers, 40-call spam storms. You paid for "exclusive" leads that weren\'t. We don\'t sell leads. Period.',
       },
       {
         icon: 'BarChart3',
-        title: 'Pipeline is unpredictable',
+        title: 'New producers can\'t fill their own pipeline',
         description:
-          'Some months are great, others are empty. You need a consistent flow of new prospects.',
+          'You\'re paying $40K-$60K/year in draw for a producer who can\'t generate enough activity. 70-80% of new producers fail within 2 years. Most of them fail because they can\'t prospect.',
+      },
+      {
+        icon: 'ShieldAlert',
+        title: 'Referrals are great. But they cap your growth.',
+        description:
+          '65% of new business comes from referrals. That\'s your foundation. But you can\'t predict or control when the next one comes in. You need a second engine.',
       },
       {
         icon: 'Ban',
-        title: 'Domain getting blacklisted',
+        title: 'DIY cold email risks your agency domain',
         description:
-          'Amateur email setup is destroying your sender reputation and hurting all your communications.',
+          'Send cold email from your main domain and you risk blacklisting. That means your renewal notices, COI requests, and client communications all start landing in spam.',
       },
     ],
   },
 
   processSteps: {
-    sectionTitle: 'Your Outbound Engine, Built and Managed For You',
+    sectionTitle: 'From Zero to New Business in Four Steps',
     sectionSubtitle:
-      "From zero to pipeline in four steps. We handle the complexity so you don't have to.",
+      'We handle the technical work. Your producers focus on quoting and placing coverage.',
     steps: [
       {
         icon: 'Phone',
         number: '01',
         title: 'Strategy Call',
         description:
-          'We learn your ideal client profile, markets, and lines of business to build a winning outreach playbook.',
+          'We learn your target industries, commercial lines focus, geographic territory, and carrier appetite. Then we build a prospecting playbook around your agency\'s strengths.',
       },
       {
         icon: 'Settings',
         number: '02',
-        title: 'Infrastructure Setup',
+        title: 'Infrastructure Build',
         description:
-          'Domain warming, DKIM/SPF/DMARC authentication, inbox configuration. All done for you.',
+          'We set up dedicated sending domains (separate from your agency domain), warm them for 14+ days, and configure SPF/DKIM/DMARC. Your agency\'s email reputation stays clean.',
       },
       {
         icon: 'Rocket',
         number: '03',
         title: 'Campaign Launch',
         description:
-          'Personalized sequences targeting business owners, CFOs, and HR leaders who need coverage.',
+          'We build verified prospect lists by industry, class code, and geography. Then we send targeted sequences to business owners, CFOs, and ops directors. X-date targeting available for businesses approaching renewal.',
       },
       {
         icon: 'CalendarCheck',
         number: '04',
-        title: 'Booked Appointments',
+        title: 'New Business on Your Calendar',
         description:
-          'We deliver warm prospects ready to talk about their insurance needs. You focus on closing.',
+          'Qualified commercial prospects show up on your calendar. Your producers quote, advise, and place coverage. We track meetings booked, proposals sent, and new business written.',
       },
     ],
   },
 
   pricingTiers: {
-    sectionTitle: 'Choose Your Growth Speed',
+    sectionTitle: 'Pick the Plan That Fits Your Agency',
     sectionSubtitle:
-      'All plans include domain warming, email authentication, and dedicated strategy support.',
-    footnote: "Pricing is customized to your agency's growth goals. Let's talk.",
+      'All plans include dedicated sending domains, full email authentication, and domain warming. Less than the cost of one in-house producer, with zero ramp time and no turnover risk.',
+    footnote: 'Month-to-month. Cancel with 30 days notice. No setup fees. One closed commercial account pays for a full month of service.',
     tiers: [
       {
-        name: 'Bronze',
-        tagline: 'The Machine',
+        name: 'Starter',
+        tagline: 'Build the Engine',
         variant: 'default',
         features: [
-          '1,000-1,500 verified contacts/month',
-          '4 email sequences (industry-specific)',
+          '1,000-1,500 verified commercial contacts/month',
+          '4 email sequences by industry vertical',
           'A/B testing across all sequences',
           'Up to 10 authenticated inboxes',
           'Full domain authentication (SPF, DKIM, DMARC)',
+          'Dedicated sending domains (your agency domain stays clean)',
           'Daily campaign management',
-          'Reply forwarding + prioritized alerts',
-          '2x biweekly strategy sessions',
-          'Monthly performance reporting',
+          'Reply forwarding + qualified lead alerts',
+          '2x monthly strategy sessions',
+          'Monthly reporting: opens, replies, meetings booked',
         ],
       },
       {
-        name: 'Silver',
-        tagline: 'The War Room',
+        name: 'Growth',
+        tagline: 'Fill the Calendar',
         badge: 'Most Popular',
         variant: 'highlighted',
         features: [
-          'Everything in Bronze, plus:',
+          'Everything in Starter, plus:',
           '2,500-3,000 verified contacts/month',
-          '6 email sequences',
-          'Up to 20 inboxes, 3 domains',
-          '10 named accounts/month (manual prospecting)',
-          'Real-time Slack notifications',
+          '6 email sequences (by industry + line of business)',
+          'Up to 20 inboxes, 3 sending domains',
+          'X-date campaign targeting (renewal-based prospecting)',
+          '10 named accounts/month (manual research + outreach)',
+          'Commercial lines list building by class code',
+          'Real-time Slack notifications on hot replies',
           'Weekly strategy sessions',
-          'Objection-handling templates',
-          'Quarterly campaign audit + refresh',
-          'Priority Slack/email support',
+          'Quarterly campaign audit + sequence refresh',
         ],
       },
       {
-        name: 'Gold',
-        tagline: 'The Takeover',
+        name: 'Scale',
+        tagline: 'Own the Territory',
         variant: 'premium',
         features: [
-          'Everything in Silver, plus:',
+          'Everything in Growth, plus:',
           '5,000+ verified contacts/month',
-          '25+ email sequences',
-          'Unlimited inboxes, 5 domains',
+          'Unlimited email sequences across all verticals',
+          'Unlimited inboxes, 5 sending domains',
           '25 named accounts/month',
-          'Full Slack suite + custom alert rules',
-          'Signal-based follow-up playbook',
-          'Cold call script development',
-          'Omnichannel (email + LinkedIn + calls)',
+          'Carrier-specific messaging (match outreach to your appetite)',
+          'Omnichannel: email + LinkedIn + call scripts',
+          'Signal-based follow-up (website visits, email engagement)',
           'Unlimited strategy sessions (up to 8hrs/mo)',
-          'Monthly executive summary',
+          'Monthly executive summary with new business tracking',
           'Quarterly business review (QBR)',
         ],
       },
@@ -302,150 +301,150 @@ const agencyContent: AudienceContent = {
 
   statsBar: {
     stats: [
-      { target: 10, prefix: '$', suffix: 'M+', label: 'Pipeline Generated' },
-      { target: 10, suffix: '+', label: 'Years B2B Sales Experience' },
-      { target: 1000, suffix: 's', label: 'Campaigns Managed' },
-      { target: 7, suffix: '+', label: 'Enterprise Companies' },
+      { target: 10, prefix: '$', suffix: 'M+', label: 'Outbound Pipeline Built' },
+      { target: 150, suffix: '+', label: 'Insurance Organizations Served' },
+      { target: 10, suffix: '+', label: 'Years B2B Sales' },
+      { target: 6, suffix: '-8 Wks', label: 'To First Meetings' },
     ],
   },
 
   differentiators: {
-    sectionTitle: 'Why Agencies Choose Us Over DIY or Big Agencies',
+    sectionTitle: 'Why Agencies Work With Us Instead of Going It Alone',
     items: [
       {
-        icon: 'User',
-        title: 'Founder-Led, Not Factory',
+        icon: 'Building2',
+        title: 'We Actually Speak Insurance',
         description:
-          'Moe personally oversees your campaigns. No junior account managers learning on your dime. You get senior-level attention from day one.',
+          'We know the difference between admitted and E&S markets, GL and WC class codes, and why your carrier just non-renewed half your book. Our founder sold loss control software to 150+ insurance organizations at Risk Control Technologies before it was acquired by Duck Creek.',
+      },
+      {
+        icon: 'User',
+        title: 'Founder-Led, Not a Call Center',
+        description:
+          'Moe ran outbound at Armilla AI (backed by Swiss Re and Lloyd\'s syndicates) and Element AI (acquired by ServiceNow). He oversees your campaigns personally. No junior reps learning on your dime.',
       },
       {
         icon: 'Cpu',
-        title: 'AI-Augmented Infrastructure',
+        title: 'Your Campaigns Run on Real Intelligence',
         description:
-          'Our CTO builds custom automation that powers your outreach. Your campaigns run on real intelligence, not copy-paste templates.',
-      },
-      {
-        icon: 'Building2',
-        title: 'Built for Insurance',
-        description:
-          'We understand the insurance landscape. Carriers, MGAs, commercial lines, personal lines. Our messaging speaks the language your prospects expect.',
+          'Custom automation identifies prospects by industry, class code, and geography. Personalized outreach at scale, not copy-paste templates. We can target businesses approaching their renewal date so you\'re in front of them when it matters.',
       },
       {
         icon: 'Shield',
-        title: 'Full-Stack Deliverability',
+        title: 'Your Agency Domain Stays Clean',
         description:
-          'Domain warming, DKIM/SPF/DMARC authentication, inbox rotation, blacklist monitoring. We handle the entire technical stack.',
+          'All outreach runs from dedicated sending infrastructure. Domain warming, DKIM/SPF/DMARC authentication, inbox rotation, blacklist monitoring. Your renewal notices, COI requests, and client emails are never at risk.',
       },
       {
         icon: 'XCircle',
-        title: 'Cancel Anytime',
+        title: 'Month-to-Month. We Earn It.',
         description:
-          'Month-to-month. No lock-in contracts. If we do not perform, you leave. We earn your business every single month.',
+          'No lock-in contracts. No setup fees. If we don\'t generate qualified conversations for your producers, you stop paying. We earn your business every single month.',
       },
     ],
   },
 
   testimonials: {
-    sectionTitle: 'Proven Track Record',
+    sectionTitle: 'The Experience Behind Every Campaign',
     sectionSubtitle:
-      'Our founder has built and scaled outbound engines across multiple industries.',
+      'Before starting WorkflowClick, our founder built outbound programs across insurance technology and enterprise SaaS. Here\'s what he brings to your agency.',
     items: [
       {
         quote:
-          'Generated over $4M in pipeline through cold email campaigns at Element AI, leading to acquisition by ServiceNow.',
-        attribution: 'Element AI (acquired by ServiceNow, 2020)',
-        context: "From Moe's career",
+          'Sold insurance risk management software to 150+ carriers, MGAs, and brokers at Risk Control Technologies. Sat across the table from the underwriters and risk managers your agency works with every day. RCT was later acquired by Duck Creek Technologies.',
+        attribution: 'Risk Control Technologies (now Duck Creek Loss Control)',
+        context: 'Insurance industry experience',
       },
       {
         quote:
-          'Built outbound engine from scratch for a YC-backed AI startup, establishing repeatable pipeline generation.',
-        attribution: 'Armilla AI (YC-backed)',
-        context: "From Moe's career",
+          'Built the outbound pipeline from scratch for Armilla AI, a YC-backed company selling AI warranty products backed by Swiss Re, Greenlight Re, and Chaucer (Lloyd\'s of London). $4M+ generated through cold email at Element AI, which was acquired by ServiceNow.',
+        attribution: 'Armilla AI + Element AI / ServiceNow',
+        context: 'Insurance-backed companies',
       },
       {
         quote:
-          'Scaled cold email programs across healthcare SaaS, driving consistent qualified meeting flow for enterprise sales teams.',
-        attribution: 'PointClickCare',
-        context: "From Moe's career",
+          'The cold email methodology is proven across 10+ years and 7+ B2B companies. What\'s new is applying it with real insurance knowledge. No other cold email agency has both. That\'s why we offer a pilot: 30 days, and you\'ll see the difference.',
+        attribution: '$10M+ career pipeline across 7+ companies',
+        context: 'Why this combination matters',
       },
     ],
   },
 
   auditCTA: {
-    sectionTitle: 'Is Your Email Domain Healthy?',
+    sectionTitle: 'Is Your Agency\'s Email Domain at Risk?',
     sectionSubtitle:
-      "Get a free deliverability audit. We'll check your DKIM, SPF, DMARC, and domain reputation, and tell you exactly what's broken.",
-    buttonText: 'Get My Free Audit',
-    successMessage: 'Your audit request has been received.',
-    successDetail: "We'll send you a detailed report within 24 hours.",
+      'If your domain gets blacklisted, it\'s not just prospecting that stops. Your renewal notices, COI requests, and client emails all start landing in spam. Get a free deliverability audit. We\'ll check your SPF, DKIM, DMARC, and blacklist status.',
+    buttonText: 'Get My Free Domain Audit',
+    successMessage: 'Your audit request is in.',
+    successDetail: "We'll send a detailed report within 24 hours, whether you work with us or not.",
   },
 
   faq: {
     items: [
       {
-        question: 'How quickly will I see results?',
+        question: 'How quickly will my producers see meetings on their calendar?',
         answer:
-          'Most agencies see their first qualified appointments within 2-4 weeks of campaign launch. The first 1-2 weeks are dedicated to infrastructure setup and domain warming. Once campaigns go live, replies typically start flowing within days.',
+          'The first 2 weeks go to infrastructure: domain warming, authentication, and list building. Campaigns go live in week 3. Most agencies see their first qualified appointments within 3-4 weeks of kickoff. By month 2, you should have a steady flow of commercial prospects booking calls.',
       },
       {
-        question: 'Do I need to provide my own domains and inboxes?',
+        question: 'How is this different from EverQuote, SmartFinancial, or buying leads?',
         answer:
-          'Yes, you provide the domains and inboxes. We handle all the technical setup: domain warming, SPF/DKIM/DMARC authentication, inbox configuration, and ongoing deliverability monitoring. We guide you through purchasing domains and inboxes if you need help.',
+          'We don\'t sell leads. At all. Lead vendors sell shared, recycled consumer leads for personal lines. You compete with 5-10 other agents on every one. We build a cold email outbound program that targets commercial business owners, CFOs, and ops directors on your behalf. Every prospect is exclusive to your agency. No sharing, no reselling, no price-shopping consumers. You own the pipeline we build.',
       },
       {
-        question: 'What types of insurance prospects can you target?',
+        question: 'Is cold email legal for insurance agencies?',
         answer:
-          'We target business owners, CFOs, HR directors, and other decision-makers who need commercial insurance, workers comp, group benefits, or other coverage. We build custom prospect lists based on your ideal client profile, industry focus, and geographic market.',
+          'Yes. B2B cold email is governed by CAN-SPAM, which we follow to the letter: clear sender identification, physical address, opt-out in every email, and opt-out processing within 10 business days. We\'re emailing business owners about their commercial coverage needs, not marketing consumer insurance products. California\'s CDI regulates insurance advertising to consumers. B2B prospecting emails to business owners fall under CAN-SPAM, not CDI advertising rules. We also run all campaigns from dedicated domains, so your agency\'s compliance record stays clean.',
       },
       {
-        question: 'How is this different from hiring an SDR?',
+        question: 'Will this damage my agency\'s domain or carrier relationships?',
         answer:
-          'An in-house SDR costs $60K-$80K+ in salary alone, takes months to ramp up, and requires management overhead. We provide an entire outbound engine (infrastructure, copy, strategy, execution) for a fraction of the cost, with faster results and no HR headaches.',
+          'No. All outreach runs from dedicated sending domains that are completely separate from your agency\'s primary domain. Your renewal notices, COI requests, and client emails are never at risk. We handle SPF, DKIM, DMARC authentication, domain warming, inbox rotation, and real-time blacklist monitoring on the sending domains. Your agency domain stays untouched.',
       },
       {
-        question: 'What email tools do you use?',
+        question: 'How does the ROI math work? What does one account actually pay?',
         answer:
-          'We use Apollo for sequencing and lead sourcing, combined with best-in-class warming and deliverability tools. Our CTO also builds custom automation to optimize campaign performance beyond what off-the-shelf tools can do.',
+          'Take a $25,000 annual premium commercial account at 12% blended commission. That\'s $3,000 in year-one commission. At 85% retention, that client stays an average of 6.7 years, generating over $15,000 in lifetime commission. One account covers a full month of service. Everything after that is profit, and the account keeps paying you for years. The math works even at conservative close rates.',
+      },
+      {
+        question: 'How is this different from hiring a new producer?',
+        answer:
+          'A new producer costs $40,000-$60,000 per year in salary draw alone, before commission splits, licensing, E&O coverage, and training. 70-80% of new producers fail within 2 years. Even the ones who make it take 2-3 years to reach validation. We deliver qualified commercial conversations in 6-8 weeks, at a fraction of the cost, with zero ramp time. If we don\'t perform, you cancel. Try that with a W-2 employee.',
       },
       {
         question: 'Can I cancel anytime?',
         answer:
-          'Yes. All plans are month-to-month with no long-term contracts. We believe in earning your business every month through results, not locking you into agreements. Cancel anytime with 30 days notice.',
+          'Yes. All plans are month-to-month. No long-term contracts, no setup fees, no early termination penalties. Cancel with 30 days notice. We earn your business every month through results. If we\'re not putting qualified prospects on your producers\' calendars, you should leave.',
       },
       {
-        question: 'How do you protect my domain reputation?',
+        question: 'What commercial lines can you target?',
         answer:
-          'We follow strict deliverability best practices: gradual domain warming, proper authentication, inbox rotation, volume throttling, and real-time blacklist monitoring. We treat your domain reputation as sacred because it directly impacts results.',
+          'We build prospect lists for any commercial line: workers\' comp, general liability, commercial property, commercial auto, professional liability, cyber, BOPs, and more. We target by industry vertical (contractors, manufacturers, restaurants, professional services), by geography (your territory, your zip codes), and by company size. We can also build X-date campaigns that reach businesses 60-90 days before their renewal.',
       },
       {
-        question: 'What does a typical campaign look like?',
+        question: 'Have you worked with insurance agencies before?',
         answer:
-          'A typical campaign includes researched and verified prospect lists matched to your ideal client profile, 4-7 step email sequences with industry-specific messaging, A/B testing across subject lines and copy, and daily monitoring with optimization. You receive regular reports on open rates, reply rates, and qualified appointments booked.',
+          'We\'re new to serving agencies directly. We\'re not new to insurance. Our founder spent years selling insurance risk management software to 150+ carriers, MGAs, and brokers at Risk Control Technologies (now Duck Creek Loss Control). He then built the outbound engine at Armilla AI, a YC-backed company backed by Swiss Re, Greenlight Re, and Lloyd\'s syndicates. The cold email methodology is proven across $10M+ in career pipeline. The insurance knowledge is real. That\'s why we offer a pilot: 30 days, and you\'ll see the difference insurance fluency makes in every email we write.',
       },
       {
-        question: 'Do you handle LinkedIn outreach too?',
+        question: 'How much does WorkflowClick cost?',
         answer:
-          'LinkedIn outreach is available in our Gold tier as part of our omnichannel strategy. This includes coordinated email + LinkedIn + call script sequences for maximum touchpoint coverage with your target accounts.',
-      },
-      {
-        question: "What's included in the free audit?",
-        answer:
-          'Our free deliverability audit checks your DKIM, SPF, and DMARC records, domain reputation across major blacklists, inbox placement rates, and overall email infrastructure health. You receive a detailed report with specific recommendations, whether you work with us or not.',
+          'Programs start from $2,500 per month, depending on your target market size, number of campaigns, and the lines of business you want to focus on. For context, an in-house producer costs $65,000-$94,000 per year in total compensation, takes months to ramp, and comes with 30%+ turnover risk. We deliver an entire outbound program for a fraction of that. On your strategy call, we\'ll give you an exact number before you commit to anything.',
       },
     ],
   },
 
   finalCTA: {
-    headline: 'Ready to Grow Your Book of Business?',
+    headline: 'Ready to Write More Commercial Business?',
     subheadline:
-      'Book a free strategy call. No pitch deck, no pressure. Just a conversation about your outbound goals.',
+      'Book a free strategy call. No pitch deck, no pressure. Just a conversation about growing your book and what it would take to put 5-10 qualified prospects on your calendar every month.',
     buttonText: 'Book a Strategy Call',
-    footnote: "You'll speak directly with Moe, our founder.",
+    footnote: 'You\'ll speak directly with Moe, our founder. Month-to-month. Cancel anytime.',
   },
 
   footer: {
     tagline:
-      'Done-for-you cold email infrastructure for insurance agencies. We handle everything from domain warming to booked appointments.',
+      'Done-for-you cold email for independent insurance agencies. We build the infrastructure, write the sequences, and put qualified commercial prospects on your calendar.',
   },
 }
 
