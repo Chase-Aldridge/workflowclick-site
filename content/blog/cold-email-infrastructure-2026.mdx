@@ -1,91 +1,127 @@
 ---
-title: "How to Set Up Cold Email Infrastructure in 2026"
-description: "A practical guide to building cold email infrastructure that lands in inboxes — covering domains, warming, authentication, sending tools, and monitoring."
-date: "2026-01-15"
-author: "Moe Raza"
-tags: ["Deliverability", "Infrastructure", "Cold Email"]
+title: "The Insurance Agency Owner's Guide to Email Deliverability"
+description: "Your cold email lands in spam because your infrastructure is broken. Here's how to fix domains, DNS, and sending for insurance outreach."
+date: "2026-03-10"
+author: "Moe Randera"
+tags: ["Deliverability", "Infrastructure", "Insurance Agencies", "Cold Email"]
 ---
 
-If you are sending cold email and half your messages are going to spam, the problem almost certainly is not your copy. It is your infrastructure.
+If your cold emails aren't landing in inboxes, the problem isn't your copy. It's your infrastructure.
 
-Most founders treat cold email like a marketing blast: buy a list, fire up Gmail, start sending. That approach gets you blacklisted inside a week. In 2026, with spam filters getting smarter every quarter, the technical foundation matters more than ever.
+Most insurance agencies treat cold email like a marketing blast. Buy a list, open up Gmail, start sending. That approach gets you blacklisted inside a week. And for insurance agencies, the stakes are even higher than most businesses realize.
 
-Here is how to set it up properly.
+Here's why, and how to fix it.
+
+## Why Insurance Agencies Have a Unique Deliverability Problem
+
+Your agency domain does a lot of heavy lifting every single day. COI requests. Renewal notices. Claims updates. Carrier portal communication. Policy documents. Every one of those emails runs through your primary domain.
+
+Now imagine you send cold outreach from that same domain. It gets flagged as spam. Suddenly, your renewal notices stop arriving. Your COI requests bounce. Your carrier communication breaks. Your entire operation grinds to a halt because one cold email campaign torched your domain reputation.
+
+This isn't a hypothetical. 17% of B2B emails never reach the inbox without proper authentication, according to Return Path. For insurance agencies, the risk is even worse because of the language you naturally use.
+
+Spam filters hate insurance words. Phrases like "free quote," "lowest rates," "save on insurance," and "no obligation" are some of the most flagged triggers in email filtering. These are the exact phrases most agencies put in their outreach without thinking twice.
+
+Your agency domain is too valuable to gamble with. Here's how to protect it.
 
 ## Step 1: Buy Dedicated Sending Domains
 
-Never send cold email from your primary company domain. If it gets flagged or blacklisted, your transactional email goes with it — meaning customers stop receiving receipts, password resets, and onboarding sequences.
+Never send cold email from your agency's primary domain. Full stop. If your agency is `smithinsurance.com`, that domain handles your certificates of insurance, your claims communication, and every carrier interaction you have. It stays clean.
 
-Instead, buy separate domains specifically for outbound. If your company is `acmecorp.com`, register two or three variations:
+Instead, register 2 to 3 variations for outbound sending.
 
-- `getacmecorp.com`
-- `acmecorpapp.com`
-- `tryacmecorp.com`
+- `getsmithins.com`
+- `smithinsgroup.com`
+- `smithinsuranceteam.com`
 
-Keep them on the same registrar (Namecheap or Cloudflare work well). You will rotate sending across these domains so no single one absorbs too much volume.
+Keep them on the same registrar. Namecheap and Cloudflare both work well. You'll rotate sending across these domains so no single one absorbs too much volume.
 
-## Step 2: Configure DNS Authentication Records
+This is cheap insurance for your insurance business. A few domains cost $30 to $40 per year total. Rebuilding a burned primary domain costs you weeks of lost communication with carriers and clients.
 
-This is the step most founders skip, and it is the most important one. Email providers like Google and Microsoft check three DNS records before deciding where to deliver your message.
+## Step 2: Set Up DNS Authentication (SPF, DKIM, DMARC)
 
-**SPF (Sender Policy Framework)** tells receiving servers which IP addresses are authorized to send email on behalf of your domain. A basic SPF record looks like:
+This is the step most agencies skip. It's also the most important one.
+
+Email providers like Google and Microsoft check three DNS records before deciding where to deliver your message. If these records are missing or wrong, your email goes straight to spam. No exceptions.
+
+**SPF (Sender Policy Framework)** tells receiving servers which IP addresses can send email on your domain's behalf. It's like a guest list for your domain. A basic SPF record looks like this:
 
 ```
 v=spf1 include:sendgrid.net ~all
 ```
 
-**DKIM (DomainKeys Identified Mail)** adds a cryptographic signature to every email so receivers can verify it was not tampered with in transit. Your sending tool will generate a DKIM key for you to add to DNS.
+**DKIM (DomainKeys Identified Mail)** adds a cryptographic signature to every email. This lets the receiving server verify your message wasn't changed in transit. Your sending tool will generate a DKIM key that you add to your DNS settings.
 
-**DMARC (Domain-based Message Authentication)** tells receivers what to do when SPF or DKIM fail, and sends you reports about authentication failures. Start with a policy of `none` to monitor before enforcing:
+**DMARC (Domain-based Message Authentication)** tells receivers what to do when SPF or DKIM checks fail. It also sends you reports about authentication failures. Start with a monitoring policy before you enforce anything:
 
 ```
 v=DMARC1; p=none; rua=mailto:dmarc@yourdomain.com
 ```
 
-Give DNS propagation 24-48 hours, then verify everything using MXToolbox or mail-tester.com.
+After you add these records, give DNS propagation 24 to 48 hours. Then verify everything using MXToolbox or mail-tester.com.
 
-## Step 3: Warm Up Your Domains
+Don't skip this step. Without proper authentication, nothing else matters. Your warm-up won't stick. Your sending tool won't help. The emails just land in spam.
 
-A brand new domain with no sending history is immediately suspicious. You cannot just start blasting 200 emails a day on day one — that is a fast way to get flagged.
+## Step 3: Warm Your Domains (4 to 6 Weeks)
 
-Warming means gradually increasing your sending volume over 4-6 weeks while building a positive reputation. The process looks like this:
+A brand new domain with no sending history looks suspicious to email providers. You can't blast 200 emails on day one. That's the fastest way to get flagged.
 
-- **Week 1-2:** Send 10-20 emails per day per domain, primarily to warm contacts or seed accounts that will open and reply
-- **Week 3-4:** Increase to 50-75 per day, mixing in your real prospects
-- **Week 5-6:** Ramp to 100-150 per day
+Warming means gradually increasing your sending volume over 4 to 6 weeks while building a positive reputation. Here's what the timeline looks like:
 
-Use a warm-up tool like Warmup Inbox, Mailreach, or Instantly's built-in warmer. These tools send emails between a network of real accounts and automatically mark them as "not spam" and reply to them, building your reputation organically.
+- **Week 1-2:** 10 to 20 emails per day per domain. Send to warm contacts or seed accounts that will open and reply.
+- **Week 3-4:** 50 to 75 per day. Start mixing in real prospects.
+- **Week 5-6:** 100 to 150 per day. Full sending volume.
 
-## Step 4: Choose a Sending Tool
+Use a warm-up tool like Warmup Inbox, Mailreach, or Instantly's built-in warmer. These tools send emails between a network of real accounts. They automatically open, reply, and mark messages as "not spam." This builds your domain's reputation organically.
 
-Your sending infrastructure sits on top of your authenticated, warmed domains. For cold email specifically, purpose-built tools give you far better deliverability than general email service providers.
+Be patient here. Rushing the warm-up process permanently damages your domain reputation. There are no shortcuts. Agencies that try to skip ahead end up burning domains and starting over from scratch.
 
-The three tools worth evaluating in 2026 are:
+## Step 4: Choose a Sending Platform
 
-**Instantly** — the current market leader for cold email at scale. Handles domain rotation, warm-up, and has solid analytics. Good for teams sending 500+ emails per day.
+Your sending platform sits on top of your authenticated, warmed domains. For cold email, purpose-built tools give you far better results than general email providers.
 
-**Smartlead** — strong alternative with excellent deliverability infrastructure and more flexible pricing. Better for agencies managing multiple clients.
+Three platforms worth evaluating in 2026:
 
-**Apollo** — if you are doing both prospecting and sending, Apollo lets you do it in one place. Deliverability is decent but not as optimized as dedicated tools.
+**Instantly.** The current market leader for cold email at scale. Handles domain rotation, warm-up, and has solid analytics.
 
-Set your daily sending limit to no more than 40-50 emails per domain per day, even after warming. Spread volume across your domains so each stays well under provider thresholds.
+**Smartlead.** Strong alternative with excellent deliverability and flexible pricing. Good for agencies managing outreach across multiple niches.
 
-## Step 5: Monitor Your Deliverability
+**Apollo.** If you need prospecting and sending in one place, Apollo handles both. Deliverability is decent but not as optimized as the dedicated tools.
 
-Set it and forget it does not work here. You need to actively watch a few signals.
+Set your daily limit to 40 to 50 emails per domain per day. Even after warming. Spread volume across your domains so each one stays well under provider thresholds.
 
-**Google Postmaster Tools** — free tool from Google that shows your domain reputation and spam rate. Set this up for every domain immediately. If your spam rate climbs above 0.1%, stop sending and diagnose the cause.
+Here's the insurance-specific tip that matters most. Your email sequences should avoid carrier-specific language that triggers compliance filters. Don't write like an insurance salesperson. Write like a business advisor who understands their industry. Skip the jargon. Talk about their business problems, not your policy options.
 
-**Blacklist monitoring** — use MXToolbox or Postmark's blacklist checker weekly. Getting on a major blacklist like Spamhaus can crater deliverability across all ISPs.
+## Step 5: Monitor and Protect Your Reputation
 
-**Reply rates** — the most honest signal of deliverability health. If you are getting zero replies, something is broken in the infrastructure, the targeting, or the copy. Diagnose systematically.
+You can't set this up and walk away. Deliverability requires ongoing attention.
 
-**Bounce rates** — keep hard bounces below 2%. Scrub your lists with a tool like ZeroBounce or NeverBounce before sending.
+**Google Postmaster Tools.** Free tool from Google that shows your domain reputation and spam rate. Set this up for every sending domain on day one. If your spam rate climbs above 0.1%, stop sending immediately and figure out why.
 
-## The Bottom Line
+**Blacklist monitoring.** Check MXToolbox weekly. Getting listed on a major blacklist like Spamhaus craters your deliverability across every email provider. Catching it early is the only way to limit the damage.
 
-Properly built cold email infrastructure takes 6-8 weeks to fully establish: domain registration, DNS configuration, warm-up, then scaled sending. Most founders underestimate this timeline and wonder why they get no replies.
+**Reply rates.** This is the most honest signal you have. If you're getting zero replies, something is broken. Diagnose infrastructure first. Then look at your copy. Don't rewrite emails until you've confirmed the technical side is clean.
 
-If you do not want to spend that time learning deliverability from scratch, that is exactly what we handle at WorkflowClick. We build the entire system — domains, authentication, warm-up, sending infrastructure — and then run your campaigns on top of it.
+**Bounce rates.** Keep hard bounces below 2%. Scrub your lists with ZeroBounce or NeverBounce before every campaign. Bad data kills good domains. One dirty list can undo weeks of careful warm-up.
 
-Either way, skip the infrastructure step at your own peril. The best copy in the world lands in spam if your technical foundation is broken.
+## Insurance-Specific Compliance Checklist
+
+Cold email for insurance agencies comes with extra rules beyond standard deliverability.
+
+**CAN-SPAM requirements.** Every cold email must include accurate sender information, clear identification of who's sending it, a physical mailing address, and a working opt-out mechanism. This isn't optional. Violations carry penalties up to $51,744 per email.
+
+**State DOI rules.** Your state Department of Insurance may have additional requirements for marketing communication. Check your state's rules before launching any campaign. California's CDI and New York's DFS have specific guidelines that go beyond federal requirements.
+
+**Honest subject lines.** Don't use misleading subject lines to boost open rates. CAN-SPAM requires them to accurately reflect the content of the email. For insurance outreach, this means no bait-and-switch.
+
+For a full compliance breakdown with state-by-state details, see our [compliance guide for insurance agencies](/blog/cold-email-compliance-insurance-agencies).
+
+## You Don't Have to Build This Yourself
+
+Properly built cold email infrastructure takes 6 to 8 weeks to fully establish. Domain registration. DNS configuration. Warm-up. Platform setup. Monitoring. That's a lot of work before you send a single real email.
+
+Don't want to spend 6 to 8 weeks building infrastructure from scratch? That's [what we do at WorkflowClick](/services). We build the entire system. Domains, authentication, warm-up, sending. Then we run your campaigns on top of it.
+
+[Get a free domain audit](/audit) to see if your current setup is clean and ready to send. Or [book a strategy call](/contact) to talk about what a cold email pipeline looks like for your agency.
+
+Your renewal notices are too important to risk. Build it right, or let us build it for you.
