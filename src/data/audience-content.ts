@@ -139,7 +139,7 @@ const agencyContent: AudienceContent = {
   shortLabel: 'Agency',
 
   hero: {
-    headline: 'Fill Your Pipeline with Commercial Prospects.',
+    headline: 'Fill Your Commercial Prospects Pipeline.',
     highlightedText: 'Every Week.',
     subheadline:
       'Done-for-you cold email infrastructure for independent insurance agencies. We handle everything from domain warming to booked appointments with decision-makers.',
