@@ -7,7 +7,7 @@ import { FinalCTA } from '@/components/sections/FinalCTA'
 export const metadata = createMetadata({
   title: 'About',
   description:
-    'Meet the team behind WorkflowClick. 10+ years selling to insurance organizations, $10M+ in B2B pipeline built from cold email.',
+    'Meet the team behind WorkFlowClick. 10+ years selling to insurance organizations, $10M+ in B2B pipeline built from cold email.',
   path: '/about',
 })
 
@@ -42,10 +42,9 @@ export default function AboutPage() {
               </p>
               <div className="mt-6 space-y-4 text-medium-gray leading-relaxed">
                 <p>
-                  Moe sold insurance technology to 150+ insurance organizations
-                  at Risk Control Technologies, the industry&apos;s leading loss
-                  control software provider. RCT was later acquired by Duck
-                  Creek Technologies.
+                  Moe sold insurance technology at Risk Control Technologies,
+                  the industry&apos;s leading loss control software provider.
+                  RCT was later acquired by Duck Creek Technologies.
                 </p>
                 <p>
                   As Sales Director at Armilla AI, he built the outbound engine
@@ -56,9 +55,12 @@ export default function AboutPage() {
                 </p>
                 <p>
                   Over 10+ years and 7+ B2B companies, Moe&apos;s built $10M+ in
-                  pipeline from cold email. He founded WorkflowClick to bring
-                  that same outbound infrastructure to independent agencies and
-                  growing insurance companies.
+                  pipeline from cold email. He&apos;s connected with executives
+                  who oversaw AI projects at Swiss Re, leadership at 180, and
+                  has immersed himself in the insurance world at this caliber
+                  for years. He founded WorkFlowClick to bring that same
+                  outbound infrastructure to independent agencies and growing
+                  insurance companies.
                 </p>
               </div>
             </div>
@@ -75,7 +77,7 @@ export default function AboutPage() {
               <div className="mt-6 space-y-4 text-medium-gray leading-relaxed">
                 <p>
                   Chase builds the technical infrastructure behind every
-                  WorkflowClick campaign. Custom automation identifies prospects
+                  WorkFlowClick campaign. Custom automation identifies prospects
                   with expiring policies, matches them to your carrier appetite,
                   and sends personalized outreach at scale.
                 </p>
@@ -102,7 +104,7 @@ export default function AboutPage() {
             <p className="text-lg text-medium-gray leading-relaxed">
               Growing agencies and insurance companies deserve enterprise-level
               outbound infrastructure without enterprise budgets. We built
-              WorkflowClick to close that gap. You focus on placing coverage and
+              WorkFlowClick to close that gap. You focus on placing coverage and
               closing deals. We fill your calendar with qualified conversations.
             </p>
           </div>

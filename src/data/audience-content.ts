@@ -144,7 +144,7 @@ const agencyContent: AudienceContent = {
     subheadline:
       'Done-for-you cold email for independent insurance agencies. We build the lists, write the sequences, warm the domains, and put qualified commercial prospects on your calendar.',
     proofLine:
-      'Built by a team that sold to 150+ insurance organizations and generated $10M+ in B2B outbound pipeline',
+      'Built by a team that generated $10M+ in B2B outbound pipeline across insurance technology and enterprise SaaS',
   },
 
   logoBar: {
@@ -178,7 +178,7 @@ const agencyContent: AudienceContent = {
         icon: 'MessageSquareOff',
         title: 'Lead vendors burned you',
         description:
-          'EverQuote, SmartFinancial, QuoteWizard. Shared leads, bad numbers, 40-call spam storms. You paid for "exclusive" leads that weren\'t. We don\'t sell leads. Period.',
+          'Shared leads, bad numbers, 40-call spam storms. You paid for "exclusive" leads that weren\'t. We don\'t sell leads. Period.',
       },
       {
         icon: 'BarChart3',
@@ -302,7 +302,7 @@ const agencyContent: AudienceContent = {
   statsBar: {
     stats: [
       { target: 10, prefix: '$', suffix: 'M+', label: 'Outbound Pipeline Built' },
-      { target: 150, suffix: '+', label: 'Insurance Organizations Served' },
+      { target: 7, suffix: '+', label: 'B2B Companies' },
       { target: 10, suffix: '+', label: 'Years B2B Sales' },
       { target: 6, suffix: '-8 Wks', label: 'To First Meetings' },
     ],
@@ -315,7 +315,7 @@ const agencyContent: AudienceContent = {
         icon: 'Building2',
         title: 'We Actually Speak Insurance',
         description:
-          'We know the difference between admitted and E&S markets, GL and WC class codes, and why your carrier just non-renewed half your book. Our founder sold loss control software to 150+ insurance organizations at Risk Control Technologies before it was acquired by Duck Creek.',
+          'We know the difference between admitted and E&S markets, GL and WC class codes, and why your carrier just non-renewed half your book. Our founder sold loss control software at Risk Control Technologies (acquired by Duck Creek) and built outbound at Armilla AI, backed by Swiss Re, Greenlight Re, and Chaucer.',
       },
       {
         icon: 'User',
@@ -347,11 +347,11 @@ const agencyContent: AudienceContent = {
   testimonials: {
     sectionTitle: 'The Experience Behind Every Campaign',
     sectionSubtitle:
-      'Before starting WorkflowClick, our founder built outbound programs across insurance technology and enterprise SaaS. Here\'s what he brings to your agency.',
+      'Before starting WorkFlowClick, our founder built outbound programs across insurance technology and enterprise SaaS. Here\'s what he brings to your agency.',
     items: [
       {
         quote:
-          'Sold insurance risk management software to 150+ carriers, MGAs, and brokers at Risk Control Technologies. Sat across the table from the underwriters and risk managers your agency works with every day. RCT was later acquired by Duck Creek Technologies.',
+          'Sold insurance risk management software to carriers, MGAs, and brokers at Risk Control Technologies. Sat across the table from the underwriters and risk managers your agency works with every day. RCT was later acquired by Duck Creek Technologies.',
         attribution: 'Risk Control Technologies (now Duck Creek Loss Control)',
         context: 'Insurance industry experience',
       },
@@ -424,10 +424,10 @@ const agencyContent: AudienceContent = {
       {
         question: 'Have you worked with insurance agencies before?',
         answer:
-          'We\'re new to serving agencies directly. We\'re not new to insurance. Our founder spent years selling insurance risk management software to 150+ carriers, MGAs, and brokers at Risk Control Technologies (now Duck Creek Loss Control). He then built the outbound engine at Armilla AI, a YC-backed company backed by Swiss Re, Greenlight Re, and Lloyd\'s syndicates. The cold email methodology is proven across $10M+ in career pipeline. The insurance knowledge is real. That\'s why we offer a pilot: 30 days, and you\'ll see the difference insurance fluency makes in every email we write.',
+          'We\'re new to serving agencies directly. We\'re not new to insurance. Our founder spent years selling insurance risk management software at Risk Control Technologies (now Duck Creek Loss Control). He then built the outbound engine at Armilla AI, backed by Swiss Re, Greenlight Re, and Chaucer (Lloyd\'s of London). He\'s connected with executives who oversaw AI projects at Swiss Re, leadership at 180, and has immersed himself in the insurance world at this level for years. The cold email methodology is proven across $10M+ in career pipeline. The insurance knowledge is real. That\'s why we offer a pilot: 30 days, and you\'ll see the difference insurance fluency makes in every email we write.',
       },
       {
-        question: 'How much does WorkflowClick cost?',
+        question: 'How much does WorkFlowClick cost?',
         answer:
           'Programs start from $2,500 per month, depending on your target market size, number of campaigns, and the lines of business you want to focus on. For context, an in-house producer costs $65,000-$94,000 per year in total compensation, takes months to ramp, and comes with 30%+ turnover risk. We deliver an entire outbound program for a fraction of that. On your strategy call, we\'ll give you an exact number before you commit to anything.',
       },

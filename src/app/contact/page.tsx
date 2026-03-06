@@ -1,3 +1,4 @@
+import { ContactForm } from './ContactForm'
 import { Mail, Phone, Linkedin } from 'lucide-react'
 import { createMetadata } from '@/lib/metadata'
 import { Container } from '@/components/ui/Container'
@@ -5,7 +6,7 @@ import { Container } from '@/components/ui/Container'
 export const metadata = createMetadata({
   title: 'Contact',
   description:
-    'Book a free strategy call with WorkflowClick. Talk directly with our founder about growing your book through cold email.',
+    'Get in touch with WorkFlowClick. Talk directly with our founder about growing your book through cold email.',
   path: '/contact',
 })
 
@@ -19,8 +20,8 @@ export default function ContactPage() {
               Let&apos;s <span className="text-primary">Talk</span>
             </h1>
             <p className="mt-4 text-lg text-white/70">
-              Book a free strategy call. No pitch deck, no pressure. Just a
-              conversation about your new business targets.
+              Tell us about your agency and goals. We&apos;ll reach out to book
+              a time that works for you.
             </p>
           </div>
         </Container>
@@ -29,30 +30,18 @@ export default function ContactPage() {
       <section className="py-20">
         <Container>
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
-            {/* Calendly embed placeholder */}
+            {/* Contact form */}
             <div>
               <h2 className="text-2xl font-bold text-dark mb-6">
-                Book a Strategy Call
+                Get in Touch
               </h2>
-              <div className="bg-bg-light rounded-2xl p-8 min-h-[500px] flex items-center justify-center border border-gray-100">
-                <div className="text-center text-medium-gray">
-                  <p className="text-lg font-medium">Calendly booking widget</p>
-                  <p className="text-sm mt-2">
-                    Replace this with your Calendly inline embed
-                  </p>
-                  {/*
-                    To add Calendly:
-                    <InlineWidget url="https://calendly.com/your-link" />
-                    using react-calendly package
-                  */}
-                </div>
-              </div>
+              <ContactForm />
             </div>
 
             {/* Contact info */}
             <div>
               <h2 className="text-2xl font-bold text-dark mb-6">
-                Or Reach Out Directly
+                Reach Out Directly
               </h2>
 
               <div className="space-y-6">
@@ -98,7 +87,7 @@ export default function ContactPage() {
                       rel="noopener noreferrer"
                       className="text-primary hover:underline"
                     >
-                      WorkflowClick
+                      WorkFlowClick
                     </a>
                   </div>
                 </div>
@@ -109,11 +98,11 @@ export default function ContactPage() {
                   You&apos;ll speak directly with Moe
                 </p>
                 <p className="text-sm text-medium-gray leading-relaxed">
-                  No sales reps, no gatekeepers. Moe has worked with 150+
-                  insurance organizations through Risk Control Technologies and
-                  companies backed by Swiss Re. He handles every strategy call
-                  personally because he wants to understand your agency before
-                  making any recommendations.
+                  No sales reps, no gatekeepers. Moe sold insurance technology
+                  at Risk Control Technologies and built outbound at Armilla AI,
+                  backed by Swiss Re, Greenlight Re, and Chaucer. He handles
+                  every strategy call personally because he wants to understand
+                  your agency before making any recommendations.
                 </p>
               </div>
             </div>
