@@ -13,7 +13,6 @@ import type { Audience } from '@/data/audience-content'
 const navLinks = [
   { label: 'Services', href: '/services' },
   { label: 'About', href: '/about' },
-  { label: 'Case Studies', href: '/case-studies' },
   { label: 'Blog', href: '/blog' },
   { label: 'Free Audit', href: '/audit' },
 ]
@@ -98,7 +97,7 @@ export function Header() {
               scrolled ? 'text-dark' : 'text-white'
             )}
           >
-            Workflow<span className="text-primary">Click</span>
+            WorkFlow<span className="text-primary">Click</span>
           </Link>
 
           {/* Desktop nav */}

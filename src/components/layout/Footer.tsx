@@ -9,7 +9,6 @@ const footerLinks = {
     { label: 'About', href: '/about' },
     { label: 'Services', href: '/services' },
     { label: 'Blog', href: '/blog' },
-    { label: 'Case Studies', href: '/case-studies' },
   ],
   resources: [
     { label: 'Free Audit', href: '/audit' },
@@ -36,7 +35,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="text-xl font-bold tracking-tight">
-              Workflow<span className="text-primary">Click</span>
+              WorkFlow<span className="text-primary">Click</span>
             </Link>
             <p className="mt-4 text-sm text-light-gray leading-relaxed">
               {tagline}
@@ -120,7 +119,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm text-light-gray">
-          &copy; {new Date().getFullYear()} WorkflowClick. All rights reserved.
+          &copy; {new Date().getFullYear()} WorkFlowClick. All rights reserved.
         </div>
       </Container>
     </footer>
