@@ -140,7 +140,7 @@ const agencyContent: AudienceContent = {
 
   hero: {
     headline: 'Grow Your Commercial Book.',
-    highlightedText: 'Without Prospecting.',
+    highlightedText: 'With Cold Email.',
     subheadline:
       'Done-for-you cold email for independent insurance agencies. We build the lists, write the emails, warm the domains, and deliver qualified commercial prospect signals to your team.',
     proofLine:
@@ -458,10 +458,10 @@ const insurtechContent: AudienceContent = {
   shortLabel: 'Insurtech',
 
   hero: {
-    headline: 'Get Meetings with Carriers and Agencies.',
-    highlightedText: 'Every Week.',
+    headline: 'Grow Your Pipeline with Carriers, Brokers, MGAs, and Other Insurance Prospects.',
+    highlightedText: 'Without Cold Calling.',
     subheadline:
-      'Done-for-you cold email infrastructure for insurtech companies. We handle everything from domain warming to booked calls with insurance decision-makers.',
+      'Done-for-you cold email infrastructure for insurtech companies. We handle everything from domain warming to sending emails.',
     proofLine:
       'Backed by $10M+ in pipeline generated across B2B sales programs',
   },
@@ -492,7 +492,7 @@ const insurtechContent: AudienceContent = {
         icon: 'TrendingDown',
         title: "Can't break into insurance",
         description:
-          'Traditional carriers and agencies are skeptical of new tech. Getting a first meeting feels impossible.',
+          'Traditional carriers and brokers are skeptical of new tech. Getting a first meeting feels impossible.',
       },
       {
         icon: 'Clock',
@@ -504,7 +504,7 @@ const insurtechContent: AudienceContent = {
         icon: 'MessageSquareOff',
         title: 'Tech-speak falling flat',
         description:
-          'Your product messaging sounds great to engineers but means nothing to an insurance VP.',
+          'Your product messaging sounds great to engineers but means nothing to a Chief Underwriting Officer.',
       },
       {
         icon: 'BarChart3',
@@ -545,14 +545,14 @@ const insurtechContent: AudienceContent = {
         number: '03',
         title: 'Campaign Launch',
         description:
-          'Insurance-native copy that speaks the language of carriers, MGAs, and agency principals.',
+          'Insurance-native copy that speaks the language of carriers, brokers, MGAs, and insurance agency principals.',
       },
       {
         icon: 'CalendarCheck',
         number: '04',
-        title: 'Qualified Meetings',
+        title: 'Actionable Prospect Signals',
         description:
-          'We deliver warm prospects ready to evaluate your platform. You focus on demos and closing.',
+          'We run your outbound engine and deliver qualified prospect signals in real time. Reply notifications, engagement alerts, and warm leads go straight to your team. You act on the data and close deals.',
       },
     ],
   },
@@ -621,8 +621,8 @@ const insurtechContent: AudienceContent = {
 
   statsBar: {
     stats: [
-      { target: 10, prefix: '$', suffix: 'M+', label: 'Pipeline Generated' },
-      { target: 10, suffix: '+', label: 'Years B2B Sales Experience' },
+      { target: 50, prefix: '$', suffix: 'M+', label: 'Pipeline Generated' },
+      { target: 10, suffix: '+', label: 'Collective Years B2B Sales' },
       { target: 1000, suffix: 's', label: 'Campaigns Managed' },
       { target: 7, suffix: '+', label: 'Enterprise Companies' },
     ],
@@ -635,19 +635,19 @@ const insurtechContent: AudienceContent = {
         icon: 'User',
         title: 'Founder-Led, Not Factory',
         description:
-          'Moe personally oversees your campaigns. No junior account managers learning on your dime. You get senior-level attention from day one.',
+'Moe sold insurance risk management software at Risk Control Technologies (acquired by Duck Creek), built outbound at Armilla AI (one of the first AI insurance product companies), and regularly attends insurance conferences like RIMS, ITC New York, and InsureTech Connect. He personally oversees your campaigns. No junior reps learning on your dime.',
       },
       {
         icon: 'Cpu',
         title: 'AI-Augmented Infrastructure',
         description:
-          'Our CTO builds custom automation that powers your outreach. Your campaigns run on real intelligence, not copy-paste templates.',
+'Real-time signal tracking, custom automation, and intelligent prospect identification. We use tools like Apollo, Instantly, and Clay to power your outreach. Your campaigns run on real intelligence, not copy-paste templates. As an insurtech, you understand sales tools. We speak your language.',
       },
       {
         icon: 'Zap',
         title: 'Built for Insurtech',
         description:
-          'We understand the insurance buyer. Carriers, MGAs, agencies, brokers. Our messaging translates your tech into business outcomes they care about.',
+'We understand the insurance buyer. Carriers, MGAs, agencies, brokers, captives, government risk pools. Our messaging translates your tech into business outcomes they care about. Real-time signal tracking means you know when prospects engage.',
       },
       {
         icon: 'Shield',
@@ -659,7 +659,7 @@ const insurtechContent: AudienceContent = {
         icon: 'XCircle',
         title: 'Cancel Anytime',
         description:
-          'Month-to-month. No lock-in contracts. If we do not perform, you leave. We earn your business every single month.',
+          'The first contract is 3 months minimum. That\'s what it takes to build infrastructure, develop your ICP, refine messaging, and start seeing results. After the initial 3 months, it\'s month-to-month with 30-day notice. If we\'re not delivering, you leave. We earn your business every single month.',
       },
     ],
   },
@@ -693,7 +693,7 @@ const insurtechContent: AudienceContent = {
   auditCTA: {
     sectionTitle: 'Is Your Email Domain Healthy?',
     sectionSubtitle:
-      "Get a free deliverability audit. We'll check your DKIM, SPF, DMARC, and domain reputation, and tell you exactly what's broken.",
+      "Your company domain reputation affects every email you send to MGAs, insurance agencies, brokers, carriers, captives, government risk pools, and other insurance prospects. Find out where you stand.",
     buttonText: 'Get My Free Audit',
     successMessage: 'Your audit request has been received.',
     successDetail: "We'll send you a detailed report within 24 hours.",
@@ -704,22 +704,27 @@ const insurtechContent: AudienceContent = {
       {
         question: 'How quickly will I see results?',
         answer:
-          'Most clients see their first qualified meetings within 2-4 weeks of campaign launch. The first 1-2 weeks are dedicated to infrastructure setup and domain warming. Once campaigns go live, replies typically start flowing within days.',
+          'The first 30+ days go to infrastructure: domain warming, authentication, and list building. Once campaigns go live, you\'ll start receiving prospect engagement signals right away. Replies, click activity, and warm leads get forwarded to your team as they come in.',
       },
       {
         question: 'Do I need to provide my own domains and inboxes?',
         answer:
-          'Yes, you provide the domains and inboxes. We handle all the technical setup: domain warming, SPF/DKIM/DMARC authentication, inbox configuration, and ongoing deliverability monitoring. We guide you through purchasing domains and inboxes if you need help.',
+          'Yes. You provide the sending platform (either Apollo or Instantly), plus the domains and inboxes. We handle all the technical setup: domain warming, SPF/DKIM/DMARC authentication, inbox configuration, and ongoing deliverability monitoring. We guide you through purchasing if needed.',
       },
       {
         question: 'Can you target carriers, MGAs, and agencies?',
         answer:
-          'Yes. We build custom prospect lists targeting the specific buyer segments you need: carriers, MGAs, wholesale brokers, retail agencies, or any combination. We research the right titles, departments, and decision-makers for your product.',
+          'Yes. We can target anyone in the insurance buyer chain: carriers, MGAs, wholesale brokers, retail agencies, captives, government risk pools, or any combination. Anyone you\'re chasing, we can chase. We research the right titles, departments, and decision-makers for your product.',
       },
       {
         question: 'How is this different from hiring an SDR?',
         answer:
           'An in-house SDR costs $60K-$80K+ in salary alone, takes months to ramp up, and requires management overhead. We provide an entire outbound engine (infrastructure, copy, strategy, execution) for a fraction of the cost, with faster results and no HR headaches.',
+      },
+      {
+        question: 'We already have an SDR team. Can we still use your cold email services?',
+        answer:
+          'Yes, this is actually the best setup. Instead of your SDRs worrying about list building, messaging, and reply management, they focus on what they\'re meant to do: make calls. Our cold email runs alongside, generates signals, and pushes warm prospects to your SDRs so they can act immediately. We complement your team, not replace it.',
       },
       {
         question: 'Will the messaging sound too salesy for insurance buyers?',
@@ -729,12 +734,12 @@ const insurtechContent: AudienceContent = {
       {
         question: 'Can I cancel anytime?',
         answer:
-          'Yes. All plans are month-to-month with no long-term contracts. We believe in earning your business every month through results, not locking you into agreements. Cancel anytime with 30 days notice.',
+          'Yes, with one caveat. When you sign up, there\'s a 3-month minimum commitment. We need that time to set up infrastructure, develop your ICP, refine value propositions, write copy, test, and optimize the engine. After those 3 months, it\'s month-to-month with 30-day notice. You can take over yourself or continue with us.',
       },
       {
         question: 'How do you protect my domain reputation?',
         answer:
-          'We follow strict deliverability best practices: gradual domain warming, proper authentication, inbox rotation, volume throttling, and real-time blacklist monitoring. We treat your domain reputation as sacred because it directly impacts results.',
+          'We will never send a cold email from your main domain. Ever. We isolate your main domain completely from sending domains. All cold email goes out from separate purchased domains with their own inboxes. This is industry standard. Best practice. Your main company domain, brand, and reputation stay completely protected.',
       },
       {
         question: 'What does a typical campaign look like?',
