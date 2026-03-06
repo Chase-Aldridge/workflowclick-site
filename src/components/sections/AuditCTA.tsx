@@ -9,7 +9,7 @@ import { useAudience } from '@/context/AudienceContext'
 export function AuditCTA() {
   const { audience, content } = useAudience()
   const [email, setEmail] = useState('')
-  const [domain, setDomain] = useState('')
+  const [secondField, setSecondField] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
 
@@ -26,7 +26,13 @@ export function AuditCTA() {
       const res = await fetch('/api/audit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, domain, audience }),
+        body: JSON.stringify({
+          email,
+          ...(audience === 'agency'
+            ? { zipCode: secondField }
+            : { domain: secondField }),
+          audience,
+        }),
       })
 
       if (res.ok) {
@@ -72,10 +78,14 @@ export function AuditCTA() {
               />
               <input
                 type="text"
-                placeholder="Your domain (e.g. company.com)"
+                placeholder={
+                  audience === 'agency'
+                    ? 'Your zip code (e.g. 80202)'
+                    : 'Your domain (e.g. company.com)'
+                }
                 required
-                value={domain}
-                onChange={(e) => setDomain(e.target.value)}
+                value={secondField}
+                onChange={(e) => setSecondField(e.target.value)}
                 className="flex-1 rounded-lg bg-white/10 border border-white/20 px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-primary"
               />
               <Button type="submit" disabled={loading}>

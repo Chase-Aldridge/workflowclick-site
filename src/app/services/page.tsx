@@ -15,7 +15,7 @@ export const metadata = createMetadata({
 
 const comparisonRows = [
   { feature: 'Verified contacts/month', bronze: '1,000-1,500', silver: '2,500-3,000', gold: '5,000+' },
-  { feature: 'Apollo sequences', bronze: '4', silver: '6', gold: '25+' },
+  { feature: 'Email campaigns', bronze: '4', silver: '6', gold: '25+' },
   { feature: 'Authenticated inboxes', bronze: 'Up to 10', silver: 'Up to 20', gold: 'Unlimited' },
   { feature: 'Domains managed', bronze: '1', silver: '3', gold: '5' },
   { feature: 'Named accounts/month', bronze: false, silver: '10', gold: '25' },
@@ -168,7 +168,7 @@ export default function ServicesPage() {
                 </ul>
               </div>
               <div className="p-6 bg-white rounded-xl border-2 border-primary">
-                <h3 className="text-lg font-semibold text-primary mb-4">WorkflowClick</h3>
+                <h3 className="text-lg font-semibold text-primary mb-4">WorkFlowClick</h3>
                 <ul className="space-y-3 text-sm text-medium-gray">
                   <li className="flex items-start gap-2">
                     <Check className="h-4 w-4 text-green shrink-0 mt-0.5" />

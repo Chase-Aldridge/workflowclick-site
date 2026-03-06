@@ -1,10 +1,14 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Building2, Cpu } from 'lucide-react'
 import { useAudience } from '@/context/AudienceContext'
 import type { Audience } from '@/data/audience-content'
+
+// Pages that don't require audience selection
+const gateBypassPaths = ['/privacy', '/terms', '/contact', '/blog', '/about', '/review']
 
 const options: Array<{
   key: Audience
@@ -185,10 +189,13 @@ function ParticleCanvas() {
 
 export function AudienceGate() {
   const { isGateVisible, setAudience } = useAudience()
+  const pathname = usePathname()
+
+  const shouldBypass = gateBypassPaths.some((p) => pathname.startsWith(p))
 
   return (
     <AnimatePresence>
-      {isGateVisible && (
+      {isGateVisible && !shouldBypass && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -207,7 +214,7 @@ export function AudienceGate() {
             {/* Logo - large */}
             <div className="mb-12">
               <span className="text-5xl sm:text-6xl font-bold tracking-tight text-white">
-                Workflow<span className="text-[#0071E3]">Click</span>
+                WorkFlow<span className="text-[#0071E3]">Click</span>
               </span>
             </div>
 

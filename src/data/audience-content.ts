@@ -142,7 +142,7 @@ const agencyContent: AudienceContent = {
     headline: 'Grow Your Commercial Book.',
     highlightedText: 'Without Prospecting.',
     subheadline:
-      'Done-for-you cold email for independent insurance agencies. We build the lists, write the sequences, warm the domains, and put qualified commercial prospects on your calendar.',
+      'Done-for-you cold email for independent insurance agencies. We build the lists, write the emails, warm the domains, and deliver qualified commercial prospect signals to your team.',
     proofLine:
       'Built by a team that generated $10M+ in B2B outbound pipeline across insurance technology and enterprise SaaS',
   },
@@ -218,21 +218,21 @@ const agencyContent: AudienceContent = {
         number: '02',
         title: 'Infrastructure Build',
         description:
-          'We set up dedicated sending domains (separate from your agency domain), warm them for 14+ days, and configure SPF/DKIM/DMARC. Your agency\'s email reputation stays clean.',
+          'We set up dedicated sending domains (separate from your agency domain), warm them for 30+ days, and configure SPF/DKIM/DMARC. Your agency\'s email reputation stays clean.',
       },
       {
         icon: 'Rocket',
         number: '03',
         title: 'Campaign Launch',
         description:
-          'We build verified prospect lists by industry, class code, and geography. Then we send targeted sequences to business owners, CFOs, and ops directors. X-date targeting available for businesses approaching renewal.',
+          'We build verified prospect lists by industry, class code, and geography. Then we send targeted emails to business owners, CFOs, and ops directors. X-date targeting available for businesses approaching renewal.',
       },
       {
         icon: 'CalendarCheck',
         number: '04',
-        title: 'New Business on Your Calendar',
+        title: 'Actionable Prospect Signals',
         description:
-          'Qualified commercial prospects show up on your calendar. Your producers quote, advise, and place coverage. We track meetings booked, proposals sent, and new business written.',
+          'We run your outbound engine and deliver qualified prospect signals in real time. Reply notifications, engagement alerts, and warm leads go straight to your team. Your producers act on the data, quote, and place coverage.',
       },
     ],
   },
@@ -249,15 +249,16 @@ const agencyContent: AudienceContent = {
         variant: 'default',
         features: [
           '1,000-1,500 verified commercial contacts/month',
-          '4 email sequences by industry vertical',
-          'A/B testing across all sequences',
+          '4 email campaigns by industry vertical',
+          'A/B testing across all campaigns',
           'Up to 10 authenticated inboxes',
           'Full domain authentication (SPF, DKIM, DMARC)',
           'Dedicated sending domains (your agency domain stays clean)',
           'Daily campaign management',
           'Reply forwarding + qualified lead alerts',
           '2x monthly strategy sessions',
-          'Monthly reporting: opens, replies, meetings booked',
+          'Daily reporting: opens, replies, prospect signals',
+          'Monthly executive summary',
         ],
       },
       {
@@ -268,14 +269,14 @@ const agencyContent: AudienceContent = {
         features: [
           'Everything in Starter, plus:',
           '2,500-3,000 verified contacts/month',
-          '6 email sequences (by industry + line of business)',
+          '6 email campaigns (by industry + line of business)',
           'Up to 20 inboxes, 3 sending domains',
           'X-date campaign targeting (renewal-based prospecting)',
           '10 named accounts/month (manual research + outreach)',
           'Commercial lines list building by class code',
           'Real-time Slack notifications on hot replies',
           'Weekly strategy sessions',
-          'Quarterly campaign audit + sequence refresh',
+          'Quarterly campaign audit + email refresh',
         ],
       },
       {
@@ -285,12 +286,13 @@ const agencyContent: AudienceContent = {
         features: [
           'Everything in Growth, plus:',
           '5,000+ verified contacts/month',
-          'Unlimited email sequences across all verticals',
+          'Unlimited email campaigns across all verticals',
           'Unlimited inboxes, 5 sending domains',
           '25 named accounts/month',
           'Carrier-specific messaging (match outreach to your appetite)',
           'Omnichannel: email + LinkedIn + call scripts',
           'Signal-based follow-up (website visits, email engagement)',
+          'Real-time SMS/WhatsApp/Telegram notifications',
           'Unlimited strategy sessions (up to 8hrs/mo)',
           'Monthly executive summary with new business tracking',
           'Quarterly business review (QBR)',
@@ -304,7 +306,7 @@ const agencyContent: AudienceContent = {
       { target: 10, prefix: '$', suffix: 'M+', label: 'Outbound Pipeline Built' },
       { target: 7, suffix: '+', label: 'B2B Companies' },
       { target: 10, suffix: '+', label: 'Years B2B Sales' },
-      { target: 6, suffix: '-8 Wks', label: 'To First Meetings' },
+      { target: 1000, suffix: '+', label: 'Campaigns Managed' },
     ],
   },
 
@@ -371,23 +373,23 @@ const agencyContent: AudienceContent = {
   },
 
   auditCTA: {
-    sectionTitle: 'Is Your Agency\'s Email Domain at Risk?',
+    sectionTitle: 'How Big Is Your Untapped Market?',
     sectionSubtitle:
-      'If your domain gets blacklisted, it\'s not just prospecting that stops. Your renewal notices, COI requests, and client emails all start landing in spam. Get a free deliverability audit. We\'ll check your SPF, DKIM, DMARC, and blacklist status.',
-    buttonText: 'Get My Free Domain Audit',
-    successMessage: 'Your audit request is in.',
-    successDetail: "We'll send a detailed report within 24 hours, whether you work with us or not.",
+      'Get a free custom market report for your territory. We\'ll analyze prospect density by industry, estimate opportunity size, and show you exactly where the commercial accounts are hiding in your zip codes.',
+    buttonText: 'Get My Free Market Report',
+    successMessage: 'Your market report request is in.',
+    successDetail: "We'll send a custom territory analysis within 48 hours, whether you work with us or not.",
   },
 
   faq: {
     items: [
       {
-        question: 'How quickly will my producers see meetings on their calendar?',
+        question: 'How quickly will we start seeing results?',
         answer:
-          'The first 2 weeks go to infrastructure: domain warming, authentication, and list building. Campaigns go live in week 3. Most agencies see their first qualified appointments within 3-4 weeks of kickoff. By month 2, you should have a steady flow of commercial prospects booking calls.',
+          'The first 30+ days go to infrastructure: domain warming, authentication, and list building. Once campaigns go live, you\'ll start receiving prospect engagement signals right away. Replies, click activity, and warm leads get forwarded to your team as they come in.',
       },
       {
-        question: 'How is this different from EverQuote, SmartFinancial, or buying leads?',
+        question: 'How is this different from buying internet leads?',
         answer:
           'We don\'t sell leads. At all. Lead vendors sell shared, recycled consumer leads for personal lines. You compete with 5-10 other agents on every one. We build a cold email outbound program that targets commercial business owners, CFOs, and ops directors on your behalf. Every prospect is exclusive to your agency. No sharing, no reselling, no price-shopping consumers. You own the pipeline we build.',
       },
@@ -409,12 +411,12 @@ const agencyContent: AudienceContent = {
       {
         question: 'How is this different from hiring a new producer?',
         answer:
-          'A new producer costs $40,000-$60,000 per year in salary draw alone, before commission splits, licensing, E&O coverage, and training. 70-80% of new producers fail within 2 years. Even the ones who make it take 2-3 years to reach validation. We deliver qualified commercial conversations in 6-8 weeks, at a fraction of the cost, with zero ramp time. If we don\'t perform, you cancel. Try that with a W-2 employee.',
+          'A new producer costs $40,000-$60,000 per year in salary draw alone, before commission splits, licensing, E&O coverage, and training. 70-80% of new producers fail within 2 years. Even the ones who make it take 2-3 years to reach validation. We deliver a full outbound engine and qualified prospect signals at a fraction of the cost, with zero ramp time. If we don\'t perform, you cancel. Try that with a W-2 employee.',
       },
       {
         question: 'Can I cancel anytime?',
         answer:
-          'Yes. All plans are month-to-month. No long-term contracts, no setup fees, no early termination penalties. Cancel with 30 days notice. We earn your business every month through results. If we\'re not putting qualified prospects on your producers\' calendars, you should leave.',
+          'Yes. All plans are month-to-month. No long-term contracts, no setup fees, no early termination penalties. Cancel with 30 days notice. We earn your business every month through results. If we\'re not delivering qualified prospect signals to your team, you should leave.',
       },
       {
         question: 'What commercial lines can you target?',
@@ -437,14 +439,14 @@ const agencyContent: AudienceContent = {
   finalCTA: {
     headline: 'Ready to Write More Commercial Business?',
     subheadline:
-      'Book a free strategy call. No pitch deck, no pressure. Just a conversation about growing your book and what it would take to put 5-10 qualified prospects on your calendar every month.',
+      'Book a free strategy call. No pitch deck, no pressure. Just a conversation about growing your commercial book with a dedicated outbound engine built for your territory.',
     buttonText: 'Book a Strategy Call',
     footnote: 'You\'ll speak directly with Moe, our founder. Month-to-month. Cancel anytime.',
   },
 
   footer: {
     tagline:
-      'Done-for-you cold email for independent insurance agencies. We build the infrastructure, write the sequences, and put qualified commercial prospects on your calendar.',
+      'Done-for-you cold email for independent insurance agencies. We build the infrastructure, write the emails, and deliver qualified commercial prospect signals to your team.',
   },
 }
 
