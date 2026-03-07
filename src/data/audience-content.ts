@@ -144,7 +144,7 @@ const agencyContent: AudienceContent = {
     subheadline:
       'Done-for-you cold email for independent insurance agencies. We build the lists, write the emails, warm the domains, and deliver qualified commercial prospect signals to your team.',
     proofLine:
-      'Built by a team that generated $10M+ in B2B outbound pipeline across insurance technology and enterprise SaaS',
+      'Built by a team that generated $50M+ in B2B outbound pipeline across insurance technology and enterprise SaaS',
   },
 
   logoBar: {
@@ -303,9 +303,9 @@ const agencyContent: AudienceContent = {
 
   statsBar: {
     stats: [
-      { target: 10, prefix: '$', suffix: 'M+', label: 'Outbound Pipeline Built' },
+      { target: 50, prefix: '$', suffix: 'M+', label: 'Outbound Pipeline Built' },
       { target: 7, suffix: '+', label: 'B2B Companies' },
-      { target: 10, suffix: '+', label: 'Years B2B Sales' },
+      { target: 25, suffix: '+', label: 'Years B2B Sales' },
       { target: 1000, suffix: '+', label: 'Campaigns Managed' },
     ],
   },
@@ -366,7 +366,7 @@ const agencyContent: AudienceContent = {
       {
         quote:
           'The cold email methodology is proven across 10+ years and 7+ B2B companies. What\'s new is applying it with real insurance knowledge. No other cold email agency has both. That\'s why we offer a pilot: 30 days, and you\'ll see the difference.',
-        attribution: '$10M+ career pipeline across 7+ companies',
+        attribution: '$50M+ career pipeline across 7+ companies',
         context: 'Why this combination matters',
       },
     ],
@@ -426,7 +426,7 @@ const agencyContent: AudienceContent = {
       {
         question: 'Have you worked with insurance agencies before?',
         answer:
-          'We\'re new to serving agencies directly. We\'re not new to insurance. Our founder spent years selling insurance risk management software at Risk Control Technologies (now Duck Creek Loss Control). He then built the outbound engine at Armilla AI, backed by Swiss Re, Greenlight Re, and Chaucer (Lloyd\'s of London). He\'s connected with executives who oversaw AI projects at Swiss Re, leadership at 180, and has immersed himself in the insurance world at this level for years. The cold email methodology is proven across $10M+ in career pipeline. The insurance knowledge is real. That\'s why we offer a pilot: 30 days, and you\'ll see the difference insurance fluency makes in every email we write.',
+          'We\'re new to serving agencies directly. We\'re not new to insurance. Our founder spent years selling insurance risk management software at Risk Control Technologies (now Duck Creek Loss Control). He then built the outbound engine at Armilla AI, backed by Swiss Re, Greenlight Re, and Chaucer (Lloyd\'s of London). He\'s connected with executives who oversaw AI projects at Swiss Re, leadership at 180, and has immersed himself in the insurance world at this level for years. The cold email methodology is proven across $50M+ in career pipeline. The insurance knowledge is real. That\'s why we offer a pilot: 30 days, and you\'ll see the difference insurance fluency makes in every email we write.',
       },
       {
         question: 'How much does WorkFlowClick cost?',
@@ -463,7 +463,7 @@ const insurtechContent: AudienceContent = {
     subheadline:
       'Done-for-you cold email infrastructure for insurtech companies. We handle everything from domain warming to sending emails.',
     proofLine:
-      'Backed by $10M+ in pipeline generated across B2B sales programs',
+      'Backed by $50M+ in pipeline generated across B2B sales programs',
   },
 
   logoBar: {
@@ -622,7 +622,7 @@ const insurtechContent: AudienceContent = {
   statsBar: {
     stats: [
       { target: 50, prefix: '$', suffix: 'M+', label: 'Pipeline Generated' },
-      { target: 10, suffix: '+', label: 'Collective Years B2B Sales' },
+      { target: 25, suffix: '+', label: 'Collective Years B2B Sales' },
       { target: 1000, suffix: 's', label: 'Campaigns Managed' },
       { target: 7, suffix: '+', label: 'Enterprise Companies' },
     ],
