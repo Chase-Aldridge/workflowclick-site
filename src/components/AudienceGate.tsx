@@ -201,7 +201,7 @@ export function AudienceGate() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 z-[60] bg-dark flex items-center justify-center px-4"
+          className="fixed inset-0 z-[60] bg-dark flex items-center justify-center px-4 py-8 overflow-y-auto"
         >
           <ParticleCanvas />
 
@@ -209,10 +209,10 @@ export function AudienceGate() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="relative max-w-2xl w-full text-center"
+            className="relative max-w-2xl w-full text-center min-h-full flex flex-col items-center justify-center"
           >
             {/* Logo - large */}
-            <div className="mb-12">
+            <div className="mb-8 sm:mb-12">
               <span className="text-5xl sm:text-6xl font-bold tracking-tight text-white">
                 WorkFlow<span className="text-[#0071E3]">Click</span>
               </span>
@@ -222,7 +222,7 @@ export function AudienceGate() {
             <h1 className="text-3xl font-bold text-white sm:text-4xl mb-3">
               I am an...
             </h1>
-            <p className="text-white/50 mb-10 text-lg">
+            <p className="text-white/50 mb-6 sm:mb-10 text-lg">
               Choose your path for a tailored experience.
             </p>
 
@@ -235,14 +235,14 @@ export function AudienceGate() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.2 + i * 0.1 }}
                   onClick={() => setAudience(option.key)}
-                  className="group relative rounded-2xl border border-white/10 bg-white/5 p-8 text-left transition-all duration-200 cursor-pointer"
+                  className="group relative rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8 text-left transition-all duration-200 cursor-pointer"
                   whileHover={{
                     borderColor: option.accentBorder,
                     backgroundColor: option.accentBg,
                   }}
                 >
                   <div
-                    className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl"
+                    className="mb-4 inline-flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-xl"
                     style={{ backgroundColor: option.accentBg }}
                   >
                     <option.icon
