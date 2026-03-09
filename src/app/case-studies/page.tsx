@@ -47,7 +47,7 @@ export default function CaseStudiesPage() {
                 </p>
                 <p className="mt-6 text-sm text-light-gray">
                   In the meantime, book a strategy call to learn about our
-                  founder&apos;s track record of $10M+ in pipeline generated
+                  founder&apos;s track record of $50M+ in pipeline generated
                   across Element AI, Armilla AI, PointClickCare, Xero, and BlueCat.
                 </p>
               </div>

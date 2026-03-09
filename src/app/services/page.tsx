@@ -15,21 +15,19 @@ export const metadata = createMetadata({
 
 const comparisonRows = [
   { feature: 'Verified contacts/month', bronze: '1,000-1,500', silver: '2,500-3,000', gold: '5,000+' },
-  { feature: 'Email campaigns', bronze: '4', silver: '6', gold: '25+' },
-  { feature: 'Authenticated inboxes', bronze: 'Up to 10', silver: 'Up to 20', gold: 'Unlimited' },
-  { feature: 'Domains managed', bronze: '1', silver: '3', gold: '5' },
+  { feature: 'Email campaigns', bronze: '4/month', silver: '10-15', gold: 'Up to 25/month' },
+  { feature: 'Authenticated inboxes', bronze: 'Up to 10', silver: 'Up to 50', gold: 'Up to 100' },
+  { feature: 'Domains managed', bronze: '5', silver: '10', gold: '20' },
   { feature: 'Named accounts/month', bronze: false, silver: '10', gold: '25' },
   { feature: 'X-date campaign targeting', bronze: false, silver: true, gold: true },
   { feature: 'Commercial lines list building by class code', bronze: false, silver: true, gold: true },
-  { feature: 'Carrier-specific messaging', bronze: false, silver: false, gold: true },
   { feature: 'Real-time Slack notifications', bronze: false, silver: true, gold: 'Full suite + custom rules' },
   { feature: 'Signal-based follow-up playbook', bronze: false, silver: false, gold: true },
-  { feature: 'Strategy sessions', bronze: '2x biweekly', silver: 'Weekly', gold: 'Unlimited (up to 8hrs)' },
+  { feature: 'Strategy sessions', bronze: '2x biweekly', silver: 'Weekly', gold: 'Dedicated Account Manager' },
   { feature: 'Manual prospecting', bronze: false, silver: true, gold: true },
   { feature: 'Omnichannel (email + LinkedIn + calls)', bronze: false, silver: false, gold: true },
   { feature: 'Cold call scripts', bronze: false, silver: false, gold: true },
   { feature: 'Insurance compliance review (CAN-SPAM + state)', bronze: true, silver: true, gold: true },
-  { feature: 'AMS integration readiness', bronze: false, silver: false, gold: true },
   { feature: 'Quarterly business review', bronze: false, silver: false, gold: true },
 ]
 
@@ -137,8 +135,8 @@ export default function ServicesPage() {
       <section className="py-20 bg-bg-light">
         <Container>
           <SectionHeading
-            title="Less Than an In-House SDR"
-            subtitle="And you get an entire team, not just one person who might quit."
+            title="Less Than an In-House Appointment Setter"
+            subtitle="And you get an entire team, not just one appointment setter or virtual assistant who might quit."
           />
           <div className="max-w-3xl mx-auto">
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -172,7 +170,7 @@ export default function ServicesPage() {
                 <ul className="space-y-3 text-sm text-medium-gray">
                   <li className="flex items-start gap-2">
                     <Check className="h-4 w-4 text-green shrink-0 mt-0.5" />
-                    <span>$3K-$5K/month</span>
+                    <span>$5K-$20K/month</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="h-4 w-4 text-green shrink-0 mt-0.5" />
@@ -180,7 +178,7 @@ export default function ServicesPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="h-4 w-4 text-green shrink-0 mt-0.5" />
-                    <span>Cancel anytime, no contracts</span>
+                    <span>3-month commitment, then month-to-month</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="h-4 w-4 text-green shrink-0 mt-0.5" />
@@ -194,7 +192,7 @@ export default function ServicesPage() {
               </div>
             </div>
             <p className="text-center text-sm text-light-gray mt-6">
-              Month-to-month. Cancel with 30 days notice. No setup fees.
+              3-month initial commitment, then month-to-month. Cancel with 30 days notice after the initial term. No setup fees.
             </p>
           </div>
         </Container>

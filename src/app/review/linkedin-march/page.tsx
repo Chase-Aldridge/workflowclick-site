@@ -2625,11 +2625,11 @@ if you know what you're doing.`,
       },
       {
         num: 29,
-        title: 'What 10 Years and $10M in ARR Taught Me About Events',
+        title: 'What 11 Years and $50M in ARR Taught Me About Events',
         funnel: 'BOFU',
         type: 'Story',
         slug: '29-decade-lessons',
-        altText: 'SDR to Sales Director to Founder: 10+ years, 7+ companies, $10M+ ARR — systems beat charisma at events',
+        altText: 'SDR to Sales Director to Founder: 11+ years, 7+ companies, $50M+ ARR — systems beat charisma at events',
         copy: `My first InsurTech event
 I walked the floor cold.
 
@@ -2699,8 +2699,8 @@ about your sales process?
         firstComment: `Quick background on me:
 
 SDR to Sales Director to Founder.
-10+ years. 7+ companies.
-$10M+ in ARR generated.
+11+ years. 7+ companies.
+$50M+ in ARR generated.
 
 Element AI (acquired by
 ServiceNow in 2020).

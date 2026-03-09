@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://workflowclick.com/audit</loc><lastmod>2026-03-04T06:00:46.983Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://workflowclick.com/contact</loc><lastmod>2026-03-04T06:00:46.983Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://workflowclick.com/case-studies</loc><lastmod>2026-03-04T06:00:46.983Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://workflowclick.com</loc><lastmod>2026-03-04T06:00:46.983Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://workflowclick.com/services</loc><lastmod>2026-03-04T06:00:46.983Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://workflowclick.com/about</loc><lastmod>2026-03-04T06:00:46.983Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://workflowclick.com/review/linkedin-march</loc><lastmod>2026-03-04T06:00:46.983Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://workflowclick.com/blog</loc><lastmod>2026-03-04T06:00:46.983Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://workflowclick.com/case-studies/saas-startup-pipeline</loc><lastmod>2026-03-04T06:00:46.983Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://workflowclick.com/blog/cold-email-infrastructure-2026</loc><lastmod>2026-03-04T06:00:46.983Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://workflowclick.com/blog/diy-vs-agency-cold-email</loc><lastmod>2026-03-04T06:00:46.983Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://workflowclick.com/about</loc><lastmod>2026-03-09T03:10:04.409Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://workflowclick.com</loc><lastmod>2026-03-09T03:10:04.410Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://workflowclick.com/audit</loc><lastmod>2026-03-09T03:10:04.410Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://workflowclick.com/playbook</loc><lastmod>2026-03-09T03:10:04.410Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://workflowclick.com/blog</loc><lastmod>2026-03-09T03:10:04.410Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://workflowclick.com/privacy</loc><lastmod>2026-03-09T03:10:04.410Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://workflowclick.com/terms</loc><lastmod>2026-03-09T03:10:04.410Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://workflowclick.com/roi-calculator</loc><lastmod>2026-03-09T03:10:04.410Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://workflowclick.com/contact</loc><lastmod>2026-03-09T03:10:04.410Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://workflowclick.com/review/linkedin-march</loc><lastmod>2026-03-09T03:10:04.410Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://workflowclick.com/services</loc><lastmod>2026-03-09T03:10:04.410Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://workflowclick.com/case-studies</loc><lastmod>2026-03-09T03:10:04.410Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://workflowclick.com/case-studies/saas-startup-pipeline</loc><lastmod>2026-03-09T03:10:04.410Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://workflowclick.com/blog/cold-email-compliance-insurance-agencies</loc><lastmod>2026-03-09T03:10:04.410Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://workflowclick.com/blog/cold-email-infrastructure-2026</loc><lastmod>2026-03-09T03:10:04.410Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://workflowclick.com/blog/cold-email-roi-insurance-agencies</loc><lastmod>2026-03-09T03:10:04.410Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://workflowclick.com/blog/diy-vs-agency-cold-email</loc><lastmod>2026-03-09T03:10:04.410Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://workflowclick.com/blog/insurance-agencies-switching-to-cold-email</loc><lastmod>2026-03-09T03:10:04.410Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://workflowclick.com/blog/soft-market-growth-window-insurance-agencies</loc><lastmod>2026-03-09T03:10:04.410Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
