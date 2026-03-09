@@ -11,9 +11,8 @@ import { useAudience } from '@/context/AudienceContext'
 import type { Audience } from '@/data/audience-content'
 
 const navLinks = [
-  { label: 'Services', href: '/services' },
   { label: 'About', href: '/about' },
-  { label: 'Blog', href: '/blog' },
+  { label: 'Services', href: '/services' },
   { label: 'Free Audit', href: '/audit' },
 ]
 
@@ -37,7 +36,7 @@ function AudienceToggle({
     <div
       className={cn(
         'relative flex rounded-full p-0.5 text-sm font-medium',
-        scrolled ? 'bg-gray-100' : 'bg-white/10',
+        scrolled ? 'bg-gray-200 border border-gray-300' : 'bg-white/10',
         className
       )}
     >
@@ -50,7 +49,7 @@ function AudienceToggle({
             audience === option.key
               ? 'text-white'
               : scrolled
-                ? 'text-medium-gray hover:text-dark'
+                ? 'text-dark hover:text-dark'
                 : 'text-white/60 hover:text-white'
           )}
         >

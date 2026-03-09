@@ -48,7 +48,7 @@ export default function CaseStudiesPage() {
                 <p className="mt-6 text-sm text-light-gray">
                   In the meantime, book a strategy call to learn about our
                   founder&apos;s track record of $50M+ in pipeline generated
-                  across Element AI, Armilla AI, PointClickCare, Xero, and BlueCat.
+                  across Element AI, Armilla AI, Prove (RCT / Duck Creek), Xero, and BlueCat.
                 </p>
               </div>
             </div>

@@ -8,7 +8,6 @@ const footerLinks = {
   company: [
     { label: 'About', href: '/about' },
     { label: 'Services', href: '/services' },
-    { label: 'Blog', href: '/blog' },
   ],
   resources: [
     { label: 'Free Audit', href: '/audit' },
@@ -119,7 +118,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm text-light-gray">
-          &copy; {new Date().getFullYear()} WorkFlowClick. All rights reserved.
+          &copy; {new Date().getFullYear()} Randera Group Inc. All rights reserved.
         </div>
       </Container>
     </footer>
