@@ -1,1 +1,39 @@
-{"name":"workflowclick-site","version":"1.0.0","private":true,"scripts":{"dev":"next dev --turbopack","build":"next build","postbuild":"next-sitemap","start":"next start","lint":"next lint"},"dependencies":{"next":"^15.2","react":"^19","react-dom":"^19","framer-motion":"^12","react-hook-form":"^7","@hookform/resolvers":"^4","zod":"^3","resend":"^4","gray-matter":"^4","next-mdx-remote":"^5","lucide-react":"^0.469","@next/mdx":"^15"},"devDependencies":{"typescript":"^5.8","@types/react":"^19","@types/node":"^22","@tailwindcss/postcss":"^4","tailwindcss":"^4","postcss":"^8","eslint":"^9","eslint-config-next":"^15","next-sitemap":"^4"}}
+{
+  "name": "workflowclick-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "postbuild": "next-sitemap",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^4",
+    "@next/mdx": "^15",
+    "framer-motion": "^12",
+    "gray-matter": "^4",
+    "lucide-react": "^0.469",
+    "next": "^15.2",
+    "next-mdx-remote": "^5",
+    "react": "^19",
+    "react-dom": "^19",
+    "react-hook-form": "^7",
+    "remark-gfm": "^4.0.1",
+    "resend": "^4",
+    "zod": "^3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "^15",
+    "next-sitemap": "^4",
+    "postcss": "^8",
+    "tailwindcss": "^4",
+    "typescript": "^5.8"
+  }
+}
