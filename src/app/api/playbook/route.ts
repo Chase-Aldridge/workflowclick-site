@@ -23,13 +23,14 @@ export async function POST(request: Request) {
         body: JSON.stringify({
           from: 'WorkflowClick <noreply@workflowclick.com>',
           to: ['moe@workflowclick.com', 'chase@chasealdridge.com'],
+          headers: { 'X-Priority': '1', 'X-MSMail-Priority': 'High', Importance: 'High' },
           subject: `New Playbook Download: ${name}${agencyName ? ` (${agencyName})` : ''}`,
           html: `
             <h2>New Playbook Download</h2>
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Agency:</strong> ${agencyName || 'Not provided'}</p>
-            <p><strong>Time:</strong> ${new Date().toISOString()}</p>
+            <p><strong>Time:</strong> ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York', dateStyle: 'full', timeStyle: 'short' })} EST</p>
             <hr />
             <p><em>This person downloaded "The Insurance Agency Cold Email Playbook" from workflowclick.com/playbook</em></p>
           `,

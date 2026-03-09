@@ -23,6 +23,7 @@ export async function POST(request: Request) {
           from: 'WorkflowClick <noreply@workflowclick.com>',
           to: ['moe@workflowclick.com', 'chase@chasealdridge.com'],
           subject: `Contact Form: ${name} from ${company || 'Unknown'}`,
+          headers: { 'X-Priority': '1', 'X-MSMail-Priority': 'High', Importance: 'High' },
           html: `
             <h2>New Contact Form Submission</h2>
             <p><strong>Name:</strong> ${name}</p>
@@ -30,7 +31,7 @@ export async function POST(request: Request) {
             <p><strong>Company:</strong> ${company || 'Not provided'}</p>
             <p><strong>Message:</strong></p>
             <p>${message}</p>
-            <p><strong>Time:</strong> ${new Date().toISOString()}</p>
+            <p><strong>Time:</strong> ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York', dateStyle: 'full', timeStyle: 'short' })} EST</p>
           `,
         }),
       })

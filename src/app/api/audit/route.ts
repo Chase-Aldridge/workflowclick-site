@@ -34,12 +34,13 @@ export async function POST(request: Request) {
           from: 'WorkFlowClick <noreply@workflowclick.com>',
           to: ['moe@workflowclick.com', 'chase@chasealdridge.com'],
           subject,
+          headers: { 'X-Priority': '1', 'X-MSMail-Priority': 'High', Importance: 'High' },
           html: `
             <h2>${isAgency ? 'New Custom Market Report Request' : 'New Deliverability Audit Request'}</h2>
             <p><strong>Email:</strong> ${email}</p>
             ${detailHtml}
             <p><strong>Audience:</strong> ${audience || 'unknown'}</p>
-            <p><strong>Time:</strong> ${new Date().toISOString()}</p>
+            <p><strong>Time:</strong> ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York', dateStyle: 'full', timeStyle: 'short' })} EST</p>
           `,
         }),
       })
