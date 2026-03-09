@@ -37,9 +37,9 @@ export default function AboutPage() {
               <Image
                 src="/images/team/moe-randera.webp"
                 alt="Moe Randera"
-                width={96}
-                height={96}
-                className="w-24 h-24 rounded-2xl object-cover mb-6"
+                width={384}
+                height={384}
+                className="w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 rounded-2xl object-cover mb-6"
               />
               <h2 className="text-2xl font-bold text-dark">Moe Randera</h2>
               <p className="text-primary font-medium mt-1">
@@ -81,9 +81,9 @@ export default function AboutPage() {
               <Image
                 src="/images/team/chase-aldridge.jpg"
                 alt="Chase Aldridge"
-                width={96}
-                height={96}
-                className="w-24 h-24 rounded-2xl object-cover mb-6"
+                width={384}
+                height={384}
+                className="w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 rounded-2xl object-cover mb-6"
               />
               <h2 className="text-2xl font-bold text-dark">Chase Aldridge</h2>
               <p className="text-primary font-medium mt-1">
