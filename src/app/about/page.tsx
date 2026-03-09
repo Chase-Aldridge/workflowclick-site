@@ -35,7 +35,7 @@ export default function AboutPage() {
             {/* Moe */}
             <div>
               <Image
-                src="/images/team/moe-randera.webp"
+                src="/images/team/moe-randera.png"
                 alt="Moe Randera"
                 width={384}
                 height={384}
