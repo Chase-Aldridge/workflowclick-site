@@ -21,7 +21,7 @@ export async function POST(request: Request) {
         },
         body: JSON.stringify({
           from: 'WorkflowClick <noreply@workflowclick.com>',
-          to: ['moe@workflowclick.com'],
+          to: ['moe@workflowclick.com', 'chase@chasealdridge.com'],
           subject: `Contact Form: ${name} from ${company || 'Unknown'}`,
           html: `
             <h2>New Contact Form Submission</h2>

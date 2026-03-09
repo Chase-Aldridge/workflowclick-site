@@ -32,7 +32,7 @@ export async function POST(request: Request) {
         },
         body: JSON.stringify({
           from: 'WorkFlowClick <noreply@workflowclick.com>',
-          to: ['moe@workflowclick.com'],
+          to: ['moe@workflowclick.com', 'chase@chasealdridge.com'],
           subject,
           html: `
             <h2>${isAgency ? 'New Custom Market Report Request' : 'New Deliverability Audit Request'}</h2>

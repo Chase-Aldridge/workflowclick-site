@@ -22,7 +22,7 @@ export async function POST(request: Request) {
         },
         body: JSON.stringify({
           from: 'WorkflowClick <noreply@workflowclick.com>',
-          to: ['moe@workflowclick.com'],
+          to: ['moe@workflowclick.com', 'chase@chasealdridge.com'],
           subject: `New Playbook Download: ${name}${agencyName ? ` (${agencyName})` : ''}`,
           html: `
             <h2>New Playbook Download</h2>
