@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Container } from '@/components/ui/Container'
 import { createMetadata } from '@/lib/metadata'
 import { SectionHeading } from '@/components/ui/SectionHeading'
@@ -33,9 +34,13 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
             {/* Moe */}
             <div>
-              <div className="w-24 h-24 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                <span className="text-3xl font-bold text-primary">MR</span>
-              </div>
+              <Image
+                src="/images/team/moe-randera.webp"
+                alt="Moe Randera"
+                width={96}
+                height={96}
+                className="w-24 h-24 rounded-2xl object-cover mb-6"
+              />
               <h2 className="text-2xl font-bold text-dark">Moe Randera</h2>
               <p className="text-primary font-medium mt-1">
                 Founder &amp; Head of Sales
@@ -73,9 +78,13 @@ export default function AboutPage() {
 
             {/* Chase */}
             <div>
-              <div className="w-24 h-24 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                <span className="text-3xl font-bold text-primary">CA</span>
-              </div>
+              <Image
+                src="/images/team/chase-aldridge.jpg"
+                alt="Chase Aldridge"
+                width={96}
+                height={96}
+                className="w-24 h-24 rounded-2xl object-cover mb-6"
+              />
               <h2 className="text-2xl font-bold text-dark">Chase Aldridge</h2>
               <p className="text-primary font-medium mt-1">
                 CTO &amp; Head of Technology
