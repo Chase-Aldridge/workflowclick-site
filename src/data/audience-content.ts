@@ -153,7 +153,7 @@ const agencyContent: AudienceContent = {
       { name: 'Risk Control Technologies / Duck Creek', abbr: 'RCT / Duck Creek' },
       { name: 'Armilla AI (Swiss Re, Lloyd\'s-backed)', abbr: 'Armilla AI' },
       { name: 'Element AI / ServiceNow', abbr: 'Element AI' },
-      { name: 'Prove (RCT / Duck Creek)', abbr: 'Prove' },
+      { name: 'PointClickCare', abbr: 'PointClickCare' },
     ],
   },
 
@@ -460,7 +460,7 @@ const insurtechContent: AudienceContent = {
     logos: [
       { name: 'Element AI / ServiceNow', abbr: 'Element AI' },
       { name: 'Armilla AI', abbr: 'Armilla AI' },
-      { name: 'Prove (RCT / Duck Creek)', abbr: 'Prove' },
+      { name: 'PointClickCare', abbr: 'PointClickCare' },
       { name: 'Xero', abbr: 'Xero' },
       { name: 'BlueCat', abbr: 'BlueCat' },
     ],
@@ -673,7 +673,7 @@ const insurtechContent: AudienceContent = {
       {
         quote:
           'Scaled cold email programs across insurance technology, driving consistent qualified meeting flow for enterprise sales teams.',
-        attribution: 'Prove (RCT / Duck Creek)',
+        attribution: 'Risk Control Technologies (acquired by Duck Creek)',
         context: "From Moe's career",
       },
     ],

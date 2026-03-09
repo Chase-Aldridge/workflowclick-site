@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/Button'
@@ -45,23 +44,15 @@ function AudienceToggle({
           key={option.key}
           onClick={() => setAudience(option.key)}
           className={cn(
-            'relative z-10 rounded-full px-4 py-1.5 transition-colors cursor-pointer',
+            'rounded-full px-4 py-1.5 transition-all duration-200 cursor-pointer',
             audience === option.key
-              ? 'text-white'
+              ? 'bg-primary text-white'
               : scrolled
-                ? 'text-dark hover:text-dark'
+                ? 'text-dark hover:text-dark/70'
                 : 'text-white/60 hover:text-white'
           )}
         >
-          {audience === option.key && (
-            <motion.div
-              layoutId="audience-toggle-pill"
-              className="absolute inset-0 rounded-full"
-              style={{ backgroundColor: 'var(--color-primary)' }}
-              transition={{ type: 'spring', bounce: 0.15, duration: 0.4 }}
-            />
-          )}
-          <span className="relative z-10">{option.label}</span>
+          {option.label}
         </button>
       ))}
     </div>
