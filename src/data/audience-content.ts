@@ -420,7 +420,7 @@ const agencyContent: AudienceContent = {
       {
         question: 'Have you worked with insurance agencies before?',
         answer:
-          'Yes. Our founder spent years selling insurance risk management software at Risk Control Technologies (now Duck Creek Loss Control). He then built the outbound engine at Armilla AI, backed by Swiss Re, Greenlight Re, and Chaucer (Lloyd\'s of London). He\'s connected with executives who oversaw AI projects at Swiss Re, collaborated with leaders at 180 Intermediaries, and has immersed himself in the insurance world at this level for years. The cold email methodology is proven across $50M+ in career pipeline. The insurance knowledge is real.',
+          'Yes. Our founder spent years selling insurance risk management software at Risk Control Technologies (now Duck Creek Loss Control). He then built the outbound engine at Armilla AI, backed by Swiss Re, Greenlight Re, and Chaucer (Lloyd\'s of London). He\'s connected with executives who oversaw AI projects at Swiss Re, collaborated with leaders at One80 Intermediaries, and has immersed himself in the insurance world at this level for years. The cold email methodology is proven across $50M+ in career pipeline. The insurance knowledge is real.',
       },
     ],
   },

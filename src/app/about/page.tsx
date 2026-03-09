@@ -57,7 +57,7 @@ export default function AboutPage() {
                   Over 11+ years and 7+ B2B companies, Moe&apos;s built $50M+ in
                   pipeline from cold email. He&apos;s connected with executives
                   who oversaw AI projects at Swiss Re, collaborated with leaders
-                  at 180 Intermediaries, and has immersed himself in the insurance
+                  at One80 Intermediaries, and has immersed himself in the insurance
                   world at this caliber for years. He founded WorkFlowClick to
                   bring that same outbound infrastructure to independent insurance
                   agencies and growing InsureTech companies. Before founding
