@@ -67,10 +67,10 @@ export default function ContactPage() {
                   <div>
                     <p className="font-semibold text-dark">Phone</p>
                     <a
-                      href="tel:+16474961221"
+                      href="tel:+15622701932"
                       className="text-primary hover:underline"
                     >
-                      +1 (647) 496-1221
+                      +1 (562) 270-1932
                     </a>
                   </div>
                 </div>
