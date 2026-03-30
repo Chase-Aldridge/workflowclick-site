@@ -80,15 +80,15 @@ export function Header() {
       )}
     >
       <Container>
-        <nav className="flex items-center justify-between h-16 sm:h-20">
+        <nav className="flex items-center justify-between h-16 sm:h-24">
           <Link href="/" className="flex items-center">
             <Image
               src="/images/logo.png"
               alt="WorkFlowClick"
-              width={160}
-              height={36}
+              width={560}
+              height={160}
               className={cn(
-                'h-8 sm:h-9 w-auto transition-all duration-300',
+                'h-12 sm:h-[4.5rem] w-auto transition-all duration-300',
                 scrolled ? '' : 'brightness-0 invert'
               )}
               priority

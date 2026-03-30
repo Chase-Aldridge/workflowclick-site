@@ -38,9 +38,9 @@ export function Footer() {
               <Image
                 src="/images/logo.png"
                 alt="WorkFlowClick"
-                width={160}
-                height={36}
-                className="h-8 sm:h-9 w-auto brightness-0 invert"
+                width={560}
+                height={160}
+                className="h-12 sm:h-[4.5rem] w-auto brightness-0 invert"
               />
             </Link>
             <p className="mt-4 text-sm text-light-gray leading-relaxed">

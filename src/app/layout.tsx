@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Rajdhani } from 'next/font/google'
 import Script from 'next/script'
 import '@/styles/globals.css'
 import { AudienceProvider } from '@/context/AudienceContext'
@@ -9,9 +9,10 @@ import { Footer } from '@/components/layout/Footer'
 import { SchemaScript } from '@/components/shared/SchemaScript'
 import { getOrganizationSchema } from '@/lib/schema'
 
-const inter = Inter({
+const rajdhani = Rajdhani({
   subsets: ['latin'],
-  variable: '--font-inter',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-heading',
   display: 'swap',
 })
 
@@ -46,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={rajdhani.variable}>
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-HTDGWW4N3W"

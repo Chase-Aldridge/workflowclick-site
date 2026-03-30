@@ -17,12 +17,22 @@ Next.js 15 marketing website for WorkflowClick (workflowclick.com).
 - `bun run start` - Start production server
 
 ## Brand
-- Primary: #6C63FF (indigo)
-- Primary Dark: #5449D6
-- Primary Light: #5BC0EB (cyan)
-- Dark: #1B2141 (navy)
+### Colors - Primary
+- Primary: #105eb2 (dark blue)
+- Primary Dark: #0c4a8c
+- Primary Light: #84acef (medium blue)
+- Accent: #90dddf (light teal)
+### Colors - Secondary
+- Dark: #0a0d1a (near-black)
+- Light BG: #f5fbfb (cool white)
+- Medium Gray: #618b94 (slate teal)
 - Red: #E53935
-- Font: Inter
+### Audience Variations
+- Agency: #105eb2 (blue)
+- Insurtech: #618b94 (slate teal)
+### Typography
+- Headlines: Rajdhani (Google Font, --font-heading)
+- Body: Helvetica, Arial, sans-serif
 
 ## Deployment
 - Coolify (self-hosted), port 3460
