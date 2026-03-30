@@ -50,6 +50,7 @@ export function AudienceProvider({ children }: { children: ReactNode }) {
   // No localStorage - always start with gate
   useEffect(() => {
     setIsLoaded(true)
+    document.getElementById('loading-screen')?.remove()
     document.body.classList.add('app-ready')
   }, [])
 
