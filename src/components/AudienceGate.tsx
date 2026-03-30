@@ -25,9 +25,9 @@ const options: Array<{
     title: 'Insurance Agency',
     description:
       'Independent agencies looking to grow their book of business with qualified prospects.',
-    accentColor: '#1B6B4A',
-    accentBg: 'rgba(27, 107, 74, 0.1)',
-    accentBorder: 'rgba(27, 107, 74, 0.5)',
+    accentColor: '#6C63FF',
+    accentBg: 'rgba(108, 99, 255, 0.1)',
+    accentBorder: 'rgba(108, 99, 255, 0.5)',
   },
   {
     key: 'insurtech',
@@ -35,9 +35,9 @@ const options: Array<{
     title: 'Insurtech',
     description:
       'Insurance technology companies looking to book meetings with carriers and agencies.',
-    accentColor: '#6C3CE0',
-    accentBg: 'rgba(108, 60, 224, 0.1)',
-    accentBorder: 'rgba(108, 60, 224, 0.5)',
+    accentColor: '#5BC0EB',
+    accentBg: 'rgba(91, 192, 235, 0.1)',
+    accentBorder: 'rgba(91, 192, 235, 0.5)',
   },
 ]
 
@@ -214,7 +214,7 @@ export function AudienceGate() {
             {/* Logo */}
             <div className="mb-4 sm:mb-12">
               <span className="text-3xl sm:text-6xl font-bold tracking-tight text-white">
-                WorkFlow<span className="text-[#0071E3]">Click</span>
+                WorkFlow<span className="text-[#6C63FF]">Click</span>
               </span>
             </div>
 

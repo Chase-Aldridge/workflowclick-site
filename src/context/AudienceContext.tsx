@@ -16,14 +16,14 @@ import {
 // Color themes per audience
 const audienceColors: Record<Audience, Record<string, string>> = {
   agency: {
-    '--color-primary': '#1B6B4A',      // Forest green - trust, stability
-    '--color-primary-dark': '#145236',
-    '--color-primary-light': '#2D9B6E',
+    '--color-primary': '#6C63FF',      // Indigo - matches logo
+    '--color-primary-dark': '#5449D6',
+    '--color-primary-light': '#5BC0EB',
   },
   insurtech: {
-    '--color-primary': '#6C3CE0',      // Electric purple - innovation, tech
-    '--color-primary-dark': '#5429B5',
-    '--color-primary-light': '#8F6AEE',
+    '--color-primary': '#6C63FF',      // Indigo - matches logo
+    '--color-primary-dark': '#5449D6',
+    '--color-primary-light': '#5BC0EB',
   },
 }
 

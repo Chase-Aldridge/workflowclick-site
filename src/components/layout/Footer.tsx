@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Container } from '@/components/ui/Container'
 import { useAudience } from '@/context/AudienceContext'
 
@@ -33,8 +34,14 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <Link href="/" className="text-xl font-bold tracking-tight">
-              WorkFlow<span className="text-primary">Click</span>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/images/logo.png"
+                alt="WorkFlowClick"
+                width={160}
+                height={36}
+                className="h-8 sm:h-9 w-auto brightness-0 invert"
+              />
             </Link>
             <p className="mt-4 text-sm text-light-gray leading-relaxed">
               {tagline}

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/Button'
@@ -80,14 +81,18 @@ export function Header() {
     >
       <Container>
         <nav className="flex items-center justify-between h-16 sm:h-20">
-          <Link
-            href="/"
-            className={cn(
-              'text-xl font-bold tracking-tight transition-colors',
-              scrolled ? 'text-dark' : 'text-white'
-            )}
-          >
-            WorkFlow<span className="text-primary">Click</span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/logo.png"
+              alt="WorkFlowClick"
+              width={160}
+              height={36}
+              className={cn(
+                'h-8 sm:h-9 w-auto transition-all duration-300',
+                scrolled ? '' : 'brightness-0 invert'
+              )}
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}

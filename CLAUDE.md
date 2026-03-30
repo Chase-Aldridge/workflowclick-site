@@ -17,8 +17,10 @@ Next.js 15 marketing website for WorkflowClick (workflowclick.com).
 - `bun run start` - Start production server
 
 ## Brand
-- Primary: #0071E3
-- Dark: #1A1A1A
+- Primary: #6C63FF (indigo)
+- Primary Dark: #5449D6
+- Primary Light: #5BC0EB (cyan)
+- Dark: #1B2141 (navy)
 - Red: #E53935
 - Font: Inter
 
