@@ -193,6 +193,12 @@ export function AudienceGate() {
 
   const shouldBypass = gateBypassPaths.some((p) => pathname.startsWith(p))
 
+  useEffect(() => {
+    if (shouldBypass) {
+      document.body.classList.add('app-ready')
+    }
+  }, [shouldBypass])
+
   return (
     <AnimatePresence>
       {isGateVisible && !shouldBypass && (

@@ -50,6 +50,7 @@ export function AudienceProvider({ children }: { children: ReactNode }) {
   // No localStorage - always start with gate
   useEffect(() => {
     setIsLoaded(true)
+    document.body.classList.add('app-ready')
   }, [])
 
   // Apply color theme to document when audience changes
@@ -59,6 +60,13 @@ export function AudienceProvider({ children }: { children: ReactNode }) {
     const root = document.documentElement
     for (const [prop, value] of Object.entries(colors)) {
       root.style.setProperty(prop, value)
+    }
+  }, [audience])
+
+  // Switch to white background once audience is selected (gate dismissed)
+  useEffect(() => {
+    if (audience) {
+      document.body.classList.add('app-ready')
     }
   }, [audience])
 
