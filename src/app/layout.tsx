@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import '@/styles/globals.css'
 import { AudienceProvider } from '@/context/AudienceContext'
 import { AudienceGate } from '@/components/AudienceGate'
@@ -46,6 +47,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-HTDGWW4N3W"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-HTDGWW4N3W');
+          `}
+        </Script>
+      </head>
       <body>
         <AudienceProvider>
           <SchemaScript schema={getOrganizationSchema()} />
