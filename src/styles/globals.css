@@ -26,6 +26,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body:not(.app-ready) header,
+body:not(.app-ready) main,
+body:not(.app-ready) footer {
+  visibility: hidden;
+}
+
 body.app-ready {
   background: #fff;
 }
