@@ -24,19 +24,6 @@ export interface ProblemGridContent {
   problems: ProblemItem[]
 }
 
-export interface StepItem {
-  icon: string
-  number: string
-  title: string
-  description: string
-}
-
-export interface ProcessStepsContent {
-  sectionTitle: string
-  sectionSubtitle: string
-  steps: StepItem[]
-}
-
 export interface TierItem {
   name: string
   tagline: string
@@ -120,7 +107,6 @@ export interface AudienceContent {
   hero: HeroContent
   logoBar: LogoBarContent
   problemGrid: ProblemGridContent
-  processSteps: ProcessStepsContent
   pricingTiers: PricingTiersContent
   statsBar: StatsBarContent
   differentiators: DifferentiatorsContent
@@ -142,7 +128,7 @@ const agencyContent: AudienceContent = {
     headline: 'Grow Your Commercial Book.',
     highlightedText: 'With Cold Email.',
     subheadline:
-      'Done-for-you cold email for independent insurance agencies. We build the lists, write the emails, warm the domains, and deliver qualified commercial prospect signals to your team.',
+      'Done-for-you cold email and cold calling for independent insurance agencies. We build the lists, write the emails, warm the domains, and make the calls. Your producers focus on quoting and closing.',
     proofLine:
       'Built by a team that generated $50M+ in B2B outbound pipeline across insurance technology and enterprise SaaS',
   },
@@ -201,100 +187,63 @@ const agencyContent: AudienceContent = {
     ],
   },
 
-  processSteps: {
-    sectionTitle: 'From Zero to New Business in Four Steps',
-    sectionSubtitle:
-      'We handle the technical work. Your producers focus on quoting and placing coverage.',
-    steps: [
-      {
-        icon: 'Phone',
-        number: '01',
-        title: 'Strategy Call',
-        description:
-          'We learn your target industries, commercial lines focus, geographic territory, and carrier appetite. Then we build a prospecting playbook around your agency\'s strengths.',
-      },
-      {
-        icon: 'Settings',
-        number: '02',
-        title: 'Infrastructure Build',
-        description:
-          'We set up dedicated sending domains (separate from your agency domain), warm them for 30+ days, and configure SPF/DKIM/DMARC. Your agency\'s email reputation stays clean.',
-      },
-      {
-        icon: 'Rocket',
-        number: '03',
-        title: 'Campaign Launch',
-        description:
-          'We build verified prospect lists by industry, class code, and geography. Then we send targeted emails to business owners, CFOs, and ops directors. X-date targeting available for businesses approaching renewal.',
-      },
-      {
-        icon: 'CalendarCheck',
-        number: '04',
-        title: 'Actionable Prospect Signals',
-        description:
-          'We run your outbound engine and deliver qualified prospect signals in real time. Reply notifications, engagement alerts, and warm leads go straight to your team. Your producers act on the data, quote, and place coverage.',
-      },
-    ],
-  },
-
   pricingTiers: {
-    sectionTitle: 'Pick the Plan That Fits Your Agency',
+    sectionTitle: 'Pick the Package That Fits Your Insurance Agency',
     sectionSubtitle:
-      'All plans include dedicated sending domains, full email authentication, and domain warming. Less than the cost of one in-house producer, with zero ramp time and no turnover risk.',
-    footnote: '3-month initial commitment, then month-to-month. Cancel with 30 days notice after the initial term. No setup fees. One closed commercial account pays for a full month of service.',
+      'We own the entire infrastructure. Domains, inboxes, warming, authentication, dialer. You provide the ICP, approve the copy, and show up to meetings.',
+    footnote: '3-month initial commitment, then month-to-month. Cancel with 30 days notice after the initial term. One-time setup fee covers domain acquisition, DNS config, inbox warming, deliverability audit, and initial list building. Does not apply to Cold Call Only.',
     tiers: [
       {
-        name: 'Starter',
-        tagline: 'Build the Engine',
+        name: 'Email Only',
+        tagline: 'Open Doors at Scale',
         variant: 'default',
         features: [
-          '1,000-1,500 verified commercial contacts/month',
-          '4 email campaigns/month by industry vertical',
-          'A/B testing across all campaigns',
-          'Up to 10 inboxes, 5 sending domains',
+          '100-150 verified companies/month',
+          '2-3 email sequences',
+          'Reply forwarding with immediate alerts',
+          '10 dedicated sending inboxes (warmed + authenticated)',
           'Full domain authentication (SPF, DKIM, DMARC)',
-          'Dedicated sending domains (your agency domain stays clean)',
-          'Daily campaign management',
-          'Reply forwarding + qualified lead alerts',
-          '2x monthly strategy sessions',
-          'Daily reporting: opens, replies, prospect signals',
-          'Monthly executive summary',
+          'Email verification on all contacts',
+          'Deliverability monitoring and domain health management',
+          '1 strategy call/month',
         ],
       },
       {
-        name: 'Growth',
-        tagline: 'Fill the Calendar',
+        name: 'Cold Call Only',
+        tagline: 'Conversations That Convert',
+        variant: 'default',
+        features: [
+          '20 hours/month of dedicated cold calling',
+          'Meeting booking on your calendar',
+          'WFC-provided dialer included',
+          'CRM integration available (Salesforce, HubSpot)',
+          '2 strategy calls/month',
+        ],
+      },
+      {
+        name: 'Full Outbound',
+        tagline: 'The Complete Engine',
         badge: 'Most Popular',
         variant: 'highlighted',
         features: [
-          'Everything in Starter, plus:',
-          '2,500-3,000 verified contacts/month',
-          '10\u201315 email campaigns/month',
-          'Up to 50 inboxes, 10 sending domains',
-          'X-date campaign targeting (renewal-based prospecting)',
-          '10 named accounts/month (manual research + outreach)',
-          'Commercial lines list building by class code',
-          'Real-time Slack notifications on hot replies',
-          'Weekly strategy sessions',
-          'Quarterly campaign audit + email refresh',
+          'Everything in Email Only, plus:',
+          '15-20 hours/month of cold calling',
+          'Meeting booking on your calendar',
+          'WFC-provided dialer included',
+          'CRM integration available',
+          '2 strategy calls/month',
         ],
       },
       {
-        name: 'Scale',
-        tagline: 'Own the Territory',
+        name: 'Outbound Pro',
+        tagline: 'Maximum Pipeline',
         variant: 'premium',
         features: [
-          'Everything in Growth, plus:',
-          '5,000+ verified contacts/month',
-          'Up to 25 email campaigns/month across all verticals',
-          'Up to 100 inboxes, 20 sending domains',
-          '25 named accounts/month',
-          'Omnichannel: email + LinkedIn + call scripts',
-          'Signal-based follow-up (website visits, email engagement)',
-          'Real-time SMS/WhatsApp/Telegram notifications',
-          'Dedicated Account Manager',
-          'Monthly executive summary with new business tracking',
-          'Quarterly business review (QBR)',
+          'Everything in Full Outbound, plus:',
+          '150-200 verified companies/month',
+          '3-4 email sequences',
+          '40 hours/month of cold calling',
+          '2 strategy calls/month',
         ],
       },
     ],
@@ -326,15 +275,15 @@ const agencyContent: AudienceContent = {
       },
       {
         icon: 'Cpu',
-        title: 'Your Campaigns Run on Real Intelligence',
+        title: 'Email + Cold Calling Under One Roof',
         description:
-          'Custom automation identifies prospects by industry, class code, and geography. Personalized outreach at scale, not copy-paste templates. We work with the data you provide us to target businesses approaching their renewal date \u2014 getting your value prop in front of the hand-picked leads you want to do business with.',
+          'Most agencies piece together separate vendors for email and calling. We run both from one team. Our staff builds verified lists using DiscoLike, AI-Ark, and Prospeo, writes the emails, and picks up the phone. One engine, one point of contact.',
       },
       {
         icon: 'Shield',
-        title: 'Your Insurance Agency Domain Stays Clean',
+        title: 'We Own the Entire Infrastructure',
         description:
-          'All outreach runs from dedicated sending infrastructure. Domain warming, DKIM/SPF/DMARC authentication, inbox rotation, blacklist monitoring. Your renewal notices, COI requests, and client emails are never at risk.',
+          'You don\'t buy tools. You don\'t configure anything. We provide 10 dedicated Google Workspace inboxes (warmed and authenticated), dedicated sending domains with SPF/DKIM/DMARC, the sending platform, and our own dialer for cold calling. Your insurance agency\'s domain stays completely clean.',
       },
       {
         icon: 'XCircle',
@@ -435,7 +384,7 @@ const agencyContent: AudienceContent = {
 
   footer: {
     tagline:
-      'Done-for-you cold email for independent insurance agencies. We build the infrastructure, write the emails, and deliver qualified commercial prospect signals to your team.',
+      'Done-for-you cold email and cold calling for independent insurance agencies. We own the entire infrastructure. You show up to meetings.',
   },
 }
 
@@ -450,7 +399,7 @@ const insurtechContent: AudienceContent = {
     headline: 'Grow Your Pipeline with Carriers, Brokers, MGAs, and Other Insurance Prospects.',
     highlightedText: 'Without Cold Calling.',
     subheadline:
-      'Done-for-you cold email infrastructure for insurtech companies. We handle everything from domain warming to sending emails.',
+      'Done-for-you cold email and cold calling for insurtech companies. We own the entire infrastructure. You provide the ICP, approve the copy, and show up to meetings.',
     proofLine:
       'Backed by $50M+ in pipeline generated across B2B sales programs',
   },
@@ -510,99 +459,63 @@ const insurtechContent: AudienceContent = {
     ],
   },
 
-  processSteps: {
-    sectionTitle: 'Your Outbound Engine, Built and Managed For You',
-    sectionSubtitle:
-      "From zero to pipeline in four steps. We handle the complexity so you don't have to.",
-    steps: [
-      {
-        icon: 'Phone',
-        number: '01',
-        title: 'Strategy Call',
-        description:
-          'We analyze your ICP, product positioning, and the insurance buyer landscape to build a winning playbook.',
-      },
-      {
-        icon: 'Settings',
-        number: '02',
-        title: 'Infrastructure Setup',
-        description:
-          'Domain warming, DKIM/SPF/DMARC authentication, inbox configuration. All done for you.',
-      },
-      {
-        icon: 'Rocket',
-        number: '03',
-        title: 'Campaign Launch',
-        description:
-          'Insurance-native copy that speaks the language of carriers, brokers, MGAs, and insurance agency principals.',
-      },
-      {
-        icon: 'CalendarCheck',
-        number: '04',
-        title: 'Actionable Prospect Signals',
-        description:
-          'We run your outbound engine and deliver qualified prospect signals in real time. Reply notifications, engagement alerts, and warm leads go straight to your team. You act on the data and close deals.',
-      },
-    ],
-  },
-
   pricingTiers: {
     sectionTitle: 'Choose Your Growth Speed',
     sectionSubtitle:
-      'All plans include domain warming, email authentication, and dedicated strategy support.',
-    footnote: '3-month initial commitment, then month-to-month. Cancel with 30 days notice after the initial term. No setup fees.',
+      'We own the entire infrastructure. Domains, inboxes, warming, authentication, dialer. You provide the ICP, approve the copy, and show up to meetings.',
+    footnote: '3-month initial commitment, then month-to-month. Cancel with 30 days notice after the initial term. One-time setup fee covers domain acquisition, DNS config, inbox warming, deliverability audit, and initial list building. Does not apply to Cold Call Only.',
     tiers: [
       {
-        name: 'Bronze',
-        tagline: 'The Machine',
+        name: 'Email Only',
+        tagline: 'Open Doors at Scale',
         variant: 'default',
         features: [
-          '1,000-1,500 verified contacts/month',
-          '4 email campaigns/month by industry vertical',
-          'A/B testing across all sequences',
-          'Up to 10 inboxes, 5 sending domains',
+          '100-150 verified companies/month',
+          '2-3 email sequences',
+          'Reply forwarding with immediate alerts',
+          '10 dedicated sending inboxes (warmed + authenticated)',
           'Full domain authentication (SPF, DKIM, DMARC)',
-          'Daily campaign management',
-          'Reply forwarding + prioritized alerts',
-          '2x biweekly strategy sessions',
-          'Monthly performance reporting',
+          'Email verification on all contacts',
+          'Deliverability monitoring and domain health management',
+          '1 strategy call/month',
         ],
       },
       {
-        name: 'Silver',
-        tagline: 'The War Room',
+        name: 'Cold Call Only',
+        tagline: 'Conversations That Convert',
+        variant: 'default',
+        features: [
+          '20 hours/month of dedicated cold calling',
+          'Meeting booking on your calendar',
+          'WFC-provided dialer included',
+          'CRM integration available (Salesforce, HubSpot)',
+          '2 strategy calls/month',
+        ],
+      },
+      {
+        name: 'Full Outbound',
+        tagline: 'The Complete Engine',
         badge: 'Most Popular',
         variant: 'highlighted',
         features: [
-          'Everything in Bronze, plus:',
-          '2,500-3,000 verified contacts/month',
-          '10\u201315 email campaigns/month',
-          'Up to 50 inboxes, 10 sending domains',
-          '10 named accounts/month (manual prospecting)',
-          'Real-time Slack notifications',
-          'Weekly strategy sessions',
-          'Objection-handling templates',
-          'Quarterly campaign audit + refresh',
-          'Priority Slack/email support',
+          'Everything in Email Only, plus:',
+          '15-20 hours/month of cold calling',
+          'Meeting booking on your calendar',
+          'WFC-provided dialer included',
+          'CRM integration available',
+          '2 strategy calls/month',
         ],
       },
       {
-        name: 'Gold',
-        tagline: 'The Takeover',
+        name: 'Outbound Pro',
+        tagline: 'Maximum Pipeline',
         variant: 'premium',
         features: [
-          'Everything in Silver, plus:',
-          '5,000+ verified contacts/month',
-          'Up to 25 email campaigns/month across all segments',
-          'Up to 100 inboxes, 20 sending domains',
-          '25 named accounts/month',
-          'Full Slack suite + custom alert rules',
-          'Signal-based follow-up playbook',
-          'Cold call script development',
-          'Omnichannel (email + LinkedIn + calls)',
-          'Dedicated Account Manager',
-          'Monthly executive summary',
-          'Quarterly business review (QBR)',
+          'Everything in Full Outbound, plus:',
+          '150-200 verified companies/month',
+          '3-4 email sequences',
+          '40 hours/month of cold calling',
+          '2 strategy calls/month',
         ],
       },
     ],
@@ -628,21 +541,21 @@ const insurtechContent: AudienceContent = {
       },
       {
         icon: 'Cpu',
-        title: 'AI-Augmented Infrastructure',
+        title: 'Email + Cold Calling Under One Roof',
         description:
-'Real-time signal tracking, custom automation, and intelligent prospect identification. We use tools like DiscoLike, Apollo, Instantly, and AI augmentation to power your outreach. Your campaigns run on real intelligence, not copy-paste templates. As an insurtech, you understand sales tools. We speak your language.',
+          'Most companies piece together separate vendors for email and calling. We run both from one team. Our staff builds verified lists using DiscoLike, AI-Ark, and Prospeo, writes the emails, and picks up the phone. One engine, one point of contact.',
       },
       {
         icon: 'Zap',
         title: 'Built for Insurtech',
         description:
-'We understand the insurance buyer. Carriers, MGAs, agencies, brokers, captives, government risk pools. Our messaging translates your tech into business outcomes they care about. Real-time signal tracking means you know when prospects engage.',
+          'We understand the insurance buyer. Carriers, MGAs, agencies, brokers, captives, government risk pools. Our messaging translates your tech into business outcomes they care about.',
       },
       {
         icon: 'Shield',
-        title: 'Full-Stack Deliverability',
+        title: 'We Own the Entire Infrastructure',
         description:
-          'Domain warming, DKIM/SPF/DMARC authentication, inbox rotation, blacklist monitoring. We handle the entire technical stack.',
+          'You don\'t buy tools. You don\'t configure anything. We provide 10 dedicated Google Workspace inboxes (warmed and authenticated), dedicated sending domains with SPF/DKIM/DMARC, the sending platform, and our own dialer for cold calling. Your company domain stays completely clean.',
       },
       {
         icon: 'XCircle',
@@ -696,9 +609,9 @@ const insurtechContent: AudienceContent = {
           'The first 30+ days go to infrastructure: domain warming, authentication, and list building. Once campaigns go live, you\'ll start receiving prospect engagement signals right away. Replies, click activity, and prospect engagement signals get forwarded to your team as they come in.',
       },
       {
-        question: 'Do I need to provide my own domains and inboxes?',
+        question: 'Do I need to provide my own domains, inboxes, or dialer?',
         answer:
-          'Yes. You provide the sending platform (either Apollo or Instantly), plus the domains and inboxes. We handle all the technical setup: domain warming, SPF/DKIM/DMARC authentication, inbox configuration, and ongoing deliverability monitoring. We guide you through purchasing if needed.',
+          'No. We own and manage the entire infrastructure. That includes 10 dedicated Google Workspace inboxes (warmed and authenticated), dedicated sending domains with SPF/DKIM/DMARC, the sending platform (Instantly), and our own dialer for cold calling. You don\'t buy anything, configure anything, or manage anything. If you prefer we dial from your CRM, we can integrate with Salesforce or HubSpot.',
       },
       {
         question: 'Can you target carriers, MGAs, and agencies?',
@@ -728,7 +641,7 @@ const insurtechContent: AudienceContent = {
       {
         question: 'How do you protect my domain reputation?',
         answer:
-          'We will never send a cold email from your main domain. Ever. We isolate your main domain completely from sending domains. All cold email goes out from separate purchased domains with their own inboxes. This is industry standard. Best practice. Your main company domain, brand, and reputation stay completely protected.',
+          'We own and manage all sending infrastructure separately from your company domain. All cold email goes out from dedicated domains that we purchase, warm, and authenticate. All cold calling runs through our own dialer. Your main company domain, brand, and reputation stay completely protected.',
       },
       {
         question: 'What does a typical campaign look like?',
@@ -758,7 +671,7 @@ const insurtechContent: AudienceContent = {
 
   footer: {
     tagline:
-      'Done-for-you cold email infrastructure for insurtech companies. We handle everything from domain warming to booked calls.',
+      'Done-for-you cold email and cold calling for insurtech companies. We own the entire infrastructure. You show up to meetings.',
   },
 }
 

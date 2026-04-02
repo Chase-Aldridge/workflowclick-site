@@ -1,7 +1,6 @@
 import { Hero } from '@/components/sections/Hero'
 import { LogoBar } from '@/components/sections/LogoBar'
 import { ProblemGrid } from '@/components/sections/ProblemGrid'
-import { ProcessSteps } from '@/components/sections/ProcessSteps'
 import { PricingTiers } from '@/components/sections/PricingTiers'
 import { StatsBar } from '@/components/sections/StatsBar'
 import { Differentiators } from '@/components/sections/Differentiators'
@@ -20,7 +19,6 @@ export default function HomePage() {
       <Hero />
       <LogoBar />
       <ProblemGrid />
-      <ProcessSteps />
       <PricingTiers />
       <StatsBar />
       <Differentiators />

@@ -3,32 +3,28 @@ import { createMetadata } from '@/lib/metadata'
 import { Container } from '@/components/ui/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Button } from '@/components/ui/Button'
-import { ProcessSteps } from '@/components/sections/ProcessSteps'
 import { FinalCTA } from '@/components/sections/FinalCTA'
 
 export const metadata = createMetadata({
   title: 'Services',
   description:
-    'Cold email services for insurance agencies and insurtechs. Choose from Bronze, Silver, or Gold tiers with done-for-you outbound campaigns, domain warming, and qualified meetings.',
+    'Cold email and cold calling services for insurance agencies and insurtechs. Four packages from email-only to full outbound with done-for-you campaigns, infrastructure, and cold calling.',
   path: '/services',
 })
 
 const comparisonRows = [
-  { feature: 'Verified contacts/month', bronze: '1,000-1,500', silver: '2,500-3,000', gold: '5,000+' },
-  { feature: 'Email campaigns', bronze: '4/month', silver: '10-15', gold: 'Up to 25/month' },
-  { feature: 'Authenticated inboxes', bronze: 'Up to 10', silver: 'Up to 50', gold: 'Up to 100' },
-  { feature: 'Domains managed', bronze: '5', silver: '10', gold: '20' },
-  { feature: 'Named accounts/month', bronze: false, silver: '10', gold: '25' },
-  { feature: 'X-date campaign targeting', bronze: false, silver: true, gold: true },
-  { feature: 'Commercial lines list building by class code', bronze: false, silver: true, gold: true },
-  { feature: 'Real-time Slack notifications', bronze: false, silver: true, gold: 'Full suite + custom rules' },
-  { feature: 'Signal-based follow-up playbook', bronze: false, silver: false, gold: true },
-  { feature: 'Strategy sessions', bronze: '2x biweekly', silver: 'Weekly', gold: 'Dedicated Account Manager' },
-  { feature: 'Manual prospecting', bronze: false, silver: true, gold: true },
-  { feature: 'Omnichannel (email + LinkedIn + calls)', bronze: false, silver: false, gold: true },
-  { feature: 'Cold call scripts', bronze: false, silver: false, gold: true },
-  { feature: 'Insurance compliance review (CAN-SPAM + state)', bronze: true, silver: true, gold: true },
-  { feature: 'Quarterly business review', bronze: false, silver: false, gold: true },
+  { feature: 'Verified companies/month', emailOnly: '100-150', coldCallOnly: false, fullOutbound: '100-150', outboundPro: '150-200' },
+  { feature: 'Email sequences', emailOnly: '2-3', coldCallOnly: false, fullOutbound: '2-3', outboundPro: '3-4' },
+  { feature: 'Reply forwarding', emailOnly: true, coldCallOnly: false, fullOutbound: true, outboundPro: true },
+  { feature: 'Cold calling', emailOnly: false, coldCallOnly: '20 hrs/mo', fullOutbound: '15-20 hrs/mo', outboundPro: '40 hrs/mo' },
+  { feature: 'Meeting booking', emailOnly: false, coldCallOnly: true, fullOutbound: true, outboundPro: true },
+  { feature: 'Dedicated sending inboxes', emailOnly: '10', coldCallOnly: false, fullOutbound: '10', outboundPro: '10' },
+  { feature: 'Full domain authentication', emailOnly: true, coldCallOnly: false, fullOutbound: true, outboundPro: true },
+  { feature: 'Email verification', emailOnly: true, coldCallOnly: false, fullOutbound: true, outboundPro: true },
+  { feature: 'WFC-provided dialer', emailOnly: false, coldCallOnly: true, fullOutbound: true, outboundPro: true },
+  { feature: 'CRM integration available', emailOnly: false, coldCallOnly: true, fullOutbound: true, outboundPro: true },
+  { feature: 'Deliverability monitoring', emailOnly: true, coldCallOnly: false, fullOutbound: true, outboundPro: true },
+  { feature: 'Strategy calls/month', emailOnly: '1', coldCallOnly: '2', fullOutbound: '2', outboundPro: '2' },
 ]
 
 function CellValue({ value }: { value: string | boolean }) {
@@ -44,11 +40,11 @@ export default function ServicesPage() {
         <Container>
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl font-bold text-white sm:text-5xl">
-              Services Built to <span className="text-primary">Grow Your Book</span>
+              Services Built to <span className="text-primary">Grow Your Pipeline</span>
             </h1>
             <p className="mt-4 text-lg text-white/70">
-              Three tiers designed to match your agency&apos;s goals. From first
-              campaigns to a full outbound engine.
+              Four packages designed to match your goals. Email only, cold calling only,
+              or the full outbound engine.
             </p>
           </div>
         </Container>
@@ -57,34 +53,31 @@ export default function ServicesPage() {
       <section className="py-20">
         <Container>
           <SectionHeading
-            title="Compare Plans"
-            subtitle="Every plan includes domain warming, full authentication, daily campaign management, and performance reporting."
+            title="Compare Packages"
+            subtitle="We own the entire infrastructure. Domains, inboxes, warming, authentication, dialer. You show up to meetings."
           />
 
           <div className="overflow-x-auto">
-            <table className="w-full min-w-[640px]">
+            <table className="w-full min-w-[720px]">
               <thead>
                 <tr className="border-b-2 border-gray-200">
-                  <th className="text-left py-4 pr-4 text-sm font-medium text-light-gray w-1/4">
+                  <th className="text-left py-4 pr-4 text-sm font-medium text-light-gray w-1/5">
                     Feature
                   </th>
-                  <th className="text-center py-4 px-4 text-sm font-semibold text-dark">
-                    Bronze
-                    <span className="block text-xs font-normal text-light-gray">
-                      &ldquo;The Machine&rdquo;
-                    </span>
+                  <th className="text-center py-4 px-3 text-sm font-semibold text-dark">
+                    Email Only
                   </th>
-                  <th className="text-center py-4 px-4 text-sm font-semibold text-primary bg-primary/5 rounded-t-lg">
-                    Silver
+                  <th className="text-center py-4 px-3 text-sm font-semibold text-dark">
+                    Cold Call Only
+                  </th>
+                  <th className="text-center py-4 px-3 text-sm font-semibold text-primary bg-primary/5 rounded-t-lg">
+                    Full Outbound
                     <span className="block text-xs font-normal text-primary/60">
-                      &ldquo;The War Room&rdquo;
+                      Most Popular
                     </span>
                   </th>
-                  <th className="text-center py-4 px-4 text-sm font-semibold text-dark">
-                    Gold
-                    <span className="block text-xs font-normal text-light-gray">
-                      &ldquo;The Takeover&rdquo;
-                    </span>
+                  <th className="text-center py-4 px-3 text-sm font-semibold text-dark">
+                    Outbound Pro
                   </th>
                 </tr>
               </thead>
@@ -94,14 +87,17 @@ export default function ServicesPage() {
                     <td className="py-4 pr-4 text-sm text-medium-gray">
                       {row.feature}
                     </td>
-                    <td className="py-4 px-4 text-center">
-                      <CellValue value={row.bronze} />
+                    <td className="py-4 px-3 text-center">
+                      <CellValue value={row.emailOnly} />
                     </td>
-                    <td className="py-4 px-4 text-center bg-primary/5">
-                      <CellValue value={row.silver} />
+                    <td className="py-4 px-3 text-center">
+                      <CellValue value={row.coldCallOnly} />
                     </td>
-                    <td className="py-4 px-4 text-center">
-                      <CellValue value={row.gold} />
+                    <td className="py-4 px-3 text-center bg-primary/5">
+                      <CellValue value={row.fullOutbound} />
+                    </td>
+                    <td className="py-4 px-3 text-center">
+                      <CellValue value={row.outboundPro} />
                     </td>
                   </tr>
                 ))}
@@ -109,17 +105,22 @@ export default function ServicesPage() {
               <tfoot>
                 <tr>
                   <td />
-                  <td className="py-6 px-4 text-center">
+                  <td className="py-6 px-3 text-center">
                     <Button href="/contact" size="sm" variant="secondary">
                       Book a Call
                     </Button>
                   </td>
-                  <td className="py-6 px-4 text-center bg-primary/5 rounded-b-lg">
+                  <td className="py-6 px-3 text-center">
+                    <Button href="/contact" size="sm" variant="secondary">
+                      Book a Call
+                    </Button>
+                  </td>
+                  <td className="py-6 px-3 text-center bg-primary/5 rounded-b-lg">
                     <Button href="/contact" size="sm">
                       Book a Call
                     </Button>
                   </td>
-                  <td className="py-6 px-4 text-center">
+                  <td className="py-6 px-3 text-center">
                     <Button href="/contact" size="sm" variant="secondary">
                       Book a Call
                     </Button>
@@ -135,8 +136,8 @@ export default function ServicesPage() {
       <section className="py-20 bg-bg-light">
         <Container>
           <SectionHeading
-            title="Less Than an In-House Appointment Setter"
-            subtitle="And you get an entire team, not just one appointment setter or virtual assistant who might quit."
+            title="Less Than an In-House SDR"
+            subtitle="And you get an entire team, not just one rep who might quit."
           />
           <div className="max-w-3xl mx-auto">
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -170,7 +171,7 @@ export default function ServicesPage() {
                 <ul className="space-y-3 text-sm text-medium-gray">
                   <li className="flex items-start gap-2">
                     <Check className="h-4 w-4 text-green shrink-0 mt-0.5" />
-                    <span>$5K-$20K/month</span>
+                    <span>A fraction of the cost of one SDR</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="h-4 w-4 text-green shrink-0 mt-0.5" />
@@ -182,23 +183,22 @@ export default function ServicesPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="h-4 w-4 text-green shrink-0 mt-0.5" />
-                    <span>Weekly reporting, no daily oversight</span>
+                    <span>Email + cold calling from one team</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="h-4 w-4 text-green shrink-0 mt-0.5" />
-                    <span>Entire team: copywriters, data, deliverability</span>
+                    <span>We own the infrastructure, you own the pipeline</span>
                   </li>
                 </ul>
               </div>
             </div>
             <p className="text-center text-sm text-light-gray mt-6">
-              3-month initial commitment, then month-to-month. Cancel with 30 days notice after the initial term. No setup fees.
+              3-month initial commitment, then month-to-month. Cancel with 30 days notice after the initial term. One-time setup fee for email packages.
             </p>
           </div>
         </Container>
       </section>
 
-      <ProcessSteps />
       <FinalCTA />
     </>
   )
