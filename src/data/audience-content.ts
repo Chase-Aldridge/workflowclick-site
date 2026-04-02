@@ -332,11 +332,6 @@ const agencyContent: AudienceContent = {
   faq: {
     items: [
       {
-        question: 'How quickly will we start seeing results?',
-        answer:
-          'The first 30+ days go to infrastructure: domain warming, authentication, and list building. Once campaigns go live, you\'ll start receiving prospect engagement signals right away. Replies, click activity, and warm leads get forwarded to your team as they come in.',
-      },
-      {
         question: 'How is this different from buying internet leads?',
         answer:
           'We don\'t sell leads. At all. Lead vendors sell shared, recycled leads. You could be competing with 5-10 other agents on every one. We build a cold email outbound program that targets commercial business owners, CFOs, and ops directors on your behalf. You get to pick the prospects we go after. You own the pipeline we build for you.',
@@ -350,11 +345,6 @@ const agencyContent: AudienceContent = {
         question: 'Will this damage my agency\'s domain or carrier relationships?',
         answer:
           'No. All outreach runs from dedicated sending domains that are completely separate from your agency\'s primary domain. Your renewal notices, COI requests, and client emails are never at risk from our cold email campaigns because we don\'t use your business inboxes. We handle SPF, DKIM, DMARC authentication, domain warming, inbox rotation, and real-time blacklist monitoring on the sending domains. Your insurance agency domain stays untouched.',
-      },
-      {
-        question: 'How does the ROI math work? What does one account actually pay?',
-        answer:
-          'Take a $25,000 annual premium commercial account at 12% blended commission. That\'s $3,000 in year-one commission. At 85% retention, that client stays an average of 6.7 years, generating over $15,000 in lifetime commission. One account could cover a full month of service. Everything after that is profit, and the account keeps paying you for years. The math works even at conservative close rates.',
       },
       {
         question: 'Can I cancel anytime?',
@@ -604,11 +594,6 @@ const insurtechContent: AudienceContent = {
   faq: {
     items: [
       {
-        question: 'How quickly will I see results?',
-        answer:
-          'The first 30+ days go to infrastructure: domain warming, authentication, and list building. Once campaigns go live, you\'ll start receiving prospect engagement signals right away. Replies, click activity, and prospect engagement signals get forwarded to your team as they come in.',
-      },
-      {
         question: 'Do I need to provide my own domains, inboxes, or dialer?',
         answer:
           'No. We own and manage the entire infrastructure. That includes 10 dedicated Google Workspace inboxes (warmed and authenticated), dedicated sending domains with SPF/DKIM/DMARC, the sending platform (Instantly), and our own dialer for cold calling. You don\'t buy anything, configure anything, or manage anything. If you prefer we dial from your CRM, we can integrate with Salesforce or HubSpot.',
@@ -647,11 +632,6 @@ const insurtechContent: AudienceContent = {
         question: 'What does a typical campaign look like?',
         answer:
           'A typical campaign includes researched and verified prospect lists matched to your ideal buyer profile, 4-7 step email sequences with insurance-native messaging, A/B testing across subject lines and copy, and daily monitoring with optimization. You receive regular reports on open rates, reply rates, and prospect engagement signals tracked.',
-      },
-      {
-        question: 'Do you handle LinkedIn outreach too?',
-        answer:
-          'LinkedIn outreach is available in our Gold tier as part of our omnichannel strategy. This includes coordinated email + LinkedIn + call script sequences for maximum touchpoint coverage with your target accounts.',
       },
       {
         question: "What's included in the free audit?",
