@@ -24,6 +24,15 @@ export const metadata: Metadata = {
   description:
     'We build and manage your entire cold email infrastructure for insurance agencies and insurtech companies. Domain warming, email authentication, psychology-driven copy, and qualified meetings delivered to your calendar.',
   metadataBase: new URL('https://workflowclick.com'),
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/site.webmanifest',
   openGraph: {
     title: 'WorkflowClick | Done-For-You Cold Email for Insurance',
     description:
