@@ -62,16 +62,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body>
-        <div
-          id="loading-screen"
-          style={{
-            position: 'fixed',
-            inset: 0,
-            zIndex: 9999,
-            background: '#0a0d1a',
-          }}
-        />
+      <body className="bg-dark">
         <AudienceProvider>
           <SchemaScript schema={getOrganizationSchema()} />
           <AudienceGate />
