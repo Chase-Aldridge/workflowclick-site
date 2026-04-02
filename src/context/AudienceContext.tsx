@@ -3,8 +3,8 @@
 import {
   createContext,
   useContext,
-  useState,
   useEffect,
+  useState,
   type ReactNode,
 } from 'react'
 import {
@@ -32,7 +32,6 @@ interface AudienceContextValue {
   setAudience: (a: Audience) => void
   content: AudienceContent | null
   isGateVisible: boolean
-  isLoaded: boolean
 }
 
 const AudienceContext = createContext<AudienceContextValue>({
@@ -40,16 +39,12 @@ const AudienceContext = createContext<AudienceContextValue>({
   setAudience: () => {},
   content: null,
   isGateVisible: true,
-  isLoaded: false,
 })
 
 export function AudienceProvider({ children }: { children: ReactNode }) {
   const [audience, setAudienceState] = useState<Audience | null>(null)
-  const [isLoaded, setIsLoaded] = useState(false)
-
-  // No localStorage - always start with gate
+  // Add app-ready class once client hydrates
   useEffect(() => {
-    setIsLoaded(true)
     document.body.classList.add('app-ready')
   }, [])
 
@@ -75,11 +70,11 @@ export function AudienceProvider({ children }: { children: ReactNode }) {
   }
 
   const content = audience ? audienceContent[audience] : null
-  const isGateVisible = isLoaded && audience === null
+  const isGateVisible = audience === null
 
   return (
     <AudienceContext.Provider
-      value={{ audience, setAudience, content, isGateVisible, isLoaded }}
+      value={{ audience, setAudience, content, isGateVisible }}
     >
       {children}
     </AudienceContext.Provider>
