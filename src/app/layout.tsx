@@ -58,6 +58,22 @@ export default function RootLayout({
   return (
     <html lang="en" className={rajdhani.variable}>
       <head>
+        {/* Critical inline styles - render-blocking, available before any external CSS */}
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              #gate-backdrop{position:fixed;top:0;left:0;right:0;bottom:0;z-index:60;background:#0a0d1a}
+              html.app-ready #gate-backdrop{display:none}
+              html:not(.app-ready) header,html:not(.app-ready) main,html:not(.app-ready) footer{visibility:hidden}
+            `,
+          }}
+        />
+        {/* Synchronous bypass-path check - runs before body paints */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var p=location.pathname;if(/^\\/(privacy|terms|contact|blog|about|review)/.test(p)){document.documentElement.classList.add('app-ready')}})()`,
+          }}
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-HTDGWW4N3W"
           strategy="afterInteractive"
@@ -72,6 +88,8 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="bg-dark">
+        {/* Static backdrop - covers viewport from first paint, no external CSS needed */}
+        <div id="gate-backdrop" />
         <AudienceProvider>
           <SchemaScript schema={getOrganizationSchema()} />
           <AudienceGate />

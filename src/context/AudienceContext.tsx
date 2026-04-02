@@ -43,10 +43,6 @@ const AudienceContext = createContext<AudienceContextValue>({
 
 export function AudienceProvider({ children }: { children: ReactNode }) {
   const [audience, setAudienceState] = useState<Audience | null>(null)
-  // Add app-ready class once client hydrates
-  useEffect(() => {
-    document.body.classList.add('app-ready')
-  }, [])
 
   // Apply color theme to document when audience changes
   useEffect(() => {
@@ -58,9 +54,10 @@ export function AudienceProvider({ children }: { children: ReactNode }) {
     }
   }, [audience])
 
-  // Switch to white background once audience is selected (gate dismissed)
+  // Mark app ready once audience is selected (gate dismissed)
   useEffect(() => {
     if (audience) {
+      document.documentElement.classList.add('app-ready')
       document.body.classList.add('app-ready')
     }
   }, [audience])

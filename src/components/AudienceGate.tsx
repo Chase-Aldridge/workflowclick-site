@@ -195,6 +195,7 @@ export function AudienceGate() {
 
   useEffect(() => {
     if (shouldBypass) {
+      document.documentElement.classList.add('app-ready')
       document.body.classList.add('app-ready')
     }
   }, [shouldBypass])
@@ -207,7 +208,7 @@ export function AudienceGate() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 z-[60] bg-dark flex items-start sm:items-center justify-center px-4 py-6 sm:py-8 overflow-y-auto"
+          className="fixed inset-0 z-[61] bg-dark flex items-start sm:items-center justify-center px-4 py-6 sm:py-8 overflow-y-auto"
         >
           <ParticleCanvas />
 
