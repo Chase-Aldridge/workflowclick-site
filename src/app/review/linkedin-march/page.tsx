@@ -22,7 +22,7 @@ type Week = {
 }
 
 const IMG_BASE =
-  'https://res.cloudinary.com/dnflu4ixl/image/upload/workflowclick/linkedin-march-2026'
+  'https://media.chasealdridge.com/workflowclick/linkedin-march-2026'
 
 const weeks: Week[] = [
   {
